@@ -23,6 +23,7 @@
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\objects\objects.csproj" />
+		<ProjectReference Include="..\tools\tools.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Update="README.md">
