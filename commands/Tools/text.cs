@@ -131,15 +131,15 @@ namespace trakit.tools {
 		/// Returns a plural version of the given word.
 		/// </summary>
 		/// <remarks>
-		/// This obviously doesn't work for every word imaginable, but covers the standard object names in the Trak-iT API.
+		/// This obviously doesn't work for every word imaginable, but covers the standard object names in the Trak-iT APIs.
 		/// </remarks>
 		/// <param name="word"></param>
 		/// <returns></returns>
 		public static string plural(string word)
 			=> word.EndsWith("y")
-				? word.Substring(0, word.Length - 1) + "ies" // company
+				? word.Substring(0, word.Length - 1) + "ies" // company  => companies
 				: word.EndsWith("ch")
-					? word + "es"                           // dispatch
-					: word + "s";
+					? word + "es"                           // dispatch => dispatches
+					: word + "s";						// other    => others
 	}
 }
