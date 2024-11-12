@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Trakit.Objects;
 using Trakit.Tools;
@@ -11,9 +9,14 @@ namespace Trakit.Commands {
 	/// </summary>
 	public abstract class Commander {
 		/// <summary>
+		/// <see cref="Uri"/> of the Trak-iT API service.
+		/// </summary>
+		public Uri BaseAddress { get; protected set; }
+
+		/// <summary>
 		/// Details of the <see cref="User"/> or <see cref="Machine"/> whose <see cref="Session"/> is connected to the <see cref="client"/>.
 		/// </summary>
-		public RespSelfDetails self { get; protected set; }
+		public RespSelfDetails Self { get; protected set; }
 		#region Authorization
 		// saved API credentials when using a service account
 		protected Machine _machine;
@@ -23,22 +26,22 @@ namespace Trakit.Commands {
 		/// Saves the authentication mechanism as a <see cref="Machine"/>.
 		/// </summary>
 		/// <param name="machine"></param>
-		public void setAuth(Machine machine) {
-			this.setAuth();
+		public void SetAuth(Machine machine) {
+			this.SetAuth();
 			_machine = machine;
 		}
 		/// <summary>
 		/// Saves the authentication mechanism as a <see cref="Session.id"/>.
 		/// </summary>
 		/// <param name="sessionId"></param>
-		public void setAuth(Guid sessionId) {
-			this.setAuth();
+		public void SetAuth(Guid sessionId) {
+			this.SetAuth();
 			_sessionId = sessionId;
 		}
 		/// <summary>
 		/// Unsets the authentication mechanism so that requests are sent without any.
 		/// </summary>
-		public void setAuth() {
+		public void SetAuth() {
 			_machine = default;
 			_sessionId = default;
 		}
@@ -55,12 +58,12 @@ namespace Trakit.Commands {
 		/// <param name="request"></param>
 		/// <returns></returns>
 		/// <exception cref="InvalidOperationException"></exception>
-		public abstract Task<TResponse> command<TResponse>(Request request) where TResponse : Response;
+		public abstract Task<TResponse> Command<TResponse>(Request request) where TResponse : Response;
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public Serializer serializer { get; private set; } = new Serializer();
+		public Serializer Serializer { get; private set; } = new Serializer();
 		#region Commands - Self
 		/// <summary>
 		/// Sends a login command, and if successful, saves the <see cref="RespSelfDetails.ghostId"/>
@@ -70,29 +73,29 @@ namespace Trakit.Commands {
 		/// <param name="password">Your password.</param>
 		/// <param name="userAgent">Optional string to identify this software.</param>
 		/// <returns>The <see cref="RespSelfDetails"/>, which contains a <see cref="SelfUser"/> when successful.</returns>
-		public async Task<RespSelfDetails> login(string username, string password, string userAgent = default) {
+		public async Task<RespSelfDetails> Login(string username, string password, string userAgent = default) {
 			var body = new ReqSelfLogin() {
 				username = username,
 				password = password,
 			};
 			if (userAgent != default) body.userAgent = userAgent;
-			this.self = await this.command<RespSelfDetails>(body);
-			if (this.self.errorCode == ErrorCode.success && Guid.TryParse(this.self.ghostId, out Guid sessionId)) {
-				this.setAuth(sessionId);
+			this.Self = await this.Command<RespSelfDetails>(body);
+			if (this.Self.errorCode == ErrorCode.success && Guid.TryParse(this.Self.ghostId, out Guid sessionId)) {
+				this.SetAuth(sessionId);
 			}
-			return this.self;
+			return this.Self;
 		}
 		/// <summary>
-		/// Sends a logout command, and if successful, removes the current session using <see cref="setAuth()"/>.
+		/// Sends a logout command, and if successful, removes the current session using <see cref="SetAuth()"/>.
 		/// </summary>
 		/// <returns></returns>
-		public async Task<RespSelfLogout> logout() {
-			var response = await this.command<RespSelfLogout>(new ReqSelfLogout());
+		public async Task<RespSelfLogout> Logout() {
+			var response = await this.Command<RespSelfLogout>(new ReqSelfLogout());
 			switch (response.errorCode) {
 				case ErrorCode.success:
 				case ErrorCode.sessionExpired:
-					this.setAuth();
-					this.self = default;
+					this.SetAuth();
+					this.Self = default;
 					break;
 			}
 			return response;
@@ -101,20 +104,20 @@ namespace Trakit.Commands {
 		/// Requests the details of the <see cref="User"/> or <see cref="Machine"/> currently identified.
 		/// </summary>
 		/// <returns></returns>
-		public async Task<RespSelfDetails> getSelfDetails() {
-			var response = await this.command<RespSelfDetails>(new ReqSelfDetails());
+		public async Task<RespSelfDetails> GetSelfDetails() {
+			var response = await this.Command<RespSelfDetails>(new ReqSelfDetails());
 			switch (response.errorCode) {
 				case ErrorCode.success:
 				case ErrorCode.passwordExpired:
 				case ErrorCode.sessionExpired:
 				case ErrorCode.userNotLoggedIn:
-					this.self = response;
+					this.Self = response;
 					break;
 				default:
-					this.self = default;
+					this.Self = default;
 					break;
 			}
-			return this.self;
+			return this.Self;
 		}
 		#endregion Commands - Self
 	}

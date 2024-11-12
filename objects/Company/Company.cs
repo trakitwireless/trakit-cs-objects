@@ -9,7 +9,7 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// 
 		/// </summary>
-		protected override Component[] pieces => new Component[] {
+		protected override Component[] Pieces => new Component[] {
 			this.general,
 			null,	// reserved for future use
 			this.directory,
@@ -139,7 +139,7 @@ namespace Trakit.Objects {
 		/// The <see cref="id"/> is the key.
 		/// </summary>
 		/// <returns></returns>
-		public override string getKey() => this.id.ToString();
+		public override string GetKey() => this.id.ToString();
 
 		// IDeletable
 		/// <summary>

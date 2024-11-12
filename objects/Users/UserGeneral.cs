@@ -80,7 +80,7 @@ namespace Trakit.Objects {
 		/// The <see cref="login"/> is the key.
 		/// </summary>
 		/// <returns></returns>
-		public override string getKey() => this.login;
+		public override string GetKey() => this.login;
 
 		// IDeletable
 		/// <summary>

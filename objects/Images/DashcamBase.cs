@@ -56,6 +56,6 @@
 		/// For dashcams, this is either a unique identifier, or a combination of the <see cref="asset"/>, <see cref="provider"/>, and <see cref="camera"/> values.
 		/// </summary>
 		/// <returns>A string unique for this type of object.</returns>
-		public abstract string getKey();
+		public abstract string GetKey();
 	}
 }

@@ -53,7 +53,7 @@ namespace Trakit.Objects {
 		/// The <see cref="id"/> is the key.
 		/// </summary>
 		/// <returns></returns>
-		public override string getKey() => this.id.ToString();
+		public override string GetKey() => this.id.ToString();
 
 		// IDeletable
 		/// <summary>

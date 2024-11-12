@@ -9,7 +9,7 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// 
 		/// </summary>
-		protected override Component[] pieces => new Component[] {
+		protected override Component[] Pieces => new Component[] {
 			this.general,
 			this.advanced,
 		};
@@ -147,7 +147,7 @@ namespace Trakit.Objects {
 		/// The <see cref="login"/> is the key.
 		/// </summary>
 		/// <returns></returns>
-		public override string getKey() => this.login;
+		public override string GetKey() => this.login;
 
 		// IDeletable
 		/// <summary>

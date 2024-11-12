@@ -27,6 +27,6 @@
 		/// The <see cref="code"/> is the key.
 		/// </summary>
 		/// <returns></returns>
-		public string getKey() => this.code;
+		public string GetKey() => this.code;
 	}
 }

@@ -8,7 +8,7 @@ namespace Trakit.Tools {
 	/// 
 	/// </summary>
 	public class ConvertIPEndPoint : TrakitConverter<IPEndPoint> {
-		public override IPEndPoint convertFrom(JsonReader reader, Type type, IPEndPoint ipEnd, bool existing, JsonSerializer serializer) {
+		public override IPEndPoint ConvertFrom(JsonReader reader, Type type, IPEndPoint ipEnd, bool existing, JsonSerializer serializer) {
 			var token = JToken.Load(reader);
 			switch (token.Type) {
 				case JTokenType.Object:
@@ -28,6 +28,6 @@ namespace Trakit.Tools {
 			}
 			return ipEnd;
 		}
-		public override void convertTo(JsonWriter writer, IPEndPoint value, JsonSerializer serializer) => writer.WriteValue(value.ToString());
+		public override void ConvertTo(JsonWriter writer, IPEndPoint value, JsonSerializer serializer) => writer.WriteValue(value.ToString());
 	}
 }

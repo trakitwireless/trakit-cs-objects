@@ -119,7 +119,7 @@ namespace Trakit.Objects {
 		/// The <see cref="key"/> is the key (how about that).
 		/// </summary>
 		/// <returns></returns>
-		public override string getKey() => this.key;
+		public override string GetKey() => this.key;
 
 		// IDeletable
 		/// <summary>

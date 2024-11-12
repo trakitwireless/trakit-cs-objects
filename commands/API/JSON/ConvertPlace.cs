@@ -8,14 +8,14 @@ namespace Trakit.Tools {
 	/// 
 	/// </summary>
 	public class ConvertPlace : TrakitConverter<Place> {
-		public override Place convertFrom(JsonReader reader, Type type, Place place, bool existing, JsonSerializer serializer) {
+		public override Place ConvertFrom(JsonReader reader, Type type, Place place, bool existing, JsonSerializer serializer) {
 			var obj = JObject.Load(reader);
 			if (!Enum.TryParse(obj["kind"].ToString(), true, out PlaceType kind)) throw new JsonException();
 
 			switch (obj["points"]?.Type) {
 				case JTokenType.String:
 					// overwrite object
-					obj["points"] = JArray.FromObject(Polyline.decode(obj["points"].ToString()));
+					obj["points"] = JArray.FromObject(Polyline.Decode(obj["points"].ToString()));
 					break;
 			}
 			place = obj.ToObject<Place>(serializer);

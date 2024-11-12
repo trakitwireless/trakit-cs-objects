@@ -10,7 +10,7 @@ namespace Trakit.Tools {
 		// settings used by Trak-iT's APIs
 		internal JsonSerializerSettings _settings;
 		// used to convert JObjects into Trak-iT classes
-		internal JsonSerializer newton;
+		internal JsonSerializer Newton;
 
 		public Serializer() {
 			_settings = new JsonSerializerSettings() {
@@ -34,7 +34,7 @@ namespace Trakit.Tools {
 			_settings.Converters.Add(new ConvertIPEndPoint());
 			_settings.Converters.Add(new ConvertErrorDetail());
 
-			this.newton = JsonSerializer.CreateDefault(_settings);
+			this.Newton = JsonSerializer.CreateDefault(_settings);
 		}
 
 		/// <summary>
@@ -43,17 +43,17 @@ namespace Trakit.Tools {
 		/// <typeparam name="T">Any object or struct.</typeparam>
 		/// <param name="value">The value to serialize.</param>
 		/// <returns>The serialized value.</returns>
-		public string serialize<T>(T value) => JsonConvert.SerializeObject(value, _settings);
+		public string Serialize<T>(T value) => JsonConvert.SerializeObject(value, _settings);
 		/// <summary>
 		/// Attempts to serialize the given value that abides the rules of Trak-iT's APIs.
 		/// </summary>
 		/// <param name="value">The value to serialize.</param>
 		/// <param name="text">The serialized value.</param>
 		/// <returns>True when successful.</returns>
-		public bool trySerialize<T>(T value, out string text) {
+		public bool TrySerialize<T>(T value, out string text) {
 			bool success;
 			try {
-				text = this.serialize<T>(value);
+				text = this.Serialize<T>(value);
 				success = true;
 			} catch {
 				text = default;
@@ -68,7 +68,7 @@ namespace Trakit.Tools {
 		/// <typeparam name="T">Any object or struct.</typeparam>
 		/// <param name="text">The serialized value.</param>
 		/// <returns>The <typeparamref name="T">object or struct</typeparamref>.</returns>
-		public T deserialize<T>(string text) => JsonConvert.DeserializeObject<T>(text, _settings);
+		public T Deserialize<T>(string text) => JsonConvert.DeserializeObject<T>(text, _settings);
 		/// <summary>
 		/// Attempts to deserializes the given text into an object abiding by the rules of Trak-iT's APIs.
 		/// </summary>
@@ -76,10 +76,10 @@ namespace Trakit.Tools {
 		/// <param name="text">The serialized value.</param>
 		/// <param name="value">The <typeparamref name="T">object or struct</typeparamref>.</param>
 		/// <returns>True when successful.</returns>
-		public bool tryDeserialize<T>(string text, out T value) {
+		public bool TryDeserialize<T>(string text, out T value) {
 			bool success;
 			try {
-				value = this.deserialize<T>(text);
+				value = this.Deserialize<T>(text);
 				success = true;
 			} catch {
 				value = default;
@@ -94,7 +94,7 @@ namespace Trakit.Tools {
 		/// <typeparam name="T">Any type of object, not compatible with structs.</typeparam>
 		/// <param name="token">JSON of the desired <typeparamref name="T">value</typeparamref>.</param>
 		/// <returns>The desired <typeparamref name="T">value</typeparamref>.</returns>
-		public T convertFrom<T>(JToken token) => token.ToObject<T>(this.newton);
+		public T ConvertFrom<T>(JToken token) => token.ToObject<T>(this.Newton);
 		/// <summary>
 		/// Attempts to converts the given <see cref="JToken"/> into an object abiding by the rules of Trak-iT's APIs.
 		/// </summary>
@@ -102,10 +102,10 @@ namespace Trakit.Tools {
 		/// <param name="token">JSON of the desired <typeparamref name="T">value</typeparamref>.</param>
 		/// <param name="value">The desired <typeparamref name="T">value</typeparamref>.</param>
 		/// <returns>True when successful.</returns>
-		public bool tryDeconvert<T>(JToken token, out T value) {
+		public bool TryDeconvert<T>(JToken token, out T value) {
 			bool success;
 			try {
-				value = this.convertFrom<T>(token);
+				value = this.ConvertFrom<T>(token);
 				success = true;
 			} catch {
 				value = default;
@@ -119,7 +119,7 @@ namespace Trakit.Tools {
 		/// <typeparam name="J">The kind of JSON token being returned.</typeparam>
 		/// <param name="value">The object or struct.</param>
 		/// <returns>The desired <see cref="JToken"/>.</returns>
-		public J convertTo<J>(object value) where J : JToken => (J)JToken.FromObject(value, this.newton);
+		public J ConvertTo<J>(object value) where J : JToken => (J)JToken.FromObject(value, this.Newton);
 		/// <summary>
 		/// Attempts to converts the given <c>value</c> into <see cref="JToken"/> abiding by the rules of Trak-iT's APIs.
 		/// </summary>
@@ -127,10 +127,10 @@ namespace Trakit.Tools {
 		/// <param name="value">The object or struct.</param>
 		/// <param name="token">The desired <see cref="JToken"/>.</param>
 		/// <returns>True when successful.</returns>
-		public bool tryConvert<J>(object value, out J token) where J : JToken {
+		public bool TryConvert<J>(object value, out J token) where J : JToken {
 			bool success;
 			try {
-				token = this.convertTo<J>(value);
+				token = this.ConvertTo<J>(value);
 				success = true;
 			} catch {
 				token = default;

@@ -108,7 +108,7 @@ namespace Trakit.Tools {
 		/// </summary>
 		/// <param name="val">String value to be codified.</param>
 		/// <returns>String value that represents codified value of the specified string.</returns>
-		public static string codify(string val) {
+		public static string Codify(string val) {
 			var output = new StringBuilder();
 			bool dash = !string.IsNullOrEmpty(val = val?.Trim());
 			if (dash) {
@@ -135,7 +135,7 @@ namespace Trakit.Tools {
 		/// </remarks>
 		/// <param name="word"></param>
 		/// <returns></returns>
-		public static string plural(string word)
+		public static string Plural(string word)
 			=> word.EndsWith("y")
 				? word.Substring(0, word.Length - 1) + "ies" // company  => companies
 				: word.EndsWith("ch")

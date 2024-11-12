@@ -10,7 +10,7 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// 
 		/// </summary>
-		protected override Component[] pieces => new Component[] {
+		protected override Component[] Pieces => new Component[] {
 			this.general,
 			this.advanced,
 			this.control,
@@ -162,7 +162,7 @@ namespace Trakit.Objects {
 		/// The <see cref="id"/> is the key.
 		/// </summary>
 		/// <returns></returns>
-		public override string getKey() => this.id;
+		public override string GetKey() => this.id;
 
 		// ISuspendable and IDeletable
 		/// <summary>

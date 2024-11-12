@@ -10,11 +10,11 @@ namespace Trakit.Tools {
 	/// </summary>
 	public class ConvertTimezone : TrakitConverter<Timezone> {
 		public static Timezone findById(string id) {
-			id = Text.codify(id);
+			id = Text.Codify(id);
 			var zone = string.IsNullOrEmpty(id)
 					? null
 					: TimeZoneInfo.GetSystemTimeZones()
-								.FirstOrDefault(tz => id == Text.codify(tz.Id));
+								.FirstOrDefault(tz => id == Text.Codify(tz.Id));
 			return zone == null
 				? null
 				: new Timezone() {
@@ -25,13 +25,13 @@ namespace Trakit.Tools {
 				};
 		}
 
-		public override Timezone convertFrom(JsonReader reader, Type type, Timezone tz, bool existing, JsonSerializer serializer) {
+		public override Timezone ConvertFrom(JsonReader reader, Type type, Timezone tz, bool existing, JsonSerializer serializer) {
 			string code = reader.Value.ToString();
 			return ConvertTimezone.findById(code)
 				?? throw new TimeZoneNotFoundException(code + " not found");
 		}
-		public override void convertTo(JsonWriter writer, Timezone value, JsonSerializer serializer) {
-			var obj = new JValue(Text.codify(value.code));
+		public override void ConvertTo(JsonWriter writer, Timezone value, JsonSerializer serializer) {
+			var obj = new JValue(Text.Codify(value.code));
 			obj.WriteTo(writer);
 		}
 	}

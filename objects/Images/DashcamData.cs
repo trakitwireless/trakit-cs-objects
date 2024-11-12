@@ -41,6 +41,6 @@ namespace Trakit.Objects {
 		/// The <see cref="guid"/> is the key.
 		/// </summary>
 		/// <returns></returns>
-		public override string getKey() => this.guid.ToString();
+		public override string GetKey() => this.guid.ToString();
 	}
 }

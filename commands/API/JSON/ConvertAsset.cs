@@ -9,7 +9,7 @@ namespace Trakit.Tools {
 	/// 
 	/// </summary>
 	public class ConvertAsset : TrakitConverter<Asset> {
-		public override Asset convertFrom(JsonReader reader, Type type, Asset asset, bool existing, JsonSerializer serializer) {
+		public override Asset ConvertFrom(JsonReader reader, Type type, Asset asset, bool existing, JsonSerializer serializer) {
 			var obj = JObject.Load(reader);
 			if (!Enum.TryParse(obj["kind"]?.ToString(), true, out AssetType kind)) throw new JsonException();
 			if (

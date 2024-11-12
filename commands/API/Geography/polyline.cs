@@ -19,7 +19,7 @@ namespace Trakit.Tools {
 		/// <param name="latlngs"></param>
 		/// <param name="precision"></param>
 		/// <returns>Encoded string</returns>
-		public static string encode(IEnumerable<LatLng> latlngs, byte precision = DEFAULT_PRECISION) {
+		public static string Encode(IEnumerable<LatLng> latlngs, byte precision = DEFAULT_PRECISION) {
 			var encodedPoints = new StringBuilder();
 			Action<int> encode = (diff) => {
 				int shifted = diff << 1;
@@ -49,7 +49,7 @@ namespace Trakit.Tools {
 		/// <param name="encodedPoints"></param>
 		/// <param name="precision"></param>
 		/// <returns></returns>
-		public static IEnumerable<LatLng> decode(string encodedPoints, byte precision = DEFAULT_PRECISION) {
+		public static IEnumerable<LatLng> Decode(string encodedPoints, byte precision = DEFAULT_PRECISION) {
 			if (string.IsNullOrEmpty(encodedPoints)) throw new ArgumentNullException("encodedPoints");
 
 			var polylineChars = encodedPoints.ToCharArray();

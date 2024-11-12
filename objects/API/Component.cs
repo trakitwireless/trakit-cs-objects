@@ -13,6 +13,6 @@
 		/// Strings are unique for each type of object, but can be identical for different object types.
 		/// </summary>
 		/// <returns>A string unique for this type of object.</returns>
-		public abstract string getKey();
+		public abstract string GetKey();
 	}
 }

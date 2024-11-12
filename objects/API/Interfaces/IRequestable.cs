@@ -16,6 +16,6 @@
 		/// <seealso cref="UserGeneral.login"/>
 		/// <seealso cref="UserAdvanced.login"/>
 		/// <seealso cref="Timezone.code"/>
-		string getKey();
+		string GetKey();
 	}
 }

@@ -12,16 +12,16 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A list of individually subscribable objects that make up the compound object.
 		/// </summary>
-		protected abstract Component[] pieces { get; }
+		protected abstract Component[] Pieces { get; }
 
 		/// <summary>
 		/// Compound objects have multiple <see cref="v"/> values; one for each part of the object.
 		/// </summary>
 		public override int[] v {
-			get => this.pieces.Select(p => p?.v[0] ?? -1).ToArray();
+			get => this.Pieces.Select(p => p?.v[0] ?? -1).ToArray();
 			set {
 				for (int i = 0; i < value.Length; i++) {
-					this.pieces[i].v = new[] { value[i] };
+					this.Pieces[i].v = new[] { value[i] };
 				}
 			}
 		}

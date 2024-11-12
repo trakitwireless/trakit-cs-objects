@@ -8,7 +8,7 @@ namespace Trakit.Tools {
 	/// 
 	/// </summary>
 	public class ConvertErrorDetail : TrakitConverter<ErrorDetail> {
-		public override ErrorDetail convertFrom(JsonReader reader, Type type, ErrorDetail detail, bool existing, JsonSerializer serializer) {
+		public override ErrorDetail ConvertFrom(JsonReader reader, Type type, ErrorDetail detail, bool existing, JsonSerializer serializer) {
 			var obj = JObject.Load(reader);
 			if (!Enum.TryParse(obj["kind"]?.ToString(), true, out ErrorDetailType kind)) throw new JsonException("Unknown ErrorDetailType");
 			switch (kind) {

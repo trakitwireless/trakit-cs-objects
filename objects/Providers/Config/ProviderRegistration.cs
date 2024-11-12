@@ -80,7 +80,7 @@ namespace Trakit.Objects {
 		/// The <see cref="id"/> is the key.
 		/// </summary>
 		/// <returns></returns>
-		public string getKey() => this.code;
+		public string GetKey() => this.code;
 
 		// IDeletable
 		/// <summary>

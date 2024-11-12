@@ -18,11 +18,12 @@ namespace Trakit.Commands {
 		/// 
 		/// </summary>
 		/// <returns></returns>
-		public string[] getNameParts() => SPLITTER.Match(this.GetType().Name).Groups
-																.Cast<Group>()
-																.Skip(1)
-																.Select(g => g.Value ?? "")
-																.ToArray();
+		public string[] GetNameParts() => SPLITTER.Match(this.GetType().Name)
+											.Groups
+											.Cast<Group>()
+											.Skip(1)
+											.Select(g => g.Value ?? "")
+											.ToArray();
 
 		/// <summary>
 		/// Identifier used by external system to correlate requests to responses.

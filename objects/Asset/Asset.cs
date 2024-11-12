@@ -11,7 +11,7 @@ namespace Trakit.Objects {
 		/// 
 		/// </summary>
 		[JsonIgnore]
-		protected override Component[] pieces => new Component[] {
+		protected override Component[] Pieces => new Component[] {
 			this.general,
 			this.advanced,
 			this.dispatch,
@@ -201,7 +201,7 @@ namespace Trakit.Objects {
 		/// The <see cref="id"/> is the key.
 		/// </summary>
 		/// <returns></returns>
-		public override string getKey() => this.id.ToString();
+		public override string GetKey() => this.id.ToString();
 
 		// ISuspendable and IDeletable
 		/// <summary>

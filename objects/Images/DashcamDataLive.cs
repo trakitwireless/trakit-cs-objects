@@ -20,7 +20,7 @@ namespace Trakit.Objects {
 		/// A combination of the asset, provider, and camera number.
 		/// </summary>
 		/// <returns></returns>
-		public override string getKey() => (this.asset ?? ulong.MinValue)
+		public override string GetKey() => (this.asset ?? ulong.MinValue)
 									+ "-" + this.provider
 									+ "-" + this.camera;
 	}
