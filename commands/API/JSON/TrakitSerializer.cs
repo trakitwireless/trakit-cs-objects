@@ -6,13 +6,13 @@ namespace Trakit.Tools {
 	/// <summary>
 	/// JSON serialization helper that abides by the rules and settings of the Trak-iT APIs.
 	/// </summary>
-	public class Serializer {
+	public class TrakitSerializer {
 		// settings used by Trak-iT's APIs
 		internal JsonSerializerSettings _settings;
 		// used to convert JObjects into Trak-iT classes
 		internal JsonSerializer Newton;
 
-		public Serializer() {
+		public TrakitSerializer() {
 			_settings = new JsonSerializerSettings() {
 				Formatting = Formatting.None,
 				DateParseHandling = DateParseHandling.None,

@@ -63,7 +63,8 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// 
 		/// </summary>
-		public Serializer Serializer { get; private set; } = new Serializer();
+		public readonly TrakitSerializer Serializer = new TrakitSerializer();
+
 		#region Commands - Self
 		/// <summary>
 		/// Sends a login command, and if successful, saves the <see cref="RespSelfDetails.ghostId"/>
