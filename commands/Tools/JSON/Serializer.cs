@@ -32,6 +32,7 @@ namespace trakit.tools {
 			_settings.Converters.Add(new ConvertTimezone());
 			_settings.Converters.Add(new ConvertIPAddress());
 			_settings.Converters.Add(new ConvertIPEndPoint());
+			_settings.Converters.Add(new ConvertErrorDetail());
 
 			this.newton = JsonSerializer.CreateDefault(_settings);
 		}

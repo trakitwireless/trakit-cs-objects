@@ -5,9 +5,7 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "objects", "objects\objects.csproj", "{8B6C6195-333F-4AF5-95C8-90A5CAC4DA21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tools", "tools\tools.csproj", "{1A21D846-F124-4E32-8A30-1F98C377D43B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "commands", "commands\commands.csproj", "{3173A331-4B26-4028-B238-6046BD9D1C2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "commands", "commands\commands.csproj", "{3173A331-4B26-4028-B238-6046BD9D1C2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{8B6C6195-333F-4AF5-95C8-90A5CAC4DA21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B6C6195-333F-4AF5-95C8-90A5CAC4DA21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B6C6195-333F-4AF5-95C8-90A5CAC4DA21}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A21D846-F124-4E32-8A30-1F98C377D43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A21D846-F124-4E32-8A30-1F98C377D43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A21D846-F124-4E32-8A30-1F98C377D43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A21D846-F124-4E32-8A30-1F98C377D43B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3173A331-4B26-4028-B238-6046BD9D1C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3173A331-4B26-4028-B238-6046BD9D1C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3173A331-4B26-4028-B238-6046BD9D1C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
