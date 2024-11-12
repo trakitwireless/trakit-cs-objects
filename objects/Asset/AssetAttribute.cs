@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// An attribute given to an asset by a behaviour script.
 	/// </summary>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// A partially created report used to quickly build results.
 	/// </summary>

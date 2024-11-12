@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// A base class for the common form field UI members.
 	/// </summary>

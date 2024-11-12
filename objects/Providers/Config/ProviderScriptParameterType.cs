@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// Possible data-types given to ProviderScriptParameter.
 	/// </summary>

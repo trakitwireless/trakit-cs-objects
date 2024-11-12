@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// Any derived class can/should be serialized and given to a user.
 	/// </summary>

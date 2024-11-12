@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// These are the details of a phone number input that failed to parse.
 	/// </summary>

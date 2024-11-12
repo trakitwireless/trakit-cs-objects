@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// Totalled information from all the results of the report.
 	/// </summary>

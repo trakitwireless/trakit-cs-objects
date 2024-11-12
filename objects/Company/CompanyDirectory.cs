@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// The list of Contacts from this and other companies broken down by contact role.
 	/// </summary>

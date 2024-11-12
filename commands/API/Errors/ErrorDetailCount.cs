@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// These are the details when a number of things create the exception.
 	/// </summary>

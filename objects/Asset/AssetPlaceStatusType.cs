@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// The kinds of interactions had with a Place.
 	/// </summary>

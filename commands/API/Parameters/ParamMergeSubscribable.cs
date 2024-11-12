@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// An abstract meant to help with validating "merge" operations.
 	/// </summary>

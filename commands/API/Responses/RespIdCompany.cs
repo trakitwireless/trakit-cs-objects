@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// A container for the id and owning <see cref="Company.id"/> of the object requested/created.
 	/// </summary>

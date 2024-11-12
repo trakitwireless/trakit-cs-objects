@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// For batch commands, these are the errors thrown by the sub-command.
 	/// </summary>

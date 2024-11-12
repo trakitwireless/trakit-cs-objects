@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// A completed form submitted by a <see cref="User"/> or <see cref="Asset"/>.
 	/// </summary>

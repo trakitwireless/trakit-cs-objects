@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// Definition for the name bubble above the icon on a map.
 	/// </summary>

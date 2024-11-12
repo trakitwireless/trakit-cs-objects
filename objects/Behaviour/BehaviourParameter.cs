@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// Definition of an argument passed to a Behaviour Script.
 	/// </summary>

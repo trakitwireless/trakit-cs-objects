@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// Determines when and how often a report schedule runs automatically.
 	/// </summary>

@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// For unhandled exceptions, a full stack trace may be given.
 	/// </summary>

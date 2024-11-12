@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// Information about other users' sessions.
 	/// </summary>

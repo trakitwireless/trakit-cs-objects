@@ -1,9 +1,9 @@
 ﻿using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using trakit.objects;
+using Trakit.Objects;
 
-namespace trakit.tools {
+namespace Trakit.Tools {
 	/// <summary>
 	/// 
 	/// </summary>
@@ -15,7 +15,7 @@ namespace trakit.tools {
 			switch (obj["points"]?.Type) {
 				case JTokenType.String:
 					// overwrite object
-					obj["points"] = JArray.FromObject(polyline.decode(obj["points"].ToString()));
+					obj["points"] = JArray.FromObject(Polyline.decode(obj["points"].ToString()));
 					break;
 			}
 			place = obj.ToObject<Place>(serializer);

@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// The lifetime of building a <see cref="BillingReport"/>.
 	/// </summary>

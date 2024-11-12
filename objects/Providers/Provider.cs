@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Net;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// A device, modem, or service which provides events from the field.
 	/// </summary>

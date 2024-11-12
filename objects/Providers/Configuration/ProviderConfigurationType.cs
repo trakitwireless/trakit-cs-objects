@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// This read-only class describes a type of logic applied to a provider.
 	/// ProviderConfigurationTypes are used to help define a ProviderConfiguration.

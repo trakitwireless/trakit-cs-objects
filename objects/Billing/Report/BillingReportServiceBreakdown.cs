@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// Full breakdown of billable details per targeted asset.
 	/// </summary>

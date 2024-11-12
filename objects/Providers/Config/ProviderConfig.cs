@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// The configured script loaded onto the provider over-the-air to control it's reporting schedule and behaviour.
 	/// </summary>

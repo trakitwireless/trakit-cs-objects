@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// An interface that when implemented can be used with validator.byBillingProfile.
 	/// </summary>

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using trakit.objects;
+using Trakit.Objects;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// A container for the requested <see cref="assets"/>.
 	/// </summary>

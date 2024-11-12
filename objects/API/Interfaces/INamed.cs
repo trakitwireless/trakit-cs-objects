@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// An interface for objects that have a "name" and "notes".
 	/// </summary>

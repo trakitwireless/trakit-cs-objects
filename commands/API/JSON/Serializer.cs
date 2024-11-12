@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 
-namespace trakit.tools {
+namespace Trakit.Tools {
 	/// <summary>
 	/// JSON serialization helper that abides by the rules and settings of the Trak-iT APIs.
 	/// </summary>
@@ -21,7 +21,7 @@ namespace trakit.tools {
 
 			// Converts a DateTime to and from the ISO 8601 date format (with seconds and milliseconds)
 			_settings.Converters.Add(new IsoDateTimeConverter() {
-				DateTimeFormat = text.DATETIME_FORMAT_ISO8601,
+				DateTimeFormat = Text.DATETIME_FORMAT_ISO8601,
 			});
 			_settings.Converters.Add(new StringEnumConverter());
 			_settings.Converters.Add(new ConvertAsset());

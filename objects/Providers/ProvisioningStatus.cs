@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// Progress lifetime of changing the on-board information of a remote device.
 	/// </summary>

@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// An interface for objects that can be marked as "enabled".
 	/// "Enabled" objects remain in the system, but are inactive.

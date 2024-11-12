@@ -2,9 +2,9 @@
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using trakit.objects;
+using Trakit.Objects;
 
-namespace trakit.tools {
+namespace Trakit.Tools {
 	/// <summary>
 	/// 
 	/// </summary>

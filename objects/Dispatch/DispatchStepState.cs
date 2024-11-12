@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// Details about the lifetime of a <see cref="DispatchStep"/>.
 	/// </summary>

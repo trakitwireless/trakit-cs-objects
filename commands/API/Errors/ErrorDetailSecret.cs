@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// Details about why the request failed an authentication process when a <see cref="Machine.secret"/> is used.
 	/// </summary>

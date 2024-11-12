@@ -1,6 +1,6 @@
-﻿using trakit.objects;
+﻿using Trakit.Objects;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// Similar to the <see cref="UserGeneral"/> object, but instead of the <see cref="contact"/> being an identifier,
 	/// it is a <see cref="Contact"/> object.

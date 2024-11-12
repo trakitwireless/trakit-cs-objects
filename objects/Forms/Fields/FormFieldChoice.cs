@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// A single- or multiple-choice input control.
 	/// </summary>

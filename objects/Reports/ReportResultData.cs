@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// Report results which also include the computed summary and breakdown for the results.
 	/// </summary>

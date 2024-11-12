@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// These are the errors/warnings taken from the output of some other system.
 	/// </summary>

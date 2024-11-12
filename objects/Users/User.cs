@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// A grouping of credentials, information, preferences, and permissions for a person or machine to login to the system and access its resources.
 	/// </summary>

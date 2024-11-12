@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// A container for the id, <see cref="BillingProfile.id"/>, and owning <see cref="Company.id"/> of the billing object requested/created.
 	/// </summary>

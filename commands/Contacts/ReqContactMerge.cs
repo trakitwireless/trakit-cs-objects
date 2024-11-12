@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using trakit.objects;
+using Trakit.Objects;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// Gets details of the specified <see cref="contact"/>.
 	/// </summary>

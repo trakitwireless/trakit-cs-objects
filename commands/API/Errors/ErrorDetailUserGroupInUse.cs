@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// Details for how many and which <see cref="User"/>s are still in the <see cref="UserGroup"/>.
 	/// </summary>

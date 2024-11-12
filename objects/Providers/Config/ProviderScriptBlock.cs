@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// A chunk of script and variables used to assemble a working ProviderScript.
 	/// </summary>

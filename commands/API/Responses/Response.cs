@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// Base class for all responses from commands.
 	/// All command response classes use this as the base.

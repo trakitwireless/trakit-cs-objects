@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// The supported types of user interface modules for a <see cref="FormTemplate"/>.
 	/// </summary>

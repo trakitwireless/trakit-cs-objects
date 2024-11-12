@@ -1,6 +1,6 @@
-﻿using trakit.objects;
+﻿using Trakit.Objects;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// Similar to the <see cref="Permission"/> object, but the <see cref="company"/>, <see cref="level"/>, <see cref="method"/>, and <see cref="labels"/> are all optional.
 	/// </summary>

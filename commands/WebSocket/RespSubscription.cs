@@ -1,6 +1,6 @@
-﻿using trakit.objects;
+﻿using Trakit.Objects;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// The types of subscriptions available using <see cref="TrakitSocket.subscribe"/>/<see cref="TrakitSocket.unsubscribe"/>.
 	/// Each type has a different synchronization messages and objects.

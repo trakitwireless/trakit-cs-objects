@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// An automatically generated notification sent to a user by the system.
 	/// </summary>

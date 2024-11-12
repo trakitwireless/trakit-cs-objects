@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// Managing communication with Device/hardware.
 	/// </summary>

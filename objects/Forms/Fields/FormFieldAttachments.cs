@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// A control to allow the user to attach <see cref="Picture"/>s or <see cref="Document"/>s.
 	/// </summary>

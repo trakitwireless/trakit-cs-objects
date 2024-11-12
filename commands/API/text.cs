@@ -2,8 +2,8 @@
 using System.Linq;
 using System.Text;
 
-namespace trakit.tools {
-	public static class text {
+namespace Trakit.Tools {
+	public static class Text {
 		/// <summary>
 		/// The full ISO8601 date/time string with seconds and milliseconds.
 		/// All date/time stamps in the Trak-iT APIs are given in UTC unless otherwise specified.

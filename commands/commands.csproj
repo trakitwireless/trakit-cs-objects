@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
-		<RootNamespace>trakit.commands</RootNamespace>
+		<RootNamespace>Trakit.Commands</RootNamespace>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>Trak-iT API Commands</Title>
 		<PackageProjectUrl>https://apis.trakit.ca/dotnet</PackageProjectUrl>
-		<AssemblyName>trakit.$(MSBuildProjectName)</AssemblyName>
+		<AssemblyName>Trakit.$(MSBuildProjectName)</AssemblyName>
 		<AssemblyVersion>0.1.0.4</AssemblyVersion>
 		<FileVersion>0.1.0.4</FileVersion>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -17,21 +17,15 @@
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
-	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-	</ItemGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\objects\objects.csproj" />
-	</ItemGroup>
-	<ItemGroup>
 		<None Update="README.md">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Providers\Configuration\" />
-	  <Folder Include="Providers\Config\" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\objects\Objects.csproj" />
 	</ItemGroup>
 </Project>

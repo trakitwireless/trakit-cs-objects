@@ -10,7 +10,7 @@ Explain how to use your package, provide clear and concise getting started instr
 
 ### Prerequisites
 
-The `trakit.objects` package is required as most `ResponseType` classes will contain an object from that definition.
+The `Trakit.Objects` package is required as most `ResponseType` classes will contain an object from that definition.
 We rely on the Newtonsoft.Json package for serialization between your application and the server.
 
 ## Questions and Feedback

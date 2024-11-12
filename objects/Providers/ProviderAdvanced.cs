@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Net;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// Device/hardware information reported from the field.
 	/// </summary>

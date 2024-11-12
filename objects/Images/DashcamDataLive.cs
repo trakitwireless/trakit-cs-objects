@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// A live snapshot a dashcam-enabled provider or asset.
 	/// </summary>

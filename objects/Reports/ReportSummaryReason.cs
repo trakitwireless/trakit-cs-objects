@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// The kind of reason associated with the range caps for a summary instance.
 	/// </summary>

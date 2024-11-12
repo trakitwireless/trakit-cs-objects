@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// Some objects are made up of the pieces of many objects.
 	/// </summary>

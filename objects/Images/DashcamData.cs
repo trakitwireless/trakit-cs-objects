@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// An image or video received from a dashcam-enabled provider or asset.
 	/// </summary>

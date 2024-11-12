@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 
 	/// <summary>
 	/// An abstract class used as a base for all Geofence type classes.

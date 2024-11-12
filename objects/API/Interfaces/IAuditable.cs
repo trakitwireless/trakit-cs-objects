@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// For auditable objects, a record of who and what mad the changes.
 	/// </summary>

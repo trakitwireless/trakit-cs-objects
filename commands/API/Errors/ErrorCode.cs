@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// The possible errors returned by the system.
 	/// </summary>

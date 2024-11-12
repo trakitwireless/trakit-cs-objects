@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// The kinds of parameters required and optional to build Report Results
 	/// </summary>

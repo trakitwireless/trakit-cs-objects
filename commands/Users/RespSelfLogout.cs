@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// The response for a logout operation which is always successful.
 	/// </summary>

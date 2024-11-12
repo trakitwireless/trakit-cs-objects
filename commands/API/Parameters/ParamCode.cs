@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// A container class used to house the "code" identifying a resource.
 	/// </summary>

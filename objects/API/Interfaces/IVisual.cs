@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// An interface for objects that make them more easily visually identifiable.
 	/// </summary>

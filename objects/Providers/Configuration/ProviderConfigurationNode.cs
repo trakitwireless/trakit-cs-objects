@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// This tree-like structure is given to the script processor for the device type so that the device can follow a program.
 	/// </summary>

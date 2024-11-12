@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// A container for the key of the <see cref="Machine"/> requested/created.
 	/// </summary>

@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// A container class used to house the string identifying a <see cref="Provider"/>.
 	/// </summary>

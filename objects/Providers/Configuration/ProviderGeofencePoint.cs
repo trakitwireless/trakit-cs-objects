@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// This is a point and not a geofence, so I don't know why this is defined.
 	/// </summary>

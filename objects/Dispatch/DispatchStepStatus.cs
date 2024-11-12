@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// The lifetime of all <see cref="DispatchStep"/>s (in order).
 	/// </summary>

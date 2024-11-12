@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// The current state of an asset's <see cref="DispatchJob"/> route progress.
 	/// </summary>

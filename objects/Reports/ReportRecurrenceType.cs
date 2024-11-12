@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// Specifies how often a Report Template is automatically generates a Report Result.
 	/// </summary>

@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// A group of users and targeted assets which receive report notifications.
 	/// </summary>

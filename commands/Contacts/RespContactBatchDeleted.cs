@@ -1,6 +1,6 @@
-﻿using trakit.objects;
+﻿using Trakit.Objects;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// A container for the <see cref="contact"/>.
 	/// </summary>

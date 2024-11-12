@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// These are the details of an exception while trying to parse the JSON input.
 	/// </summary>

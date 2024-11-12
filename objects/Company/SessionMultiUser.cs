@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// Defines the behaviour of the system when a user creates multiple sessions.
 	/// </summary>

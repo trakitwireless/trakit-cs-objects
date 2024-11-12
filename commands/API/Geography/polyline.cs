@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 using System;
-using trakit.objects;
+using Trakit.Objects;
 
-namespace trakit.tools {
+namespace Trakit.Tools {
 	/// <summary>
 	/// 
 	/// </summary>
-	public static class polyline {
+	public static class Polyline {
 		/// <summary>
 		/// 
 		/// </summary>

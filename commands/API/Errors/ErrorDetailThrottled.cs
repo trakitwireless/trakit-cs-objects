@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// Details of a command or session being throttled.
 	/// </summary>

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// An interface for objects that can be marked as "suspended".
 	/// "Suspended" objects can be "revived", but are otherwise treated as "achived" or "inert" (events are not processed).

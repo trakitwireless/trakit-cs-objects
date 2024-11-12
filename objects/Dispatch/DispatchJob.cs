@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// Some work that needs to be done by performing one or more <see cref="DispatchStep"/>s.
 	/// </summary>

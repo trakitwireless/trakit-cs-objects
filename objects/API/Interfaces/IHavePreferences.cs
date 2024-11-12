@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// This interface exists so that I can work with Machine and UserGeneral objects the same way.
 	/// </summary>

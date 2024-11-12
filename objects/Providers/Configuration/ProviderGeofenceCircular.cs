@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// A geofence defined by a centre coordinate and a threshold value to indicate the boundary around that point.
 	/// </summary>

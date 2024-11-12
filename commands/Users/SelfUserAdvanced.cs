@@ -1,6 +1,6 @@
-﻿using trakit.objects;
+﻿using Trakit.Objects;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// Similar to the <see cref="UserAdvanced"/> object, but instead of the <see cref="groups"/> being a list of identifiers,
 	/// the <see cref="UserGroup"/> objects are embedded within.

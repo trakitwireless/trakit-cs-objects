@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// A geofence whose boundary is defined by a non-overlapping series of coordinates.
 	/// </summary>

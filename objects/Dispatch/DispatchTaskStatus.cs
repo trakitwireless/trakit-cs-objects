@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// Tasks have a lifetime and each status represents a task's progress through it's life.
 	/// </summary>

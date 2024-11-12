@@ -1,6 +1,6 @@
-﻿using trakit.objects;
+﻿using Trakit.Objects;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// A container class used to house the login identifying a <see cref="User"/>.
 	/// Used specifically to get session details.

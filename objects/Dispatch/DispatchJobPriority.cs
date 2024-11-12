@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// A value assigned to <see cref="DispatchJob"/>s in order to weigh them when optimizing a route.
 	/// </summary>

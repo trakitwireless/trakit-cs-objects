@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// A debug message available to script writers to help debug and trace output from a BehaviourScript.
 	/// </summary>

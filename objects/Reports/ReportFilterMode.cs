@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// Drill-down mechanism for highlighting only those places and regions desired in report results.
 	/// </summary>

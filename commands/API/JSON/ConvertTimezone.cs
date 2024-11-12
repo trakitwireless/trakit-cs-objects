@@ -2,19 +2,19 @@
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using trakit.objects;
+using Trakit.Objects;
 
-namespace trakit.tools {
+namespace Trakit.Tools {
 	/// <summary>
 	/// 
 	/// </summary>
 	public class ConvertTimezone : TrakitConverter<Timezone> {
 		public static Timezone findById(string id) {
-			id = text.codify(id);
+			id = Text.codify(id);
 			var zone = string.IsNullOrEmpty(id)
 					? null
 					: TimeZoneInfo.GetSystemTimeZones()
-								.FirstOrDefault(tz => id == text.codify(tz.Id));
+								.FirstOrDefault(tz => id == Text.codify(tz.Id));
 			return zone == null
 				? null
 				: new Timezone() {
@@ -31,7 +31,7 @@ namespace trakit.tools {
 				?? throw new TimeZoneNotFoundException(code + " not found");
 		}
 		public override void convertTo(JsonWriter writer, Timezone value, JsonSerializer serializer) {
-			var obj = new JValue(text.codify(value.code));
+			var obj = new JValue(Text.codify(value.code));
 			obj.WriteTo(writer);
 		}
 	}

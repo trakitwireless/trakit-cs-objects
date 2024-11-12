@@ -1,7 +1,7 @@
 ﻿using System;
-using trakit.objects;
+using Trakit.Objects;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// A container for the <see cref="User"/> or <see cref="Machine"/> of the current session.
 	/// </summary>

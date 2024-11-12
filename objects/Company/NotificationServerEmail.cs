@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// The server used for notification and conversational email messages sent and received by the system.
 	/// </summary>

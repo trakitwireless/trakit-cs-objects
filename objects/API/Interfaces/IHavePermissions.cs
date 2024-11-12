@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// This interface exists so that I can work with Machine and UserAdvanced objects the same way.
 	/// </summary>

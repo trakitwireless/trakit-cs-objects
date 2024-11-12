@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// A container for the <see cref="User"/> login and owning <see cref="Company.id"/> of the user requested/created.
 	/// </summary>

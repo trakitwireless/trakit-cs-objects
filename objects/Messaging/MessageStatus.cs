@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// Memos have a lifetime and each status represents a memos's progress through it's life.
 	/// </summary>

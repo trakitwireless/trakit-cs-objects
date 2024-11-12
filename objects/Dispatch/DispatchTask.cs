@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// A task assigned to an asset which represents a coordinate on the map which must be visited.
 	/// </summary>

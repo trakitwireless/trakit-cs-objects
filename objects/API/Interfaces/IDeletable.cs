@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// An interface for objects that can be marked as "deleted".
 	/// "Deleted" objects can be restored, but are otherwise treated as "not there".

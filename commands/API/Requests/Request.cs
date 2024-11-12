@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// Base class for all command parameters.
 	/// All command parameter classes use this as the base.

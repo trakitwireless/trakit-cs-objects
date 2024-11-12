@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// Details for how long a resource is locked, or if a command cannot be executed right away, how long until it can be executed.
 	/// </summary>

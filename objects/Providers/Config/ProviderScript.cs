@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// This class describes a type of logic applied to a provider.
 	/// A script will generate a file which is loaded onto a provider in the field.

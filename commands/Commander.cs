@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using trakit.objects;
-using trakit.tools;
+using Trakit.Objects;
+using Trakit.Tools;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// 
 	/// </summary>

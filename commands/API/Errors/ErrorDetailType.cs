@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// <see cref="ErrorDetail"/>s are identified for deserialization using <see cref="ErrorDetail.kind"/>.
 	/// </summary>

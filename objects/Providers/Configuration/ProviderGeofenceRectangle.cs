@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// A geofence whose boundary is a "rectangle" defined by corner coordinates.
 	/// </summary>

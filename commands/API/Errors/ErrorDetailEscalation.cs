@@ -1,6 +1,6 @@
-﻿using trakit.objects;
+﻿using Trakit.Objects;
 
-namespace trakit.commands {
+namespace Trakit.Commands {
 	/// <summary>
 	/// Details of a permission escallation error thrown when modifying a resource or user that would grant the following extra permissions.
 	/// </summary>

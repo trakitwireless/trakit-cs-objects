@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// The colours and styles used by this company to tag and label Assets, Places, and other things.
 	/// </summary>

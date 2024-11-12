@@ -1,4 +1,4 @@
-﻿namespace trakit.objects {
+﻿namespace Trakit.Objects {
 	/// <summary>
 	/// Amount billed for a type of hosting (service or license) per target company.
 	/// </summary>

@@ -1,4 +1,4 @@
-﻿namespace trakit.commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// For suspend/revive commands, this contains the id, version keys, owning <see cref="Company.id"/>, and suspended state.
 	/// </summary>

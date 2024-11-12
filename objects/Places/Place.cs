@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// A POI (point-of-interest) saved to the system to help determine an asset's real-world position.
 	/// </summary>

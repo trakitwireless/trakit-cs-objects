@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// A defined permission for <see cref="User"/>s, <see cref="UserGroup"/>s, and <see cref="Machine"/>s.
 	/// </summary>

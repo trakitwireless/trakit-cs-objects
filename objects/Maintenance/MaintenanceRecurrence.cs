@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// The detail for calculating Maintenance Schedule recurrence.
 	/// </summary>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// A portion of work for a <see cref="DispatchJob"/>.
 	/// </summary>

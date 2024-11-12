@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace trakit.objects {
+namespace Trakit.Objects {
 	/// <summary>
 	/// Definition for load-balanced outbound SMS numbers for the White-labelling profile.
 	/// </summary>
