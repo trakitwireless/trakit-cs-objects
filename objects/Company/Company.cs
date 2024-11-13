@@ -11,7 +11,7 @@ namespace Trakit.Objects {
 		/// </summary>
 		protected override Component[] Pieces => new Component[] {
 			this.general,
-			null,	// reserved for future use
+			default,	// reserved for future use
 			this.directory,
 			this.styles,
 			this.policies,
@@ -40,11 +40,11 @@ namespace Trakit.Objects {
 				?? this.reseller?.parent
 				?? throw new NullReferenceException("general");
 			set {
-				if (this.general != null) this.general.parent = value;
-				if (this.directory != null) this.directory.parent = value;
-				if (this.policies != null) this.policies.parent = value;
-				if (this.styles != null) this.styles.parent = value;
-				if (this.reseller != null) this.reseller.parent = value;
+				if (this.general != default) this.general.parent = value;
+				if (this.directory != default) this.directory.parent = value;
+				if (this.policies != default) this.policies.parent = value;
+				if (this.styles != default) this.styles.parent = value;
+				if (this.reseller != default) this.reseller.parent = value;
 			}
 		}
 

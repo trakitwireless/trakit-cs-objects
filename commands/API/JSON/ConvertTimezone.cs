@@ -12,11 +12,11 @@ namespace Trakit.Tools {
 		public static Timezone findById(string id) {
 			id = Text.Codify(id);
 			var zone = string.IsNullOrEmpty(id)
-					? null
+					? default
 					: TimeZoneInfo.GetSystemTimeZones()
 								.FirstOrDefault(tz => id == Text.Codify(tz.Id));
-			return zone == null
-				? null
+			return zone == default
+				? default
 				: new Timezone() {
 					code = id,
 					name = zone.DisplayName,
