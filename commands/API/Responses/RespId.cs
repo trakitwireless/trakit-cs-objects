@@ -1,6 +1,6 @@
 ﻿namespace Trakit.Commands {
 	/// <summary>
-	/// A container for the id of the object requested/created.
+	/// A container for the id of the object requested.
 	/// </summary>
 	public class RespId {
 		/// <summary>
