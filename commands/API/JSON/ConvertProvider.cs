@@ -12,9 +12,9 @@ namespace Trakit.Tools {
 		public override Provider ConvertFrom(JsonReader reader, Type type, Provider provider, bool existing, JsonSerializer serializer) {
 			var obj = JObject.Load(reader);
 			provider = new Provider() {
-				general = obj.ToObject<ProviderGeneral>(serializer),
-				advanced = obj.ToObject<ProviderAdvanced>(serializer),
-				control = obj.ToObject<ProviderControl>(serializer),
+				General = obj.ToObject<ProviderGeneral>(serializer),
+				Advanced = obj.ToObject<ProviderAdvanced>(serializer),
+				Control = obj.ToObject<ProviderControl>(serializer),
 			};
 			provider.v = obj["v"].Select(p => (int)p).ToArray();
 			return provider;

@@ -16,17 +16,17 @@ namespace Trakit.Tools {
 				|| bool.TryParse(obj["suspended"]?.ToString(), out _)
 			) {
 				company = new Company() {
-					general = obj.ToObject<CompanyGeneral>(serializer),
+					General = obj.ToObject<CompanyGeneral>(serializer),
 				};
 			} else {
 				company = new Company() {
-					general = obj.ToObject<CompanyGeneral>(serializer),
-					directory = obj.ToObject<CompanyDirectory>(serializer),
-					policies = obj.ToObject<CompanyPolicies>(serializer),
-					styles = obj.ToObject<CompanyStyles>(serializer),
+					General = obj.ToObject<CompanyGeneral>(serializer),
+					Directory = obj.ToObject<CompanyDirectory>(serializer),
+					Policies = obj.ToObject<CompanyPolicies>(serializer),
+					Styles = obj.ToObject<CompanyStyles>(serializer),
 				};
 				if (obj["reseller"]?.Type == JTokenType.Object) {
-					company.reseller = obj["reseller"].ToObject<CompanyReseller>(serializer);
+					company.Reseller = obj["reseller"].ToObject<CompanyReseller>(serializer);
 				}
 				company.v = obj["v"].Select(p => (int)p).ToArray();
 			}

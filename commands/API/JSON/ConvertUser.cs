@@ -12,8 +12,8 @@ namespace Trakit.Tools {
 		public override User ConvertFrom(JsonReader reader, Type type, User user, bool existing, JsonSerializer serializer) {
 			var obj = JObject.Load(reader);
 			user = new User() {
-				general = obj.ToObject<UserGeneral>(serializer),
-				advanced = obj.ToObject<UserAdvanced>(serializer),
+				General = obj.ToObject<UserGeneral>(serializer),
+				Advanced = obj.ToObject<UserAdvanced>(serializer),
 			};
 			user.v = obj["v"].Select(p => (int)p).ToArray();
 			return user;

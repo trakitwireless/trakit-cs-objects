@@ -34,44 +34,44 @@ namespace Trakit.Tools {
 						break;
 					case AssetType.asset:
 						asset = new Asset() {
-							general = obj.ToObject<AssetGeneral>(serializer),
+							General = obj.ToObject<AssetGeneral>(serializer),
 						};
 						break;
 				}
-				asset.general.deleted = true;
+				asset.General.deleted = true;
 			} else {
 				switch (kind) {
 					case AssetType.person:
 						asset = new Person() {
 							general = obj.ToObject<PersonGeneral>(serializer),
-							advanced = obj.ToObject<AssetAdvanced>(serializer),
-							dispatch = obj["dispatch"].ToObject<AssetDispatch>(serializer),
+							Advanced = obj.ToObject<AssetAdvanced>(serializer),
+							Dispatch = obj["dispatch"].ToObject<AssetDispatch>(serializer),
 						};
 						break;
 					case AssetType.vehicle:
 						asset = new Vehicle() {
 							general = obj.ToObject<VehicleGeneral>(serializer),
 							advanced = obj.ToObject<VehicleAdvanced>(serializer),
-							dispatch = obj["dispatch"].ToObject<AssetDispatch>(serializer),
+							Dispatch = obj["dispatch"].ToObject<AssetDispatch>(serializer),
 						};
 						break;
 					case AssetType.trailer:
 						asset = new Trailer() {
 							general = obj.ToObject<TrailerGeneral>(serializer),
-							advanced = obj.ToObject<AssetAdvanced>(serializer),
-							dispatch = obj["dispatch"].ToObject<AssetDispatch>(serializer),
+							Advanced = obj.ToObject<AssetAdvanced>(serializer),
+							Dispatch = obj["dispatch"].ToObject<AssetDispatch>(serializer),
 						};
 						break;
 					case AssetType.asset:
 						asset = new Asset() {
-							general = obj.ToObject<AssetGeneral>(serializer),
-							advanced = obj.ToObject<AssetAdvanced>(serializer),
-							dispatch = obj["dispatch"].ToObject<AssetDispatch>(serializer),
+							General = obj.ToObject<AssetGeneral>(serializer),
+							Advanced = obj.ToObject<AssetAdvanced>(serializer),
+							Dispatch = obj["dispatch"].ToObject<AssetDispatch>(serializer),
 						};
 						break;
 				}
-				asset.dispatch.id = asset.id;
-				asset.dispatch.company = asset.company;
+				asset.Dispatch.id = asset.id;
+				asset.Dispatch.company = asset.company;
 				asset.v = obj["v"].Select(p => (int)p).ToArray();
 			}
 
