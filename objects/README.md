@@ -6,7 +6,7 @@ https://github.com/trakitwireless
 
 ### Prerequisites
 
-We rely on the Newtonsoft.Json package for serialization between your application and the server.
+We rely on the `Newtonsoft.Json` package for serialization between your application and the Trak-iT API services.
 
 ## Questions and Feedback
 

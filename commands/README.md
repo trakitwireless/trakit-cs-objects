@@ -4,14 +4,10 @@ The Trak-iT APIs use the same command definitions for all HTTPS, RESTful, and We
 Other Trak-iT API libraries are available on GitHub.
 https://github.com/trakitwireless
 
-## Getting started
-
-Explain how to use your package, provide clear and concise getting started instructions, including any necessary steps.
-
 ### Prerequisites
 
-The `Trakit.Objects` package is required as most `ResponseType` classes will contain an object from that definition.
-We rely on the Newtonsoft.Json package for serialization between your application and the server.
+The `Trakit.Objects` package is required as most `Response` classes will contain an object from that library.
+We rely on the `Newtonsoft.Json` package for serialization between your application and the Trak-iT API services.
 
 ## Questions and Feedback
 
