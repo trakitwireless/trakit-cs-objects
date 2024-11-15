@@ -10,16 +10,16 @@ namespace Trakit.Objects {
 		/// </summary>
 		/// <override skip="true" />
 		new public VehicleGeneral general {
-			get => (VehicleGeneral)base.general;
-			set => base.general = value;
+			get => (VehicleGeneral)base.General;
+			set => base.General = value;
 		}
 		/// <summary>
 		/// Advanced details about this vehicle.
 		/// </summary>
 		/// <override skip="true" />
 		new public VehicleAdvanced advanced {
-			get => (VehicleAdvanced)base.advanced;
-			set => base.advanced = value;
+			get => (VehicleAdvanced)base.Advanced;
+			set => base.Advanced = value;
 		}
 
 		/// <summary>
