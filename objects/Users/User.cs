@@ -10,8 +10,8 @@ namespace Trakit.Objects {
 		/// 
 		/// </summary>
 		protected override Component[] Pieces => new Component[] {
-			this.general,
-			this.advanced,
+			this.General,
+			this.Advanced,
 		};
 
 		/// <summary>
@@ -19,58 +19,58 @@ namespace Trakit.Objects {
 		/// </summary>
 		/// <seealso cref="User.login" />
 		/// <override min-length="6" max-length="254" format="email" />
-		public string login => this.general?.login
-						?? this.advanced?.login
+		public string login => this.General?.login
+						?? this.Advanced?.login
 						?? throw new NullReferenceException("general");
 		/// <summary>
 		/// The company to which this user belongs.
 		/// </summary>
 		/// <seealso cref="Company.id" />
-		public ulong company => this.general?.company
-							?? this.advanced?.company
+		public ulong company => this.General?.company
+							?? this.Advanced?.company
 							?? throw new NullReferenceException("general");
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public UserGeneral general { get; set; }
+		public UserGeneral General { get; set; }
 		/// <summary>
 		/// Indicated whether the credentials have expired according to the company's policy.
 		/// </summary>
 		public bool passwordExpired {
-			get => (this.general ?? throw new NullReferenceException("general")).passwordExpired;
-			set => (this.general ?? throw new NullReferenceException("general")).passwordExpired = value;
+			get => (this.General ?? throw new NullReferenceException("general")).passwordExpired;
+			set => (this.General ?? throw new NullReferenceException("general")).passwordExpired = value;
 		}
 		/// <summary>
 		/// Indicates whether system access is disabled.
 		/// </summary>
 		public bool enabled {
-			get => (this.general ?? throw new NullReferenceException("general")).enabled;
-			set => (this.general ?? throw new NullReferenceException("general")).enabled = value;
+			get => (this.General ?? throw new NullReferenceException("general")).enabled;
+			set => (this.General ?? throw new NullReferenceException("general")).enabled = value;
 		}
 		/// <summary>
 		/// Human friendly name for these credentials
 		/// </summary>
 		/// <override max-length="100" />
 		public string nickname {
-			get => (this.general ?? throw new NullReferenceException("general")).nickname;
-			set => (this.general ?? throw new NullReferenceException("general")).nickname = value;
+			get => (this.General ?? throw new NullReferenceException("general")).nickname;
+			set => (this.General ?? throw new NullReferenceException("general")).nickname = value;
 		}
 		/// <summary>
 		/// Contact information for this user.
 		/// </summary>
 		/// <seealso cref="Contact.id" />
 		public ulong? contact {
-			get => (this.general ?? throw new NullReferenceException("general")).contact;
-			set => (this.general ?? throw new NullReferenceException("general")).contact = value;
+			get => (this.General ?? throw new NullReferenceException("general")).contact;
+			set => (this.General ?? throw new NullReferenceException("general")).contact = value;
 		}
 		/// <summary>
 		/// The user's local timezone.
 		/// </summary>
 		/// <seealso cref="Timezone.code" />
 		public Timezone timezone {
-			get => (this.general ?? throw new NullReferenceException("general")).timezone;
-			set => (this.general ?? throw new NullReferenceException("general")).timezone = value;
+			get => (this.General ?? throw new NullReferenceException("general")).timezone;
+			set => (this.General ?? throw new NullReferenceException("general")).timezone = value;
 		}
 		/// <summary>
 		/// Preferred region/language for the UI and notifications.
@@ -78,8 +78,8 @@ namespace Trakit.Objects {
 		/// </summary>
 		/// <override min-length="2" max-length="5" format="codified" />
 		public string language {
-			get => (this.general ?? throw new NullReferenceException("general")).language;
-			set => (this.general ?? throw new NullReferenceException("general")).language = value;
+			get => (this.General ?? throw new NullReferenceException("general")).language;
+			set => (this.General ?? throw new NullReferenceException("general")).language = value;
 		}
 		/// <summary>
 		/// The format strings defining the preferred way to display ambiguous values.
@@ -89,8 +89,8 @@ namespace Trakit.Objects {
 		/// <values max-length="20" format="datetimetemplate" />
 		/// </override>
 		public Dictionary<string, string> formats {
-			get => (this.general ?? throw new NullReferenceException("general")).formats;
-			set => (this.general ?? throw new NullReferenceException("general")).formats = value;
+			get => (this.General ?? throw new NullReferenceException("general")).formats;
+			set => (this.General ?? throw new NullReferenceException("general")).formats = value;
 		}
 		/// <summary>
 		/// Preferred way of displaying ambiguous numbers in the context of measurements.
@@ -99,8 +99,8 @@ namespace Trakit.Objects {
 		/// <keys format="codified" />
 		/// </override>
 		public Dictionary<string, SystemsOfUnits> measurements {
-			get => (this.general ?? throw new NullReferenceException("general")).measurements;
-			set => (this.general ?? throw new NullReferenceException("general")).measurements = value;
+			get => (this.General ?? throw new NullReferenceException("general")).measurements;
+			set => (this.General ?? throw new NullReferenceException("general")).measurements = value;
 		}
 		/// <summary>
 		/// Additional options which do not fit in with the formats or measurements preferences.
@@ -110,36 +110,36 @@ namespace Trakit.Objects {
 		/// <values max-length="20" />
 		/// </override>
 		public Dictionary<string, string> options {
-			get => (this.general ?? throw new NullReferenceException("general")).options;
-			set => (this.general ?? throw new NullReferenceException("general")).options = value;
+			get => (this.General ?? throw new NullReferenceException("general")).options;
+			set => (this.General ?? throw new NullReferenceException("general")).options = value;
 		}
 		/// <summary>
 		/// Definition of how and when to send alerts to the user.
 		/// </summary>
 		/// <override max-count="7" />
 		public UserNotifications[] notify {
-			get => (this.general ?? throw new NullReferenceException("general")).notify;
-			set => (this.general ?? throw new NullReferenceException("general")).notify = value;
+			get => (this.General ?? throw new NullReferenceException("general")).notify;
+			set => (this.General ?? throw new NullReferenceException("general")).notify = value;
 		}
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public UserAdvanced advanced { get; set; }
+		public UserAdvanced Advanced { get; set; }
 		/// <summary>
 		/// A list of groups to which this user belongs.
 		/// </summary>
 		/// <seealso cref="UserGroup.id" />
 		public ulong[] groups {
-			get => (this.advanced ?? throw new NullReferenceException("advanced")).groups;
-			set => (this.advanced ?? throw new NullReferenceException("advanced")).groups = value;
+			get => (this.Advanced ?? throw new NullReferenceException("advanced")).groups;
+			set => (this.Advanced ?? throw new NullReferenceException("advanced")).groups = value;
 		}
 		/// <summary>
 		/// Individual permission rules which override the group rules.
 		/// </summary>
 		public Permission[] permissions {
-			get => (this.advanced ?? throw new NullReferenceException("advanced")).permissions;
-			set => (this.advanced ?? throw new NullReferenceException("advanced")).permissions = value;
+			get => (this.Advanced ?? throw new NullReferenceException("advanced")).permissions;
+			set => (this.Advanced ?? throw new NullReferenceException("advanced")).permissions = value;
 		}
 
 		// IRequestable
@@ -153,10 +153,10 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Indicates whether this object was deleted.
 		/// </summary>
-		public bool? deleted => (this.general ?? throw new NullReferenceException("general")).deleted;
+		public bool? deleted => (this.General ?? throw new NullReferenceException("general")).deleted;
 		/// <summary>
 		/// Timestamp from the action that deleted or suspended this object.
 		/// </summary>
-		public DateTime? since => (this.general ?? throw new NullReferenceException("general")).since;
+		public DateTime? since => (this.General ?? throw new NullReferenceException("general")).since;
 	}
 }

@@ -9,8 +9,8 @@ namespace Trakit.Objects {
 		/// General details about this trailer.
 		/// </summary>
 		new public TrailerGeneral general {
-			get => (TrailerGeneral)base.general;
-			set => base.general = value;
+			get => (TrailerGeneral)base.General;
+			set => base.General = value;
 		}
 
 		/// <summary>

@@ -9,8 +9,8 @@ namespace Trakit.Objects {
 		/// General details about this person.
 		/// </summary>
 		new public PersonGeneral general {
-			get => (PersonGeneral)base.general;
-			set => base.general = value;
+			get => (PersonGeneral)base.General;
+			set => base.General = value;
 		}
 
 		/// <summary>
