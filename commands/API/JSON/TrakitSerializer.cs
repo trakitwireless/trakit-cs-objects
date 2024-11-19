@@ -24,6 +24,7 @@ namespace Trakit.Tools {
 				DateTimeFormat = Text.DATETIME_FORMAT_ISO8601,
 			});
 			_settings.Converters.Add(new StringEnumConverter());
+			// Trakit.Objects
 			_settings.Converters.Add(new ConvertAsset());
 			_settings.Converters.Add(new ConvertCompany());
 			_settings.Converters.Add(new ConvertProvider());
@@ -32,6 +33,8 @@ namespace Trakit.Tools {
 			_settings.Converters.Add(new ConvertTimezone());
 			_settings.Converters.Add(new ConvertIPAddress());
 			_settings.Converters.Add(new ConvertIPEndPoint());
+			// Trakit.Commands
+			_settings.Converters.Add(new ConvertSelfUser());
 			_settings.Converters.Add(new ConvertErrorDetail());
 
 			this.Newton = JsonSerializer.CreateDefault(_settings);
