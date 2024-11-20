@@ -13,6 +13,9 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// Identifier used by external system to correlate requests to responses.
 		/// </summary>
+		/// <remarks>
+		/// This is only used with the Trak-iT WebSocket API service.
+		/// </remarks>
 		[JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
 		public int? reqId { get; set; }
 		/// <summary>

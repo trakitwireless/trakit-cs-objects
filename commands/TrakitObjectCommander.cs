@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Trakit.Objects;
-using Trakit.Tools;
 
 namespace Trakit.Commands {
 	/// <summary>
-	/// 
+	/// The base class used to define commands for accessing and manipulating all <see cref="Component">Trak-iT API Objects</see>.
 	/// </summary>
 	public abstract class TrakitObjectCommander : TrakitCommander {
 		/// <summary>

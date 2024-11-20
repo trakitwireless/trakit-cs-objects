@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Trakit.Objects;
 using Trakit.Tools;
 
 namespace Trakit.Commands {
 	/// <summary>
-	/// 
+	/// The base class used to help define interaction with all Trak-iT API services.
 	/// </summary>
 	public abstract class TrakitCommander {
 		/// <summary>
@@ -15,7 +13,7 @@ namespace Trakit.Commands {
 		/// </summary>
 		public Uri BaseAddress { get; protected set; }
 		/// <summary>
-		/// 
+		/// Helps to serialize (and deserialize) content when transmitted between this client and the underlying Trak-iT API service.
 		/// </summary>
 		public readonly TrakitSerializer Serializer = new TrakitSerializer();
 
@@ -49,10 +47,6 @@ namespace Trakit.Commands {
 		}
 		#endregion Authorization
 
-		/// <summary>
-		/// Used to correlate requests and responses.
-		/// </summary>
-		protected int _reqId;
 		/// <summary>
 		/// Sends a command to the underlying service, and returns a <see cref="Task"/> that completes when a reply is received.
 		/// </summary>
