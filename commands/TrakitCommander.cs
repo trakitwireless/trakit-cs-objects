@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
 using Trakit.Objects;
 using Trakit.Tools;
@@ -20,10 +19,6 @@ namespace Trakit.Commands {
 		/// </summary>
 		public readonly TrakitSerializer Serializer = new TrakitSerializer();
 
-		/// <summary>
-		/// Details of the <see cref="User"/> or <see cref="Machine"/> who is connected to the underlying Trak-iT API service.
-		/// </summary>
-		public RespSelfDetails Self { get; protected set; }
 		#region Authorization
 		// saved API credentials when using a service account
 		protected Machine _machine;
@@ -65,7 +60,17 @@ namespace Trakit.Commands {
 		/// <param name="request"></param>
 		/// <returns></returns>
 		/// <exception cref="InvalidOperationException"></exception>
-		public abstract Task<TResponse> Command<TResponse>(Request request) where TResponse : Response;
+		public abstract Task<TResponse> Command<TResponse>(Request request);
+	}
+	
+	/// <summary>
+	/// 
+	/// </summary>
+	public abstract class TrakitServiceCommander : TrakitCommander {
+		/// <summary>
+		/// Details of the <see cref="User"/> or <see cref="Machine"/> who is connected to the underlying Trak-iT API service.
+		/// </summary>
+		public RespSelfDetails Self { get; protected set; }
 
 		#region Commands - Self
 		/// <summary>
@@ -131,7 +136,7 @@ namespace Trakit.Commands {
 		/// <param name="assetId"></param>
 		/// <param name="includeDeleted"></param>
 		/// <returns></returns>
-		public Task<RespAssetGet> GetAsset(
+		public Task<RespAssetGet> GetAsset<TResponse>(
 			ulong assetId,
 			bool includeDeleted = false
 		) => this.Command<RespAssetGet>(new ReqAssetGet() {
