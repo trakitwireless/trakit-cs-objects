@@ -7,7 +7,8 @@ namespace Trakit.Commands {
 	/// <summary>
 	/// The base class used to help define interaction with all Trak-iT API services.
 	/// </summary>
-	public abstract class TrakitCommander {
+	/// <typeparam name="TClient">.NET class used to communicate over the Internet.</typeparam>
+	public abstract class TrakitCommander<TClient> where TClient : IDisposable {
 		/// <summary>
 		/// <see cref="Uri"/> of the underlying Trak-iT API service.
 		/// </summary>
@@ -16,6 +17,10 @@ namespace Trakit.Commands {
 		/// Helps to serialize (and deserialize) content when transmitted between this client and the underlying Trak-iT API service.
 		/// </summary>
 		public readonly TrakitSerializer Serializer = new TrakitSerializer();
+		/// <summary>
+		/// The underlying client making requests to the Trak-iT API service.
+		/// </summary>
+		public virtual TClient Client { get; protected set; }
 
 		#region Authorization
 		// saved API credentials when using a service account

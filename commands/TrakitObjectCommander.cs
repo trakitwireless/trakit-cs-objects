@@ -8,7 +8,8 @@ namespace Trakit.Commands {
 	/// <summary>
 	/// The base class used to define commands for accessing and manipulating all <see cref="Component">Trak-iT API Objects</see>.
 	/// </summary>
-	public abstract class TrakitObjectCommander : TrakitCommander {
+	/// <typeparam name="TClient">.NET class used to communicate over the Internet.</typeparam>
+	public abstract class TrakitObjectCommander<TClient> : TrakitCommander<TClient> where TClient : IDisposable {
 		/// <summary>
 		/// Details of the <see cref="User"/> or <see cref="Machine"/> who is connected to the underlying Trak-iT API service.
 		/// </summary>
