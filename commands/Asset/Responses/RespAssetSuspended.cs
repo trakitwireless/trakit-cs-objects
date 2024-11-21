@@ -4,7 +4,7 @@ namespace Trakit.Commands {
 	/// <summary>
 	/// 
 	/// </summary>
-	public class RespAssetSuspend : Response {
+	public class RespAssetSuspended : Response {
 		/// <summary>
 		/// 
 		/// </summary>

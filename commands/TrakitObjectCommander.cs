@@ -174,9 +174,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="parameters"></param>
 		/// <returns></returns>
-		public Task<RespAssetSuspend> MergeAsset(
+		public Task<RespAssetSuspended> MergeAsset(
 			ParamAssetMerge parameters
-		) => this.Command<RespAssetSuspend>(new ReqAssetMerge() {
+		) => this.Command<RespAssetSuspended>(new ReqAssetMerge() {
 			asset = parameters,
 		});
 
@@ -185,9 +185,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="assetId"></param>
 		/// <returns></returns>
-		public Task<RespAssetSuspend> SuspendAsset(
+		public Task<RespAssetSuspended> SuspendAsset(
 			ulong assetId
-		) => this.Command<RespAssetSuspend>(new ReqAssetSuspend() {
+		) => this.Command<RespAssetSuspended>(new ReqAssetSuspend() {
 			asset = new ParamId() {
 				id = assetId
 			},
@@ -197,9 +197,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="assetId"></param>
 		/// <returns></returns>
-		public Task<RespAssetSuspend> ReactivateAsset(
+		public Task<RespAssetSuspended> ReactivateAsset(
 			ulong assetId
-		) => this.Command<RespAssetSuspend>(new ReqAssetReactivate() {
+		) => this.Command<RespAssetSuspended>(new ReqAssetReactivate() {
 			asset = new ParamId() {
 				id = assetId
 			},
@@ -209,9 +209,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="assetId"></param>
 		/// <returns></returns>
-		public Task<RespAssetDelete> DeleteAsset(
+		public Task<RespAssetDeleted> DeleteAsset(
 			ulong assetId
-		) => this.Command<RespAssetDelete>(new ReqAssetDelete() {
+		) => this.Command<RespAssetDeleted>(new ReqAssetDelete() {
 			asset = new ParamId() {
 				id = assetId
 			},
@@ -221,9 +221,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="assetId"></param>
 		/// <returns></returns>
-		public Task<RespAssetDelete> RestoreAsset(
+		public Task<RespAssetDeleted> RestoreAsset(
 			ulong assetId
-		) => this.Command<RespAssetDelete>(new ReqAssetRestore() {
+		) => this.Command<RespAssetDeleted>(new ReqAssetRestore() {
 			asset = new ParamId() {
 				id = assetId
 			},
