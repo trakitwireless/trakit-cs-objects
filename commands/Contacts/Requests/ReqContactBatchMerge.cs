@@ -6,6 +6,6 @@
 		/// <summary>
 		/// 
 		/// </summary>
-		public ReqContactMerge.Content[] contacts { get; set; }
+		public ParamContactMerge[] contacts { get; set; }
 	}
 }
