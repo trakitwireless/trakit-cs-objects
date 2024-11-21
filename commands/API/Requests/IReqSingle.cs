@@ -7,6 +7,6 @@
 		/// 
 		/// </summary>
 		/// <returns></returns>
-		string getKey();
+		string GetKey();
 	}
 }

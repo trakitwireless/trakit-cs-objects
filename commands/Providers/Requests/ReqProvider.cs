@@ -14,6 +14,6 @@ namespace Trakit.Commands {
 		/// 
 		/// </summary>
 		/// <returns></returns>
-		public string getKey() => this.provider?.id ?? "";
+		public string GetKey() => this.provider?.id ?? "";
 	}
 }

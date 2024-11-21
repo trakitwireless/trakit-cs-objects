@@ -85,6 +85,6 @@ namespace Trakit.Commands {
 		/// 
 		/// </summary>
 		/// <returns></returns>
-		public string getKey() => this.contact?.id?.ToString() ?? "";
+		public string GetKey() => this.contact?.id?.ToString() ?? "";
 	}
 }

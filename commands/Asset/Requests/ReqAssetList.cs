@@ -7,7 +7,7 @@ namespace Trakit.Commands {
 	/// </summary>
 	public abstract class ReqAssetList : Request, IReqIDeletable, IReqISuspendable {
 		/// <summary>
-		/// When true, the command will also return <see cref="Message"/>s for the asset.
+		/// When true, the command will also return <see cref="AssetMessage"/>s for the asset.
 		/// </summary>
 		public bool includeMessages { get; set; }
 		/// <summary>
