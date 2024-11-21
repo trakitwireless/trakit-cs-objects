@@ -2,5 +2,5 @@
 	/// <summary>
 	/// 
 	/// </summary>
-	public class ReqSelfDetails : Request { }
+	public class ReqSelfGet : Request { }
 }

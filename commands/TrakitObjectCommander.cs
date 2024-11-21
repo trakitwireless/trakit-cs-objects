@@ -13,24 +13,24 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// Details of the <see cref="User"/> or <see cref="Machine"/> who is connected to the underlying Trak-iT API service.
 		/// </summary>
-		public RespSelfDetails Self { get; protected set; }
+		public RespSelfGet Self { get; protected set; }
 
 		#region Commands - Self
 		/// <summary>
-		/// Sends a login command, and if successful, saves the <see cref="RespSelfDetails.ghostId"/>
+		/// Sends a login command, and if successful, saves the <see cref="RespSelfGet.ghostId"/>
 		/// as the authentication mechanism for all further requests.
 		/// </summary>
 		/// <param name="username">Your email address.</param>
 		/// <param name="password">Your password.</param>
 		/// <param name="userAgent">Optional string to identify this software.</param>
-		/// <returns>The <see cref="RespSelfDetails"/>, which contains a <see cref="SelfUser"/> when successful.</returns>
-		public async Task<RespSelfDetails> Login(string username, string password, string userAgent = default) {
+		/// <returns>The <see cref="RespSelfGet"/>, which contains a <see cref="SelfUser"/> when successful.</returns>
+		public async Task<RespSelfGet> Login(string username, string password, string userAgent = default) {
 			var body = new ReqSelfLogin() {
 				username = username,
 				password = password,
 			};
 			if (userAgent != default) body.userAgent = userAgent;
-			this.Self = await this.Command<RespSelfDetails>(body);
+			this.Self = await this.Command<RespSelfGet>(body);
 			if (this.Self.errorCode == ErrorCode.success && Guid.TryParse(this.Self.ghostId, out Guid sessionId)) {
 				this.SetAuth(sessionId);
 			}
@@ -55,8 +55,8 @@ namespace Trakit.Commands {
 		/// Requests the details of the <see cref="User"/> or <see cref="Machine"/> currently identified.
 		/// </summary>
 		/// <returns></returns>
-		public async Task<RespSelfDetails> GetSelfDetails() {
-			var response = await this.Command<RespSelfDetails>(new ReqSelfDetails());
+		public async Task<RespSelfGet> GetSelfDetails() {
+			var response = await this.Command<RespSelfGet>(new ReqSelfGet());
 			switch (response.errorCode) {
 				case ErrorCode.success:
 				case ErrorCode.passwordExpired:

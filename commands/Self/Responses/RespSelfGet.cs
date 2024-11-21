@@ -5,7 +5,7 @@ namespace Trakit.Commands {
 	/// <summary>
 	/// A container for the <see cref="User"/> or <see cref="Machine"/> of the current session.
 	/// </summary>
-	public class RespSelfDetails : Response {
+	public class RespSelfGet : Response {
 		/// <summary>
 		/// Your session identifier.
 		/// </summary>
