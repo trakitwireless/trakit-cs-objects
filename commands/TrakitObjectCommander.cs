@@ -200,7 +200,7 @@ namespace Trakit.Commands {
 			company = new ParamId() {
 				id = companyId
 			},
-			labels = labels?.ToArray() ?? new string[0],
+			labels = labels?.ToList() ?? new List<string>(),
 			includeSuspended = includeSuspended,
 			includeDeleted = includeDeleted,
 			includeTasks = includeTasks,
