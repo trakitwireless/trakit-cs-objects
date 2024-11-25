@@ -1,4 +1,6 @@
-﻿namespace Trakit.Commands {
+﻿using System.Collections.Generic;
+
+namespace Trakit.Commands {
 	/// <summary>
 	/// 
 	/// </summary>
@@ -6,6 +8,6 @@
 		/// <summary>
 		/// 
 		/// </summary>
-		public ParamAssetMerge[] assets { get; set; }
+		public List<ParamAssetMerge> assets { get; set; }
 	}
 }

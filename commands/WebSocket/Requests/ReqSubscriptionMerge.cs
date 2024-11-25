@@ -1,4 +1,5 @@
-﻿using Trakit.Objects;
+﻿using System.Collections.Generic;
+using Trakit.Objects;
 
 namespace Trakit.Commands {
 	/// <summary>
@@ -15,6 +16,6 @@ namespace Trakit.Commands {
 		/// The list of subscription types you want to receive.
 		/// </summary>
 		/// <seealso cref="SubscriptionType"/>
-		public SubscriptionType[] subscriptionTypes;
+		public List<SubscriptionType> subscriptionTypes;
 	}
 }
