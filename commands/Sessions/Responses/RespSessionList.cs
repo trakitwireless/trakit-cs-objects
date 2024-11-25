@@ -6,9 +6,9 @@ namespace Trakit.Commands {
 	/// </summary>
 	public abstract class RespSessionList : Response {
 		/// <summary>
-		/// The list of requested <see cref="SessionDetails"/>.
+		/// The list of requested <see cref="Session"/>.
 		/// </summary>
-		public SessionDetails[] sessions;
+		public Session[] sessions;
 	}
 
 	/// <summary>
@@ -16,7 +16,7 @@ namespace Trakit.Commands {
 	/// </summary>
 	public abstract class RespSessionListByCompany : RespSessionList {
 		/// <summary>
-		/// An object to contain the "id" of the <see cref="Company"/> to which the array of <see cref="SessionDetails"/>s belong.
+		/// An object to contain the "id" of the <see cref="Company"/> to which the array of <see cref="Session"/>s belong.
 		/// </summary>
 		public RespId company;
 	}
@@ -25,7 +25,7 @@ namespace Trakit.Commands {
 	/// </summary>
 	public abstract class RespSessionListByUser : RespSessionList {
 		/// <summary>
-		/// An object to contain the "login" of the <see cref="User"/> to which the array of <see cref="SessionDetails"/>s belong.
+		/// An object to contain the "login" of the <see cref="User"/> to which the array of <see cref="Session"/>s belong.
 		/// </summary>
 		public RespLoginCompany user;
 	}

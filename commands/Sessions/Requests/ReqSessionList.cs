@@ -2,7 +2,7 @@
 
 namespace Trakit.Commands {
 	/// <summary>
-	/// Gets the list of <see cref="SessionDetails"/> for the specified <see cref="Company"/>.
+	/// Gets the list of <see cref="Session"/> for the specified <see cref="Company"/>.
 	/// </summary>
 	public class ReqSessionListByCompany : Request, IReqListByCompany {
 		/// <summary>
@@ -11,7 +11,7 @@ namespace Trakit.Commands {
 		public ParamId company { get; set; }
 	}
 	/// <summary>
-	/// Gets the list of <see cref="SessionDetails"/>s for the specified <see cref="User"/>.
+	/// Gets the list of <see cref="Session"/>s for the specified <see cref="User"/>.
 	/// </summary>
 	public class ReqSessionListByUser : Request, IReqListByUser {
 		/// <summary>

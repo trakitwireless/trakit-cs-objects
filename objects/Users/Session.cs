@@ -2,62 +2,57 @@
 
 namespace Trakit.Objects {
 	/// <summary>
-	/// Information about other users' sessions.
+	/// Information about another <see cref="User"/>'s <see cref="Session"/>.
 	/// </summary>
-	public class Session {
+	public class Session : IBelongCompany {
 		/// <summary>
-		/// UserAgent identification string
+		/// A "handle" identifying a resource.
+		/// </summary>
+		public string handle;
+		/// <summary>
+		/// Getter shortcut for the <see cref="User"/>'s <see cref="Company.id"/>.
+		/// </summary>
+		public ulong company { get; set; }
+		/// <summary>
+		/// <c>UserAgent</c> identification string
 		/// </summary>
 		public string userAgent { get; set; }
 		/// <summary>
-		/// The IP address of the user last used to connect using this session.
+		/// The IP address the user last used to connect using this session.
 		/// </summary>
-		/// <override max-length="15" format="ipv4" />
 		public string ipAddress { get; set; }
 		/// <summary>
-		/// The login of the user to which this session belongs.
-		/// </summary>
-		/// <seealso cref="User.login" />
-		public string user { get; set; }
-		/// <summary>
-		/// Date/time stamp of the last connection using this session.
-		/// </summary>
-		public DateTime lastActivity { get; set; }
-		/// <summary>
-		/// Indicates that the password has expired.
-		/// </summary>
-		public bool passwordExpired { get; set; }
-
-		/// <summary>
-		/// Session specific identifier of this user session.
-		/// The value changes value from session to session to prevent session hijacking attacks.
-		/// </summary>
-		public string id { get; set; }
-		/// <summary>
-		/// Date/time stamp of when this user session was created.
-		/// </summary>
-		public DateTime created { get; set; }
-		/// <summary>
-		/// Getter shortcut for the session user's company id.
-		/// This property will throw an exception if the itemCollection is null (getter also if company is not set).
-		/// </summary>
-		public ulong company;
-		/// <summary>
-		/// A count of the number of connected sockets for this session.
-		/// The setter will throw an exception if the itemCollection is null.
+		/// The number of currently connected WebSocket clients.
 		/// </summary>
 		public int sockets;
 		/// <summary>
-		/// The name or route of the last command executed by the client.
+		/// The <see cref="User"/> to which the <see cref="Session"/> belongs.
+		/// </summary>
+		/// <seealso cref="User.login" />
+		public string login;
+		/// <summary>
+		/// This <see cref="Session"/>'s current state.
+		/// </summary>
+		public SessionStatus status;
+		/// <summary>
+		/// The timestamp from the moment this <see cref="Session"/> was created.
+		/// </summary>
+		public DateTime created;
+		/// <summary>
+		/// A timestamp for when the <see cref="RespSession"/> will expire.
+		/// </summary>
+		public DateTime expiry;
+		/// <summary>
+		/// The name or path of the last command executed.
 		/// </summary>
 		public string lastCommand;
 		/// <summary>
-		/// Date/time stamp of when this user session will be automatically killed.
+		/// A timestamp from the last command or call to the system.
 		/// </summary>
-		public DateTime expires { get; set; }
+		public DateTime lastActivity;
 		/// <summary>
-		/// Expire timeout (in minutes) from session policy.
+		/// Indicator that this <see cref="Session"/> is using at least one WebSocket connection.
 		/// </summary>
-		public int timeout { get; set; }
+		public bool active => this.sockets > 0;
 	}
 }

@@ -3,7 +3,7 @@ using Trakit.Objects;
 
 namespace Trakit.Commands {
 	/// <summary>
-	/// A container class used to house the "handle" identifying a session.
+	/// A container class used to house the "handle" identifying a <see cref="Session"/>.
 	/// </summary>
 	public class SessionHandle {
 		/// <summary>
@@ -16,12 +16,12 @@ namespace Trakit.Commands {
 		/// <seealso cref="Company.id"/>
 		public ulong company;
 		/// <summary>
-		/// The <see cref="User"/> to which the <see cref="RespSession"/> belongs.
+		/// The <see cref="User"/> to which the <see cref="Session"/> belongs.
 		/// </summary>
 		/// <seealso cref="User.login" />
 		public string login;
 		/// <summary>
-		/// A timestamp for when the <see cref="RespSession"/> will expire.
+		/// A timestamp for when the <see cref="Session"/> will expire.
 		/// </summary>
 		public DateTime expiry;
 	}
