@@ -41,7 +41,7 @@ namespace Trakit.Commands {
 		/// The parsed labels given as input.
 		/// </summary>
 		/// <seealso cref="AssetGeneral.labels"/>
-		public string[] labels { get; set; }
+		public List<string> labels { get; set; }
 	}
 	/// <summary>
 	/// Gets the list of <see cref="Asset"/>s for the specified <see cref="Company"/> only if one of the specified <see cref="AssetGeneral.references"/> fields match.

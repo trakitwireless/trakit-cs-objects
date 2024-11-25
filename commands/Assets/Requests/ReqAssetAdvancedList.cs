@@ -40,8 +40,8 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// The parsed labels given as input.
 		/// </summary>
-		/// <seealso cref="AssetAdvancedGeneral.labels"/>
-		public string[] labels { get; set; }
+		/// <seealso cref="AssetGeneral.labels"/>
+		public List<string> labels { get; set; }
 	}
 	/// <summary>
 	/// Gets the list of <see cref="AssetAdvanced"/>s for the specified <see cref="Company"/> only if one of the specified <see cref="AssetAdvancedGeneral.references"/> fields match.
