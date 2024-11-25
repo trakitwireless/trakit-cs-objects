@@ -241,9 +241,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="parameters"></param>
 		/// <returns></returns>
-		public Task<RespAssetSuspended> MergeAsset(
+		public Task<RespAssetMerged> MergeAsset(
 			ParamAssetMerge parameters
-		) => this.Command<RespAssetSuspended>(new ReqAssetMerge() {
+		) => this.Command<RespAssetMerged>(new ReqAssetMerge() {
 			asset = parameters,
 		});
 
@@ -296,5 +296,252 @@ namespace Trakit.Commands {
 			},
 		});
 		#endregion Commands - Assets
+
+		#region Commands - DispatchJobs
+		/// <summary>
+		/// Gets details of the specified <see cref="DispatchJob"/>.
+		/// </summary>
+		/// <param name="dispatchJobId"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespDispatchJobGet> GetDispatchJob<TResponse>(
+			ulong dispatchJobId,
+			bool includeDeleted = false
+		) => this.Command<RespDispatchJobGet>(new ReqDispatchJobGet() {
+			dispatchJob = new ParamId() {
+				id = dispatchJobId
+			},
+			includeDeleted = includeDeleted,
+		});
+		/// <summary>
+		/// Gets the list of <see cref="DispatchJob"/>s for the specified <see cref="Company"/>.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespDispatchJobListByCompany> ListDispatchJobs(
+			ulong companyId,
+			bool includeSuspended = true,
+			bool includeMessages = false,
+			bool includeTasks = false,
+			bool includeDeleted = false
+		) => this.Command<RespDispatchJobListByCompany>(new ReqDispatchJobListByCompany() {
+			company = new ParamId() {
+				id = companyId
+			},
+			includeDeleted = includeDeleted,
+		});
+		/// <summary>
+		/// Gets the list of <see cref="DispatchJob"/>s for the specified <see cref="Company"/> only if the <see cref="DispatchJobGeneral.labels"/> matches all of the given <see cref="Parameters.labels"/>.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <param name="labels"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespDispatchJobListByCompanyAndLabels> ListDispatchJobs(
+			ulong companyId,
+			IEnumerable<string> labels,
+			bool includeSuspended = true,
+			bool includeMessages = false,
+			bool includeTasks = false,
+			bool includeDeleted = false
+		) => this.Command<RespDispatchJobListByCompanyAndLabels>(new ReqDispatchJobListByCompanyAndLabels() {
+			company = new ParamId() {
+				id = companyId
+			},
+			labels = labels?.ToList() ?? new List<string>(),
+			includeDeleted = includeDeleted,
+		});
+		/// <summary>
+		/// Gets the list of <see cref="DispatchJob"/>s for the specified <see cref="Company"/> only if one of the specified <see cref="DispatchJobGeneral.references"/> fields match.
+		/// If no references are specified, it will match any <see cref="DispatchJob"/> with no references.
+		/// If a reference value is null, it will match any <see cref="DispatchJob"/> without that reference key.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <param name="references"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespDispatchJobListByCompanyAndRefPairs> ListDispatchJobs(
+			ulong companyId,
+			IDictionary<string, string> references,
+			bool includeSuspended = true,
+			bool includeMessages = false,
+			bool includeTasks = false,
+			bool includeDeleted = false
+		) => this.Command<RespDispatchJobListByCompanyAndRefPairs>(new ReqDispatchJobListByCompanyAndRefPairs() {
+			company = new ParamId() {
+				id = companyId
+			},
+			references = references?.ToDictionary(p => p.Key, p => p.Value) ?? new Dictionary<string, string>(),
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Creates a new, or updates an existing <see cref="DispatchJob"/>.
+		/// </summary>
+		/// <param name="parameters"></param>
+		/// <returns></returns>
+		public Task<RespDispatchJobMerged> MergeDispatchJob(
+			ParamDispatchJobMerge parameters
+		) => this.Command<RespDispatchJobMerged>(new ReqDispatchJobMerge() {
+			dispatchJob = parameters,
+		});
+		/// <summary>
+		/// Completes or modifies an existing <see cref="DispatchJob"/> from a driver's perspective.
+		/// This can be used by dispatchers to accomodate thrid-party delivery systems, or correcting errors from drivers.
+		/// </summary>
+		/// <param name="parameters"></param>
+		/// <returns></returns>
+		public Task<RespDispatchJobMerged> ChangeDispatchJob(
+			ParamDispatchJobChange parameters
+		) => this.Command<RespDispatchJobMerged>(new ReqDispatchJobChange() {
+			dispatchJob = parameters,
+		});
+		/// <summary>
+		/// Cancels a <see cref="DispatchJob"/>, removing it from the dispatcher's and driver's views.
+		/// </summary>
+		/// <param name="parameters"></param>
+		/// <returns></returns>
+		public Task<RespDispatchJobMerged> MergeDispatchJob(
+			ParamDispatchJobCancel parameters
+		) => this.Command<RespDispatchJobMerged>(new ReqDispatchJobCancel() {
+			dispatchJob = parameters,
+		});
+
+		/// <summary>
+		/// Deletes an existing <see cref="DispatchJob"/>.
+		/// </summary>
+		/// <param name="dispatchJobId"></param>
+		/// <returns></returns>
+		public Task<RespDispatchJobDeleted> DeleteDispatchJob(
+			ulong dispatchJobId
+		) => this.Command<RespDispatchJobDeleted>(new ReqDispatchJobDelete() {
+			dispatchJob = new ParamId() {
+				id = dispatchJobId
+			},
+		});
+		/// <summary>
+		/// Restores a deleted <see cref="DispatchJob"/>.
+		/// </summary>
+		/// <param name="dispatchJobId"></param>
+		/// <returns></returns>
+		public Task<RespDispatchJobDeleted> RestoreDispatchJob(
+			ulong dispatchJobId
+		) => this.Command<RespDispatchJobDeleted>(new ReqDispatchJobRestore() {
+			dispatchJob = new ParamId() {
+				id = dispatchJobId
+			},
+		});
+		#endregion Commands - DispatchJobs
+		#region Commands - DispatchTasks
+		/// <summary>
+		/// Gets details of the specified <see cref="DispatchTask"/>.
+		/// </summary>
+		/// <param name="dispatchTaskId"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespDispatchTaskGet> GetDispatchTask<TResponse>(
+			ulong dispatchTaskId,
+			bool includeDeleted = false
+		) => this.Command<RespDispatchTaskGet>(new ReqDispatchTaskGet() {
+			dispatchTask = new ParamId() {
+				id = dispatchTaskId
+			},
+			includeDeleted = includeDeleted,
+		});
+		/// <summary>
+		/// Gets the list of <see cref="DispatchTask"/>s for the specified <see cref="Company"/>.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespDispatchTaskListByCompany> ListDispatchTasks(
+			ulong companyId,
+			bool includeSuspended = true,
+			bool includeMessages = false,
+			bool includeTasks = false,
+			bool includeDeleted = false
+		) => this.Command<RespDispatchTaskListByCompany>(new ReqDispatchTaskListByCompany() {
+			company = new ParamId() {
+				id = companyId
+			},
+			includeDeleted = includeDeleted,
+		});
+		/// <summary>
+		/// Gets the list of <see cref="DispatchTask"/>s for the specified <see cref="Company"/> only if one of the specified <see cref="DispatchTaskGeneral.references"/> fields match.
+		/// If no references are specified, it will match any <see cref="DispatchTask"/> with no references.
+		/// If a reference value is null, it will match any <see cref="DispatchTask"/> without that reference key.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <param name="references"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespDispatchTaskListByCompanyAndRefPairs> ListDispatchTasks(
+			ulong companyId,
+			IDictionary<string, string> references,
+			bool includeSuspended = true,
+			bool includeMessages = false,
+			bool includeTasks = false,
+			bool includeDeleted = false
+		) => this.Command<RespDispatchTaskListByCompanyAndRefPairs>(new ReqDispatchTaskListByCompanyAndRefPairs() {
+			company = new ParamId() {
+				id = companyId
+			},
+			references = references?.ToDictionary(p => p.Key, p => p.Value) ?? new Dictionary<string, string>(),
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Creates a new, or updates an existing <see cref="DispatchTask"/>.
+		/// </summary>
+		/// <param name="parameters"></param>
+		/// <returns></returns>
+		public Task<RespDispatchTaskMerged> MergeDispatchTask(
+			ParamDispatchTaskMerge parameters
+		) => this.Command<RespDispatchTaskMerged>(new ReqDispatchTaskMerge() {
+			dispatchTask = parameters,
+		});
+
+		/// <summary>
+		/// Deletes an existing <see cref="DispatchTask"/>.
+		/// </summary>
+		/// <param name="dispatchTaskId"></param>
+		/// <returns></returns>
+		public Task<RespDispatchTaskDeleted> DeleteDispatchTask(
+			ulong dispatchTaskId
+		) => this.Command<RespDispatchTaskDeleted>(new ReqDispatchTaskDelete() {
+			dispatchTask = new ParamId() {
+				id = dispatchTaskId
+			},
+		});
+		/// <summary>
+		/// Restores a deleted <see cref="DispatchTask"/>.
+		/// </summary>
+		/// <param name="dispatchTaskId"></param>
+		/// <returns></returns>
+		public Task<RespDispatchTaskDeleted> RestoreDispatchTask(
+			ulong dispatchTaskId
+		) => this.Command<RespDispatchTaskDeleted>(new ReqDispatchTaskRestore() {
+			dispatchTask = new ParamId() {
+				id = dispatchTaskId
+			},
+		});
+		#endregion Commands - DispatchTasks
+
 	}
 }
