@@ -13,7 +13,7 @@ namespace Trakit.Commands {
 	/// </remarks>
 	public abstract class Request {
 		//
-		static readonly Regex SPLITTER = new Regex("Req([A-Z][a-z]+)+?((?:Batch)?(?:Get|List|Merge|Delete|Remove|Restore|Suspend|Revive))(By.+)?", RegexOptions.Compiled);
+		static readonly Regex SPLITTER = new Regex("Req([A-Z][a-z]+)+?((?:Batch)?(?:Get|List|Merge|Delete|Remove|Restore|Suspend|Revive|Cancel|Change))(By.+)?", RegexOptions.Compiled);
 		/// <summary>
 		/// 
 		/// </summary>

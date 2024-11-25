@@ -4,10 +4,10 @@ namespace Trakit.Commands {
 	/// <summary>
 	/// A container for the <see cref="dispatchJob"/>.
 	/// </summary>
-	public class RespDispatchJobDeleted : Response {
+	public class RespDispatchJobBatchDelete : Response {
 		/// <summary>
 		/// Details about deleting/restoring the requested <see cref="DispatchJob"/>.
 		/// </summary>
-		public RespDeleted dispatchJob;
+		public RespDeleted[] dispatchJobs;
 	}
 }

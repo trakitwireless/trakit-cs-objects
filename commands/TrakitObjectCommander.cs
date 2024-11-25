@@ -127,11 +127,11 @@ namespace Trakit.Commands {
 			},
 		});
 		/// <summary>
-		/// Deletes an existing <see cref="Session"/>.
+		/// Terminates an existing <see cref="Session"/>.
 		/// </summary>
 		/// <param name="handle"></param>
 		/// <returns></returns>
-		public Task<RespSessionDelete> DeleteSession(
+		public Task<RespSessionDelete> KillSession(
 			string handle
 		) => this.Command<RespSessionDelete>(new ReqSessionDelete() {
 			session = new ParamHandle() {
@@ -241,9 +241,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="parameters"></param>
 		/// <returns></returns>
-		public Task<RespAssetMerged> MergeAsset(
+		public Task<RespAssetMerge> MergeAsset(
 			ParamAssetMerge parameters
-		) => this.Command<RespAssetMerged>(new ReqAssetMerge() {
+		) => this.Command<RespAssetMerge>(new ReqAssetMerge() {
 			asset = parameters,
 		});
 
@@ -252,9 +252,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="assetId"></param>
 		/// <returns></returns>
-		public Task<RespAssetSuspended> SuspendAsset(
+		public Task<RespAssetSuspend> SuspendAsset(
 			ulong assetId
-		) => this.Command<RespAssetSuspended>(new ReqAssetSuspend() {
+		) => this.Command<RespAssetSuspend>(new ReqAssetSuspend() {
 			asset = new ParamId() {
 				id = assetId
 			},
@@ -264,9 +264,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="assetId"></param>
 		/// <returns></returns>
-		public Task<RespAssetSuspended> ReactivateAsset(
+		public Task<RespAssetSuspend> ReactivateAsset(
 			ulong assetId
-		) => this.Command<RespAssetSuspended>(new ReqAssetReactivate() {
+		) => this.Command<RespAssetSuspend>(new ReqAssetReactivate() {
 			asset = new ParamId() {
 				id = assetId
 			},
@@ -276,9 +276,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="assetId"></param>
 		/// <returns></returns>
-		public Task<RespAssetDeleted> DeleteAsset(
+		public Task<RespAssetDelete> DeleteAsset(
 			ulong assetId
-		) => this.Command<RespAssetDeleted>(new ReqAssetDelete() {
+		) => this.Command<RespAssetDelete>(new ReqAssetDelete() {
 			asset = new ParamId() {
 				id = assetId
 			},
@@ -288,9 +288,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="assetId"></param>
 		/// <returns></returns>
-		public Task<RespAssetDeleted> RestoreAsset(
+		public Task<RespAssetDelete> RestoreAsset(
 			ulong assetId
-		) => this.Command<RespAssetDeleted>(new ReqAssetRestore() {
+		) => this.Command<RespAssetDelete>(new ReqAssetRestore() {
 			asset = new ParamId() {
 				id = assetId
 			},
@@ -390,9 +390,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="parameters"></param>
 		/// <returns></returns>
-		public Task<RespDispatchJobMerged> MergeDispatchJob(
+		public Task<RespDispatchJobMerge> MergeDispatchJob(
 			ParamDispatchJobMerge parameters
-		) => this.Command<RespDispatchJobMerged>(new ReqDispatchJobMerge() {
+		) => this.Command<RespDispatchJobMerge>(new ReqDispatchJobMerge() {
 			dispatchJob = parameters,
 		});
 		/// <summary>
@@ -401,9 +401,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="parameters"></param>
 		/// <returns></returns>
-		public Task<RespDispatchJobMerged> ChangeDispatchJob(
+		public Task<RespDispatchJobMerge> ChangeDispatchJob(
 			ParamDispatchJobChange parameters
-		) => this.Command<RespDispatchJobMerged>(new ReqDispatchJobChange() {
+		) => this.Command<RespDispatchJobMerge>(new ReqDispatchJobChange() {
 			dispatchJob = parameters,
 		});
 		/// <summary>
@@ -411,9 +411,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="parameters"></param>
 		/// <returns></returns>
-		public Task<RespDispatchJobMerged> MergeDispatchJob(
+		public Task<RespDispatchJobMerge> MergeDispatchJob(
 			ParamDispatchJobCancel parameters
-		) => this.Command<RespDispatchJobMerged>(new ReqDispatchJobCancel() {
+		) => this.Command<RespDispatchJobMerge>(new ReqDispatchJobCancel() {
 			dispatchJob = parameters,
 		});
 
@@ -422,9 +422,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="dispatchJobId"></param>
 		/// <returns></returns>
-		public Task<RespDispatchJobDeleted> DeleteDispatchJob(
+		public Task<RespDispatchJobDelete> DeleteDispatchJob(
 			ulong dispatchJobId
-		) => this.Command<RespDispatchJobDeleted>(new ReqDispatchJobDelete() {
+		) => this.Command<RespDispatchJobDelete>(new ReqDispatchJobDelete() {
 			dispatchJob = new ParamId() {
 				id = dispatchJobId
 			},
@@ -434,9 +434,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="dispatchJobId"></param>
 		/// <returns></returns>
-		public Task<RespDispatchJobDeleted> RestoreDispatchJob(
+		public Task<RespDispatchJobDelete> RestoreDispatchJob(
 			ulong dispatchJobId
-		) => this.Command<RespDispatchJobDeleted>(new ReqDispatchJobRestore() {
+		) => this.Command<RespDispatchJobDelete>(new ReqDispatchJobRestore() {
 			dispatchJob = new ParamId() {
 				id = dispatchJobId
 			},
@@ -511,9 +511,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="parameters"></param>
 		/// <returns></returns>
-		public Task<RespDispatchTaskMerged> MergeDispatchTask(
+		public Task<RespDispatchTaskMerge> MergeDispatchTask(
 			ParamDispatchTaskMerge parameters
-		) => this.Command<RespDispatchTaskMerged>(new ReqDispatchTaskMerge() {
+		) => this.Command<RespDispatchTaskMerge>(new ReqDispatchTaskMerge() {
 			dispatchTask = parameters,
 		});
 
@@ -522,9 +522,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="dispatchTaskId"></param>
 		/// <returns></returns>
-		public Task<RespDispatchTaskDeleted> DeleteDispatchTask(
+		public Task<RespDispatchTaskDelete> DeleteDispatchTask(
 			ulong dispatchTaskId
-		) => this.Command<RespDispatchTaskDeleted>(new ReqDispatchTaskDelete() {
+		) => this.Command<RespDispatchTaskDelete>(new ReqDispatchTaskDelete() {
 			dispatchTask = new ParamId() {
 				id = dispatchTaskId
 			},
@@ -534,9 +534,9 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <param name="dispatchTaskId"></param>
 		/// <returns></returns>
-		public Task<RespDispatchTaskDeleted> RestoreDispatchTask(
+		public Task<RespDispatchTaskDelete> RestoreDispatchTask(
 			ulong dispatchTaskId
-		) => this.Command<RespDispatchTaskDeleted>(new ReqDispatchTaskRestore() {
+		) => this.Command<RespDispatchTaskDelete>(new ReqDispatchTaskRestore() {
 			dispatchTask = new ParamId() {
 				id = dispatchTaskId
 			},

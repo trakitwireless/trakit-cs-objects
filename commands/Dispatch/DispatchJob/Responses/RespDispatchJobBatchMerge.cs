@@ -4,10 +4,10 @@ namespace Trakit.Commands {
 	/// <summary>
 	/// 
 	/// </summary>
-	public class RespContactBatchMerged : Response {
+	public class RespDispatchJobBatchMerge : Response {
 		/// <summary>
 		/// 
 		/// </summary>
-		public RespIdCompany[] contacts;
+		public RespIdCompany[] dispatchJobs;
 	}
 }

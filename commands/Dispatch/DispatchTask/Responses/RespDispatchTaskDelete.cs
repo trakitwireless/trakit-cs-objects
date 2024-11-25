@@ -4,7 +4,7 @@ namespace Trakit.Commands {
 	/// <summary>
 	/// A container for the <see cref="dispatchTask"/>.
 	/// </summary>
-	public class RespDispatchTaskDeleted : Response {
+	public class RespDispatchTaskDelete : Response {
 		/// <summary>
 		/// Details about deleting/restoring the requested <see cref="DispatchTask"/>.
 		/// </summary>
