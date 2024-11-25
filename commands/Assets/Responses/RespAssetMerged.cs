@@ -1,12 +1,10 @@
-﻿using Trakit.Objects;
-
-namespace Trakit.Commands {
+﻿namespace Trakit.Commands {
 	/// <summary>
 	/// A container for the <see cref="asset"/>.
 	/// </summary>
 	public class RespAssetMerged : Response {
 		/// <summary>
-		/// The requested <see cref="Asset"/>.
+		/// An object which contains the <c>id</c> and <c>company</c> keys when there is no error.
 		/// </summary>
 		public RespIdCompany asset;
 	}

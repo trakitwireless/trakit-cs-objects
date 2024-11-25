@@ -2,11 +2,11 @@
 
 namespace Trakit.Commands {
 	/// <summary>
-	/// Gets details of the specified <see cref="contact"/>.
+	/// Creates a new or updates an existing <see cref="Contact"/>.
 	/// </summary>
 	public class ReqContactMerge : Request, IReqSingle {
 		/// <summary>
-		/// An object to contain the "id" of the <see cref="Contact"/>.
+		/// Parameters given to create or update a <see cref="Contact"/>.
 		/// </summary>
 		public ParamContactMerge contact { get; set; }
 

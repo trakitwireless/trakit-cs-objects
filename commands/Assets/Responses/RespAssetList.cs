@@ -22,7 +22,7 @@ namespace Trakit.Commands {
 		public RespId company;
 	}
 	/// <summary>
-	/// A container owner <see cref="Company"/> of the collection.
+	/// Contains the codified <see cref="Company.labels"/> keys used to filter the collection.
 	/// </summary>
 	public class RespAssetListByCompanyAndLabels : RespAssetListByCompany {
 		/// <summary>
@@ -32,7 +32,7 @@ namespace Trakit.Commands {
 		public string[] labels;
 	}
 	/// <summary>
-	/// A container owner <see cref="Company"/> of the collection.
+	/// Contains the <see cref="AssetGeneral.references"/> used to filter the collection.
 	/// </summary>
 	public class RespAssetListByCompanyAndRefPairs : RespAssetListByCompany {
 		/// <summary>
@@ -41,4 +41,5 @@ namespace Trakit.Commands {
 		/// <seealso cref="AssetGeneral.references"/>
 		public Dictionary<string, string> references;
 	}
+
 }

@@ -4,7 +4,7 @@ using Trakit.Objects;
 
 namespace Trakit.Commands {
 	/// <summary>
-	/// Gets details of the specified <see cref="contact"/>.
+	/// Parameters used to create or update an <see cref="Contact"/>.
 	/// </summary>
 	public class ParamContactMerge : ParamMergeSubscribable {
 		/// <summary>
