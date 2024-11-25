@@ -72,6 +72,73 @@ namespace Trakit.Commands {
 		}
 		#endregion Commands - Self
 
+		#region Commands - Sessions
+		/// <summary>
+		/// Gets details of the specified <see cref="Session"/>.
+		/// </summary>
+		/// <typeparam name="TResponse"></typeparam>
+		/// <param name="handle"></param>
+		/// <returns></returns>
+		public Task<RespSessionGet> GetSession<TResponse>(
+			string handle
+		) => this.Command<RespSessionGet>(new ReqSessionGet() {
+			session = new ParamHandle() {
+				handle = handle,
+			},
+		});
+		/// <summary>
+		/// Gets the list of <see cref="SessionDetails"/>s for the specified <see cref="Company"/>.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespSessionListByCompany> ListSessions(
+			ulong companyId,
+			bool includeSuspended = true,
+			bool includeMessages = false,
+			bool includeTasks = false,
+			bool includeDeleted = false
+		) => this.Command<RespSessionListByCompany>(new ReqSessionListByCompany() {
+			company = new ParamId() {
+				id = companyId
+			},
+		});
+		/// <summary>
+		/// Gets the list of <see cref="SessionDetails"/>s for the specified <see cref="User"/>.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespSessionListByUser> ListSessions(
+			string login,
+			bool includeSuspended = true,
+			bool includeMessages = false,
+			bool includeTasks = false,
+			bool includeDeleted = false
+		) => this.Command<RespSessionListByUser>(new ReqSessionListByUser() {
+			user = new ParamLogin() {
+				login = login,
+			},
+		});
+		/// <summary>
+		/// Deletes an existing <see cref="Session"/>.
+		/// </summary>
+		/// <param name="handle"></param>
+		/// <returns></returns>
+		public Task<RespSessionDelete> DeleteSession(
+			string handle
+		) => this.Command<RespSessionDelete>(new ReqSessionDelete() {
+			session = new ParamHandle() {
+				handle = handle,
+			},
+		});
+		#endregion Commands - Sessions
 		#region Commands - Assets
 		/// <summary>
 		/// Gets details of the specified <see cref="Asset"/>.
