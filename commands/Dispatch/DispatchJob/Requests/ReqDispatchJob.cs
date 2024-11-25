@@ -4,7 +4,7 @@ namespace Trakit.Commands {
 	/// <summary>
 	/// A container for the <see cref="dispatchJob"/> object.
 	/// </summary>
-	public abstract class ReqDispatchJob : IReqSingle {
+	public abstract class ReqDispatchJob : Request, IReqSingle {
 		/// <summary>
 		/// An object to contain the "id" of the <see cref="DispatchJob"/>.
 		/// </summary>
