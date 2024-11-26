@@ -72,6 +72,78 @@ namespace Trakit.Commands {
 		}
 		#endregion Commands - Self
 
+		#region Commands - Messages
+		/// <summary>
+		/// Gets details of the specified <see cref="Contact"/>.
+		/// </summary>
+		/// <param name="contactId"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespContactGet> GetContact<TResponse>(
+			ulong contactId,
+			bool includeDeleted = false
+		) => this.Command<RespContactGet>(new ReqContactGet() {
+			contact = new ParamId() {
+				id = contactId
+			},
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Gets the list of <see cref="Contact"/>s for the specified <see cref="Company"/>.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespContactListByCompany> ListContacts(
+			ulong companyId,
+			bool includeDeleted = false
+		) => this.Command<RespContactListByCompany>(new ReqContactListByCompany() {
+			company = new ParamId() {
+				id = companyId
+			},
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Creates a new, or updates an existing <see cref="Contact"/>.
+		/// </summary>
+		/// <param name="parameters"></param>
+		/// <returns></returns>
+		public Task<RespContactMerge> MergeContact(
+			ParamContactMerge parameters
+		) => this.Command<RespContactMerge>(new ReqContactMerge() {
+			contact = parameters,
+		});
+
+		/// <summary>
+		/// Deletes an existing <see cref="Contact"/>.
+		/// </summary>
+		/// <param name="contactId"></param>
+		/// <returns></returns>
+		public Task<RespContactDelete> DeleteContact(
+			ulong contactId
+		) => this.Command<RespContactDelete>(new ReqContactDelete() {
+			contact = new ParamId() {
+				id = contactId
+			},
+		});
+		/// <summary>
+		/// Restores a deleted <see cref="Contact"/>.
+		/// </summary>
+		/// <param name="contactId"></param>
+		/// <returns></returns>
+		public Task<RespContactDelete> RestoreContact(
+			ulong contactId
+		) => this.Command<RespContactDelete>(new ReqContactRestore() {
+			contact = new ParamId() {
+				id = contactId
+			},
+		});
+		#endregion Commands - Contacts
 		#region Commands - Sessions
 		/// <summary>
 		/// Gets details of the specified <see cref="Session"/>.
@@ -96,11 +168,7 @@ namespace Trakit.Commands {
 		/// <param name="includeDeleted"></param>
 		/// <returns></returns>
 		public Task<RespSessionListByCompany> ListSessions(
-			ulong companyId,
-			bool includeSuspended = true,
-			bool includeMessages = false,
-			bool includeTasks = false,
-			bool includeDeleted = false
+			ulong companyId
 		) => this.Command<RespSessionListByCompany>(new ReqSessionListByCompany() {
 			company = new ParamId() {
 				id = companyId
@@ -116,11 +184,7 @@ namespace Trakit.Commands {
 		/// <param name="includeDeleted"></param>
 		/// <returns></returns>
 		public Task<RespSessionListByUser> ListSessions(
-			string login,
-			bool includeSuspended = true,
-			bool includeMessages = false,
-			bool includeTasks = false,
-			bool includeDeleted = false
+			string login
 		) => this.Command<RespSessionListByUser>(new ReqSessionListByUser() {
 			user = new ParamLogin() {
 				login = login,
@@ -139,6 +203,7 @@ namespace Trakit.Commands {
 			},
 		});
 		#endregion Commands - Sessions
+
 		#region Commands - Assets
 		/// <summary>
 		/// Gets details of the specified <see cref="Asset"/>.
@@ -296,7 +361,6 @@ namespace Trakit.Commands {
 			},
 		});
 		#endregion Commands - Assets
-
 		#region Commands - DispatchJobs
 		/// <summary>
 		/// Gets details of the specified <see cref="DispatchJob"/>.
@@ -313,6 +377,7 @@ namespace Trakit.Commands {
 			},
 			includeDeleted = includeDeleted,
 		});
+
 		/// <summary>
 		/// Gets the list of <see cref="DispatchJob"/>s for the specified <see cref="Company"/>.
 		/// </summary>
@@ -324,9 +389,6 @@ namespace Trakit.Commands {
 		/// <returns></returns>
 		public Task<RespDispatchJobListByCompany> ListDispatchJobs(
 			ulong companyId,
-			bool includeSuspended = true,
-			bool includeMessages = false,
-			bool includeTasks = false,
 			bool includeDeleted = false
 		) => this.Command<RespDispatchJobListByCompany>(new ReqDispatchJobListByCompany() {
 			company = new ParamId() {
@@ -347,9 +409,6 @@ namespace Trakit.Commands {
 		public Task<RespDispatchJobListByCompanyAndLabels> ListDispatchJobs(
 			ulong companyId,
 			IEnumerable<string> labels,
-			bool includeSuspended = true,
-			bool includeMessages = false,
-			bool includeTasks = false,
 			bool includeDeleted = false
 		) => this.Command<RespDispatchJobListByCompanyAndLabels>(new ReqDispatchJobListByCompanyAndLabels() {
 			company = new ParamId() {
@@ -373,13 +432,51 @@ namespace Trakit.Commands {
 		public Task<RespDispatchJobListByCompanyAndRefPairs> ListDispatchJobs(
 			ulong companyId,
 			IDictionary<string, string> references,
-			bool includeSuspended = true,
-			bool includeMessages = false,
-			bool includeTasks = false,
 			bool includeDeleted = false
 		) => this.Command<RespDispatchJobListByCompanyAndRefPairs>(new ReqDispatchJobListByCompanyAndRefPairs() {
 			company = new ParamId() {
 				id = companyId
+			},
+			references = references?.ToDictionary(p => p.Key, p => p.Value) ?? new Dictionary<string, string>(),
+			includeDeleted = includeDeleted,
+		});
+		/// <summary>
+		/// Gets the list of <see cref="DispatchJob"/>s for the specified <see cref="Asset"/>.
+		/// </summary>
+		/// <param name="assetId"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespDispatchJobListByAsset> ListDispatchJobsByAsset(
+			ulong assetId,
+			bool includeDeleted = false
+		) => this.Command<RespDispatchJobListByAsset>(new ReqDispatchJobListByAsset() {
+			asset = new ParamId() {
+				id = assetId
+			},
+			includeDeleted = includeDeleted,
+		});
+		/// <summary>
+		/// Gets the list of <see cref="DispatchJob"/>s for the specified <see cref="Asset"/> only if one of the specified <see cref="DispatchJobGeneral.references"/> fields match.
+		/// If no references are specified, it will match any <see cref="DispatchJob"/> with no references.
+		/// If a reference value is null, it will match any <see cref="DispatchJob"/> without that reference key.
+		/// </summary>
+		/// <param name="assetId"></param>
+		/// <param name="references"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespDispatchJobListByAssetAndRefPairs> ListDispatchJobsByAsset(
+			ulong assetId,
+			IDictionary<string, string> references,
+			bool includeDeleted = false
+		) => this.Command<RespDispatchJobListByAssetAndRefPairs>(new ReqDispatchJobListByAssetAndRefPairs() {
+			asset = new ParamId() {
+				id = assetId
 			},
 			references = references?.ToDictionary(p => p.Key, p => p.Value) ?? new Dictionary<string, string>(),
 			includeDeleted = includeDeleted,
@@ -542,6 +639,6 @@ namespace Trakit.Commands {
 			},
 		});
 		#endregion Commands - DispatchTasks
-
+		
 	}
 }
