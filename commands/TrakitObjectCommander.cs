@@ -639,6 +639,95 @@ namespace Trakit.Commands {
 			},
 		});
 		#endregion Commands - DispatchTasks
-		
+		#region Commands - Messages
+		/// <summary>
+		/// Gets details of the specified <see cref="AssetMessage"/>.
+		/// </summary>
+		/// <param name="assetMessageId"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespAssetMessageGet> GetAssetMessage<TResponse>(
+			ulong assetMessageId,
+			bool includeDeleted = false
+		) => this.Command<RespAssetMessageGet>(new ReqAssetMessageGet() {
+			assetMessage = new ParamId() {
+				id = assetMessageId
+			},
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Gets the list of <see cref="AssetMessage"/>s for the specified <see cref="Company"/>.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespAssetMessageListByCompany> ListAssetMessages(
+			ulong companyId,
+			bool includeDeleted = false
+		) => this.Command<RespAssetMessageListByCompany>(new ReqAssetMessageListByCompany() {
+			company = new ParamId() {
+				id = companyId
+			},
+			includeDeleted = includeDeleted,
+		});
+		/// <summary>
+		   /// Gets the list of <see cref="AssetMessage"/>s for the specified <see cref="Asset"/>.
+		   /// </summary>
+		   /// <param name="assetId"></param>
+		   /// <param name="includeSuspended"></param>
+		   /// <param name="includeMessages"></param>
+		   /// <param name="includeTasks"></param>
+		   /// <param name="includeDeleted"></param>
+		   /// <returns></returns>
+		public Task<RespAssetMessageListByAsset> ListAssetMessagesByAsset(
+			ulong assetId,
+			bool includeDeleted = false
+		) => this.Command<RespAssetMessageListByAsset>(new ReqAssetMessageListByAsset() {
+			asset = new ParamId() {
+				id = assetId
+			},
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Creates a new, or updates an existing <see cref="AssetMessage"/>.
+		/// </summary>
+		/// <param name="parameters"></param>
+		/// <returns></returns>
+		public Task<RespAssetMessageMerge> MergeAssetMessage(
+			ParamAssetMessageMerge parameters
+		) => this.Command<RespAssetMessageMerge>(new ReqAssetMessageMerge() {
+			assetMessage = parameters,
+		});
+
+		/// <summary>
+		/// Deletes an existing <see cref="AssetMessage"/>.
+		/// </summary>
+		/// <param name="assetMessageId"></param>
+		/// <returns></returns>
+		public Task<RespAssetMessageDelete> DeleteAssetMessage(
+			ulong assetMessageId
+		) => this.Command<RespAssetMessageDelete>(new ReqAssetMessageDelete() {
+			assetMessage = new ParamId() {
+				id = assetMessageId
+			},
+		});
+		/// <summary>
+		/// Restores a deleted <see cref="AssetMessage"/>.
+		/// </summary>
+		/// <param name="assetMessageId"></param>
+		/// <returns></returns>
+		public Task<RespAssetMessageDelete> RestoreAssetMessage(
+			ulong assetMessageId
+		) => this.Command<RespAssetMessageDelete>(new ReqAssetMessageRestore() {
+			assetMessage = new ParamId() {
+				id = assetMessageId
+			},
+		});
+		#endregion Commands - AssetMessages
 	}
 }
