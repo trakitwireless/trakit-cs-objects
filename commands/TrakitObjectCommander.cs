@@ -76,15 +76,15 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// Gets details of the specified <see cref="User"/>.
 		/// </summary>
-		/// <param name="userId"></param>
+		/// <param name="userLogin"></param>
 		/// <param name="includeDeleted"></param>
 		/// <returns></returns>
 		public Task<RespUserGet> GetUser<TResponse>(
-			ulong userId,
+			string userLogin,
 			bool includeDeleted = false
 		) => this.Command<RespUserGet>(new ReqUserGet() {
-			user = new ParamId() {
-				id = userId
+			user = new ParamLogin() {
+				login = userLogin
 			},
 			includeDeleted = includeDeleted,
 		});
@@ -122,28 +122,100 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// Deletes an existing <see cref="User"/>.
 		/// </summary>
-		/// <param name="userId"></param>
+		/// <param name="userLogin"></param>
 		/// <returns></returns>
 		public Task<RespUserDelete> DeleteUser(
-			ulong userId
+			string userLogin
 		) => this.Command<RespUserDelete>(new ReqUserDelete() {
-			user = new ParamId() {
-				id = userId
+			user = new ParamLogin() {
+				login = userLogin
 			},
 		});
 		/// <summary>
 		/// Restores a deleted <see cref="User"/>.
 		/// </summary>
-		/// <param name="userId"></param>
+		/// <param name="userLogin"></param>
 		/// <returns></returns>
 		public Task<RespUserDelete> RestoreUser(
-			ulong userId
+			string userLogin
 		) => this.Command<RespUserDelete>(new ReqUserRestore() {
-			user = new ParamId() {
-				id = userId
+			user = new ParamLogin() {
+				login = userLogin
 			},
 		});
 		#endregion Commands - Users
+		#region Commands - Machines
+		/// <summary>
+		/// Gets details of the specified <see cref="Machine"/>.
+		/// </summary>
+		/// <param name="machineKey"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespMachineGet> GetMachine<TResponse>(
+			string machineKey,
+			bool includeDeleted = false
+		) => this.Command<RespMachineGet>(new ReqMachineGet() {
+			machine = new ParamKey() {
+				key = machineKey
+			},
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Gets the list of <see cref="Machine"/>s for the specified <see cref="Company"/>.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespMachineListByCompany> ListMachines(
+			ulong companyId,
+			bool includeDeleted = false
+		) => this.Command<RespMachineListByCompany>(new ReqMachineListByCompany() {
+			company = new ParamId() {
+				id = companyId
+			},
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Creates a new, or updates an existing <see cref="Machine"/>.
+		/// </summary>
+		/// <param name="parameters"></param>
+		/// <returns></returns>
+		public Task<RespMachineMerge> MergeMachine(
+			ParamMachineMerge parameters
+		) => this.Command<RespMachineMerge>(new ReqMachineMerge() {
+			machine = parameters,
+		});
+
+		/// <summary>
+		/// Deletes an existing <see cref="Machine"/>.
+		/// </summary>
+		/// <param name="machineKey"></param>
+		/// <returns></returns>
+		public Task<RespMachineDelete> DeleteMachine(
+			string machineKey
+		) => this.Command<RespMachineDelete>(new ReqMachineDelete() {
+			machine = new ParamKey() {
+				key = machineKey
+			},
+		});
+		/// <summary>
+		/// Restores a deleted <see cref="Machine"/>.
+		/// </summary>
+		/// <param name="machineKey"></param>
+		/// <returns></returns>
+		public Task<RespMachineDelete> RestoreMachine(
+			string machineKey
+		) => this.Command<RespMachineDelete>(new ReqMachineRestore() {
+			machine = new ParamKey() {
+				key = machineKey
+			},
+		});
+		#endregion Commands - Machines
 		#region Commands - Contacts
 		/// <summary>
 		/// Gets details of the specified <see cref="Contact"/>.
