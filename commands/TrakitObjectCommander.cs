@@ -72,7 +72,79 @@ namespace Trakit.Commands {
 		}
 		#endregion Commands - Self
 
-		#region Commands - Messages
+		#region Commands - Users
+		/// <summary>
+		/// Gets details of the specified <see cref="User"/>.
+		/// </summary>
+		/// <param name="userId"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespUserGet> GetUser<TResponse>(
+			ulong userId,
+			bool includeDeleted = false
+		) => this.Command<RespUserGet>(new ReqUserGet() {
+			user = new ParamId() {
+				id = userId
+			},
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Gets the list of <see cref="User"/>s for the specified <see cref="Company"/>.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespUserListByCompany> ListUsers(
+			ulong companyId,
+			bool includeDeleted = false
+		) => this.Command<RespUserListByCompany>(new ReqUserListByCompany() {
+			company = new ParamId() {
+				id = companyId
+			},
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Creates a new, or updates an existing <see cref="User"/>.
+		/// </summary>
+		/// <param name="parameters"></param>
+		/// <returns></returns>
+		public Task<RespUserMerge> MergeUser(
+			ParamUserMerge parameters
+		) => this.Command<RespUserMerge>(new ReqUserMerge() {
+			user = parameters,
+		});
+
+		/// <summary>
+		/// Deletes an existing <see cref="User"/>.
+		/// </summary>
+		/// <param name="userId"></param>
+		/// <returns></returns>
+		public Task<RespUserDelete> DeleteUser(
+			ulong userId
+		) => this.Command<RespUserDelete>(new ReqUserDelete() {
+			user = new ParamId() {
+				id = userId
+			},
+		});
+		/// <summary>
+		/// Restores a deleted <see cref="User"/>.
+		/// </summary>
+		/// <param name="userId"></param>
+		/// <returns></returns>
+		public Task<RespUserDelete> RestoreUser(
+			ulong userId
+		) => this.Command<RespUserDelete>(new ReqUserRestore() {
+			user = new ParamId() {
+				id = userId
+			},
+		});
+		#endregion Commands - Users
+		#region Commands - Contacts
 		/// <summary>
 		/// Gets details of the specified <see cref="Contact"/>.
 		/// </summary>
