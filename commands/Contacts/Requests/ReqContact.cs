@@ -4,7 +4,7 @@ namespace Trakit.Commands {
 	/// <summary>
 	/// A container for the <see cref="contact"/> object.
 	/// </summary>
-	public abstract class ReqContact : IReqSingle {
+	public abstract class ReqContact : Request, IReqSingle {
 		/// <summary>
 		/// An object to contain the "id" of the <see cref="Contact"/>.
 		/// </summary>

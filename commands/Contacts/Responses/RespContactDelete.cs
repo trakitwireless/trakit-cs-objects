@@ -4,7 +4,7 @@ namespace Trakit.Commands {
 	/// <summary>
 	/// A container for the <see cref="contact"/>.
 	/// </summary>
-	public class RespContactDeleted : Response {
+	public class RespContactDelete : Response {
 		/// <summary>
 		/// Details about deleting/restoring the requested <see cref="Contact"/>.
 		/// </summary>
