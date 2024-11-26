@@ -72,6 +72,115 @@ namespace Trakit.Commands {
 		}
 		#endregion Commands - Self
 
+		#region Commands - Companies
+		/// <summary>
+		/// Gets details of the specified <see cref="Company"/>.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespCompanyGet> GetCompany<TResponse>(
+			ulong companyId,
+			bool includeDeleted = false
+		) => this.Command<RespCompanyGet>(new ReqCompanyGet() {
+			company = new ParamId() {
+				id = companyId
+			},
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Gets the list of child-<see cref="Company">companies</see> for the specified <see cref="Company"/>.
+		/// By default the full tree of <see cref="Company">companies</see> is returned, but this can be overridden using <see cref="ReqCompanyList.tree"/>.
+		/// By default it does not include the parent <see cref="Company"/>, but this can be overridden using <see cref="ReqCompanyList.includeParent"/>.
+		/// </summary>
+		/// <param name="parentId"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespCompanyListByCompany> ListCompanies(
+			ulong? parentId = default,
+			bool tree = true,
+			bool includeParent = false,
+			bool includeDeleted = false
+		) => this.Command<RespCompanyListByCompany>(new ReqCompanyListByCompany() {
+			company = new ParamId() {
+				id = parentId
+					?? this.Self.machine?.company
+					?? this.Self.user?.company
+					?? throw new InvalidOperationException("You are not authenticated")
+			},
+			tree = tree,
+			includeParent = includeParent,
+			includeDeleted = includeDeleted,
+		});
+		/// <summary>
+		/// Gets the list of <see cref="Company"/>s for the specified <see cref="Company"/>.
+		/// </summary>
+		/// <param name="references"></param>
+		/// <param name="parentId"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespCompanyListByCompanyAndRefPairs> ListCompanies(
+			IDictionary<string, string> references,
+			ulong? parentId = default,
+			bool tree = true,
+			bool includeParent = false,
+			bool includeDeleted = false
+		) => this.Command<RespCompanyListByCompanyAndRefPairs>(new ReqCompanyListByCompanyAndRefPairs() {
+			references = references?.ToDictionary(p => p.Key, p => p.Value) ?? new Dictionary<string, string>(),
+			company = new ParamId() {
+				id = parentId
+					?? this.Self.machine?.company
+					?? this.Self.user?.company
+					?? throw new InvalidOperationException("You are not authenticated")
+			},
+			tree = tree,
+			includeParent = includeParent,
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Creates a new, or updates an existing <see cref="Company"/>.
+		/// </summary>
+		/// <param name="parameters"></param>
+		/// <returns></returns>
+		public Task<RespCompanyMerge> MergeCompany(
+			ParamCompanyMerge parameters
+		) => this.Command<RespCompanyMerge>(new ReqCompanyMerge() {
+			company = parameters,
+		});
+
+		/// <summary>
+		/// Deletes an existing <see cref="Company"/>.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <returns></returns>
+		public Task<RespCompanyDelete> DeleteCompany(
+			ulong companyId
+		) => this.Command<RespCompanyDelete>(new ReqCompanyDelete() {
+			company = new ParamId() {
+				id = companyId
+			},
+		});
+		/// <summary>
+		/// Restores a deleted <see cref="Company"/>.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <returns></returns>
+		public Task<RespCompanyDelete> RestoreCompany(
+			ulong companyId
+		) => this.Command<RespCompanyDelete>(new ReqCompanyRestore() {
+			company = new ParamId() {
+				id = companyId
+			},
+		});
+		#endregion Commands - Companies
 		#region Commands - Users
 		/// <summary>
 		/// Gets details of the specified <see cref="User"/>.

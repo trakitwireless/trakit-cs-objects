@@ -58,7 +58,6 @@ namespace Trakit.Commands {
 		/// <typeparam name="TResponse"></typeparam>
 		/// <param name="request"></param>
 		/// <returns></returns>
-		/// <exception cref="InvalidOperationException"></exception>
 		public abstract Task<TResponse> Command<TResponse>(Request request);
 	}
 }
