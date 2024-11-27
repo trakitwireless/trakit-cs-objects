@@ -982,5 +982,78 @@ namespace Trakit.Commands {
 			},
 		});
 		#endregion Commands - AssetMessages
+
+		#region Commands - Places
+		/// <summary>
+		/// Gets details of the specified <see cref="Place"/>.
+		/// </summary>
+		/// <param name="placeId"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespPlaceGet> GetPlace<TResponse>(
+			ulong placeId,
+			bool includeDeleted = false
+		) => this.Command<RespPlaceGet>(new ReqPlaceGet() {
+			place = new ParamId() {
+				id = placeId
+			},
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Gets the list of <see cref="Place"/>s for the specified <see cref="Company"/>.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespPlaceListByCompany> ListPlaces(
+			ulong companyId,
+			bool includeDeleted = false
+		) => this.Command<RespPlaceListByCompany>(new ReqPlaceListByCompany() {
+			company = new ParamId() {
+				id = companyId
+			},
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Creates a new, or updates an existing <see cref="Place"/>.
+		/// </summary>
+		/// <param name="parameters"></param>
+		/// <returns></returns>
+		public Task<RespPlaceMerge> MergePlace(
+			ParamPlaceMerge parameters
+		) => this.Command<RespPlaceMerge>(new ReqPlaceMerge() {
+			place = parameters,
+		});
+
+		/// <summary>
+		/// Deletes an existing <see cref="Place"/>.
+		/// </summary>
+		/// <param name="placeId"></param>
+		/// <returns></returns>
+		public Task<RespPlaceDelete> DeletePlace(
+			ulong placeId
+		) => this.Command<RespPlaceDelete>(new ReqPlaceDelete() {
+			place = new ParamId() {
+				id = placeId
+			},
+		});
+		/// <summary>
+		/// Restores a deleted <see cref="Place"/>.
+		/// </summary>
+		/// <param name="placeId"></param>
+		/// <returns></returns>
+		public Task<RespPlaceDelete> RestorePlace(
+			ulong placeId
+		) => this.Command<RespPlaceDelete>(new ReqPlaceRestore() {
+			place = new ParamId() {
+				id = placeId
+			},
+		});
+		#endregion Commands - Places
 	}
 }
