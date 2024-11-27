@@ -12,23 +12,23 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The type of data being stored.
 		/// </summary>
-		public DashcamDataType kind;
+		public DashcamMediaType kind;
 		/// <summary>
-		/// For <see cref="DashcamDataType.video"/> media files, this indicates the frames-per-second.
+		/// For <see cref="DashcamMediaType.video"/> media files, this indicates the frames-per-second.
 		/// </summary>
 		public float? fps;
 		/// <summary>
 		/// Timestamp of when this resource started.
-		/// For <see cref="DashcamDataType.image"/> media files, the start and end are the same.
+		/// For <see cref="DashcamMediaType.image"/> media files, the start and end are the same.
 		/// </summary>
 		public DateTime start;
 		/// <summary>
 		/// Timestamp of when this resource ended.
-		/// For <see cref="DashcamDataType.image"/> media files, the start and end are the same.
+		/// For <see cref="DashcamMediaType.image"/> media files, the start and end are the same.
 		/// </summary>
 		public DateTime end;
 		/// <summary>
-		/// For <see cref="DashcamDataType.video"/> media files, the duration of the video clip.
+		/// For <see cref="DashcamMediaType.video"/> media files, the duration of the video clip.
 		/// </summary>
 		public TimeSpan duration => this.end - this.start;
 		/// <summary>

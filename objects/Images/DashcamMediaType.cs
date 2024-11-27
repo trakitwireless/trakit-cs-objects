@@ -2,7 +2,7 @@
 	/// <summary>
 	/// The type of dashcam data being stored.
 	/// </summary>
-	public enum DashcamDataType : byte {
+	public enum DashcamMediaType : byte {
 		/// <summary>
 		/// Unknown or other.
 		/// </summary>

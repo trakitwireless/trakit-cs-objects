@@ -9,7 +9,7 @@ namespace Trakit.Objects {
 		/// The type of data being stored.
 		/// </summary>
 		/// <override value="image" />
-		public readonly DashcamDataType kind = DashcamDataType.image;
+		public readonly DashcamMediaType kind = DashcamMediaType.image;
 		/// <summary>
 		/// Timestamp of this live camera image.
 		/// </summary>
