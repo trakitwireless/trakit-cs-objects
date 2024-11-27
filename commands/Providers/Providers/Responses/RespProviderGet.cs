@@ -2,7 +2,7 @@
 
 namespace Trakit.Commands {
 	/// <summary>
-	/// A container for the <see cref="Provider"/>.
+	/// A container for the <see cref="provider"/>.
 	/// </summary>
 	public class RespProviderGet : Response {
 		/// <summary>
