@@ -4,7 +4,7 @@ namespace Trakit.Objects {
 	/// <summary>
 	/// An image or video received from a dashcam-enabled provider or asset.
 	/// </summary>
-	public class DashcamData : DashcamBase {
+	public class Dashcam : DashcamBase {
 		/// <summary>
 		/// Unique identifier of this resource.
 		/// </summary>

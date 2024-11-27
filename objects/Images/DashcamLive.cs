@@ -4,7 +4,7 @@ namespace Trakit.Objects {
 	/// <summary>
 	/// A live snapshot a dashcam-enabled provider or asset.
 	/// </summary>
-	public class DashcamDataLive : DashcamBase {
+	public class DashcamLive : DashcamBase {
 		/// <summary>
 		/// The type of data being stored.
 		/// </summary>
