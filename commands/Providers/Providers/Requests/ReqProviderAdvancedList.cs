@@ -7,14 +7,6 @@ namespace Trakit.Commands {
 	/// </summary>
 	public abstract class ReqProviderAdvancedList : Request, IReqIDeletable, IReqISuspendable {
 		/// <summary>
-		/// When true, the command will also return <see cref="ProviderAdvancedMessage"/>s for the asset.
-		/// </summary>
-		public bool includeMessages { get; set; }
-		/// <summary>
-		/// When true, the command will also return <see cref="DispatchTask"/>s for the asset.
-		/// </summary>
-		public bool includeTasks { get; set; }
-		/// <summary>
 		/// When true, the command will also return suspended <see cref="ProviderAdvanced"/>s.
 		/// </summary>
 		public bool includeSuspended { get; set; }
