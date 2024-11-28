@@ -1,6 +1,8 @@
-﻿namespace Trakit.Commands {
+﻿using Trakit.Objects;
+
+namespace Trakit.Commands {
 	/// <summary>
-	/// For delete/restore commands, this contains the <see cref="Provider"/> id, version keys, owning <see cref="Company.id"/>, and deleted state.
+	/// For delete/restore commands, this contains the <see cref="Provider.id"/>, version keys, owning <see cref="Company.id"/>, and deleted state.
 	/// </summary>
 	public class RespIdendifierDeleted : RespIdendifierCompany {
 		/// <summary>

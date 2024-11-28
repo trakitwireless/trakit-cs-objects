@@ -1,4 +1,6 @@
-﻿namespace Trakit.Commands {
+﻿using Trakit.Objects;
+
+namespace Trakit.Commands {
 	/// <summary>
 	/// A container for the id of the <see cref="Provider"/> requested/created.
 	/// </summary>
