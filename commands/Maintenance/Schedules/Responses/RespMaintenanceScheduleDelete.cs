@@ -8,6 +8,6 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// Details about deleting/restoring the requested <see cref="MaintenanceSchedule"/>.
 		/// </summary>
-		public RespDeleted maintenanceSchedule;
+		public RespIdDeleted maintenanceSchedule;
 	}
 }

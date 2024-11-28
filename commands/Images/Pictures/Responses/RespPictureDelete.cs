@@ -8,6 +8,6 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// Details about deleting/restoring the requested <see cref="Picture"/>.
 		/// </summary>
-		public RespDeleted picture;
+		public RespIdDeleted picture;
 	}
 }

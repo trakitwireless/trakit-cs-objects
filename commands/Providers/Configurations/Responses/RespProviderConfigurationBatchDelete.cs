@@ -10,6 +10,6 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// Details about deleting/restoring the requested <see cref="ProviderConfiguration"/>.
 		/// </summary>
-		public RespDeleted[] providerConfigurations;
+		public RespIdDeleted[] providerConfigurations;
 	}
 }

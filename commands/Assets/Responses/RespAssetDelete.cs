@@ -8,6 +8,6 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// 
 		/// </summary>
-		public RespDeleted asset;
+		public RespIdDeleted asset;
 	}
 }

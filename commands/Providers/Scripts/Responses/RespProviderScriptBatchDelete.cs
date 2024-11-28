@@ -8,6 +8,6 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// Details about deleting/restoring the requested <see cref="ProviderScript"/>.
 		/// </summary>
-		public RespDeleted[] providerScripts;
+		public RespIdDeleted[] providerScripts;
 	}
 }

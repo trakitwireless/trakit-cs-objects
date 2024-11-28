@@ -8,6 +8,6 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// Details about deleting/restoring the requested <see cref="BehaviourLog"/>.
 		/// </summary>
-		public RespDeleted[] behaviourLogs;
+		public RespIdDeleted[] behaviourLogs;
 	}
 }

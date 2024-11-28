@@ -8,6 +8,6 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// Details about deleting/restoring the requested <see cref="DispatchTask"/>.
 		/// </summary>
-		public RespDeleted dispatchTask;
+		public RespIdDeleted dispatchTask;
 	}
 }

@@ -8,6 +8,6 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// Details about deleting/restoring the requested <see cref="FormResult"/>.
 		/// </summary>
-		public RespDeleted formResult;
+		public RespIdDeleted formResult;
 	}
 }

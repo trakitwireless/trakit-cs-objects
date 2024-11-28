@@ -2,7 +2,7 @@
 	/// <summary>
 	/// For suspend/revive commands, this contains the id, version keys, owning <see cref="Company.id"/>, and suspended state.
 	/// </summary>
-	public class RespSuspended : RespIdCompany {
+	public class RespIdSuspended : RespIdCompany {
 		/// <summary>
 		/// Flag showing if the object is suspended.
 		/// </summary>

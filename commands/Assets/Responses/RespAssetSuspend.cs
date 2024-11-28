@@ -8,6 +8,6 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// 
 		/// </summary>
-		public RespSuspended asset;
+		public RespIdSuspended asset;
 	}
 }
