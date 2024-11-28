@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 using Trakit.Objects;
 using Trakit.Tools;
 
@@ -14,6 +17,15 @@ namespace Trakit.Commands {
 		/// </summary>
 		public Uri BaseAddress { get; protected set; }
 		/// <summary>
+		/// Additional (optional) values added to the query-string of the connection request.
+		/// </summary>
+		public readonly Dictionary<string, string> Query = new Dictionary<string, string>();
+		/// <summary>
+		/// Additional (optional) HTTP headers added to the connection request.
+		/// </summary>
+		public readonly Dictionary<string, string> Headers = new Dictionary<string, string>();
+
+		/// <summary>
 		/// Helps to serialize (and deserialize) content when transmitted between this client and the underlying Trak-iT API service.
 		/// </summary>
 		public readonly TrakitSerializer Serializer = new TrakitSerializer();
@@ -22,11 +34,35 @@ namespace Trakit.Commands {
 		/// </summary>
 		public virtual TClient Client { get; protected set; }
 
+		/// <summary>
+		/// Returns the <see cref="BaseAddress"/> with the appropriate <paramref name="path"/>, <see cref="Query"/> values (and session token if applicable).
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
+		protected UriBuilder CreateBaseUri(string path = null) {
+			var endpoint = new UriBuilder(this.BaseAddress);
+			endpoint.Path = path ?? "";
+			var query = new Dictionary<string, string>(this.Query);
+			if (_sessionId != default) {
+				query["ghostId"] = _sessionId.ToString();
+			}
+			if (query.Count > 0) {
+				endpoint.Query += "&" + string.Join(
+					"&",
+					this.Query.Select(p => $"{HttpUtility.UrlEncode(p.Key)}={HttpUtility.UrlEncode(p.Value)}")
+				);
+			}
+			if (endpoint.Query.Length > 1 && endpoint.Query[1] == '&') {
+				endpoint.Query = endpoint.Query.Substring(2);
+			}
+			return endpoint;
+		}
+
 		#region Authorization
 		// saved API credentials when using a service account
-		protected Machine _machine;
+		protected Machine _machine { get; private set; }
 		// saved session identifier when using a user account
-		protected Guid _sessionId;
+		protected Guid _sessionId { get; private set; }
 		/// <summary>
 		/// Saves the authentication mechanism as a <see cref="Machine"/>.
 		/// </summary>
