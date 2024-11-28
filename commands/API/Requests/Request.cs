@@ -11,11 +11,11 @@ namespace Trakit.Commands {
 	/// This class exists solely to create an inheritance chain.
 	/// Child classes should contain members required to execute a command.
 	/// </remarks>
-	public abstract class Request {
-		//
-		static readonly Regex SPLITTER = new Regex("Req([A-Z][a-z]+)+?((?:Batch)?(?:Get|List|Merge|Delete|Remove|Restore|Suspend|Revive|Cancel|Change))(By.+)?", RegexOptions.Compiled);
+	public class Request {
+		/// Used to split the Request class name into pieces to help create commands
+		static readonly Regex SPLITTER = new Regex("Req([A-Z][a-z]+)+?((?:Batch)?(?:Get|List|Merge|Delete|Restore|Suspend|Revive|Cancel|Change))(By.+)?", RegexOptions.Compiled);
 		/// <summary>
-		/// 
+		/// Splits this class' name into parts helpful to <see cref="TrakitCommander{TClient}.Command{TResponse}(Request)"/>.
 		/// </summary>
 		/// <returns></returns>
 		public string[] GetNameParts() => SPLITTER.Match(this.GetType().Name)

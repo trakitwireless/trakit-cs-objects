@@ -9,7 +9,7 @@ namespace Trakit.Commands {
 	/// It will always have the <see cref="reqId"/>, <see cref="errorCode"/>, <see cref="message"/>, and <see cref="errorDetails"/> properties, but can also contain any number of other properties.
 	/// A child class per command type should be created.
 	/// </remarks>
-	public abstract class Response {
+	public class Response {
 		/// <summary>
 		/// Identifier used by external system to correlate requests to responses.
 		/// </summary>
