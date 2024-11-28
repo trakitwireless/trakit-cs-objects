@@ -181,6 +181,78 @@ namespace Trakit.Commands {
 			},
 		});
 		#endregion Commands - Companies
+		#region Commands - UserGroups
+		/// <summary>
+		/// Gets details of the specified <see cref="UserGroup"/>.
+		/// </summary>
+		/// <param name="userGroupId"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespUserGroupGet> GetUserGroup<TResponse>(
+			ulong userGroupId,
+			bool includeDeleted = false
+		) => this.Command<RespUserGroupGet>(new ReqUserGroupGet() {
+			userGroup = new ParamId() {
+				id = userGroupId
+			},
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Gets the list of <see cref="UserGroup"/>s for the specified <see cref="Company"/>.
+		/// </summary>
+		/// <param name="companyId"></param>
+		/// <param name="includeSuspended"></param>
+		/// <param name="includeMessages"></param>
+		/// <param name="includeTasks"></param>
+		/// <param name="includeDeleted"></param>
+		/// <returns></returns>
+		public Task<RespUserGroupListByCompany> ListUserGroups(
+			ulong companyId,
+			bool includeDeleted = false
+		) => this.Command<RespUserGroupListByCompany>(new ReqUserGroupListByCompany() {
+			company = new ParamId() {
+				id = companyId
+			},
+			includeDeleted = includeDeleted,
+		});
+
+		/// <summary>
+		/// Creates a new, or updates an existing <see cref="UserGroup"/>.
+		/// </summary>
+		/// <param name="parameters"></param>
+		/// <returns></returns>
+		public Task<RespUserGroupMerge> MergeUserGroup(
+			ParamUserGroupMerge parameters
+		) => this.Command<RespUserGroupMerge>(new ReqUserGroupMerge() {
+			userGroup = parameters,
+		});
+
+		/// <summary>
+		/// Deletes an existing <see cref="UserGroup"/>.
+		/// </summary>
+		/// <param name="userGroupId"></param>
+		/// <returns></returns>
+		public Task<RespUserGroupDelete> DeleteUserGroup(
+			ulong userGroupId
+		) => this.Command<RespUserGroupDelete>(new ReqUserGroupDelete() {
+			userGroup = new ParamId() {
+				id = userGroupId
+			},
+		});
+		/// <summary>
+		/// Restores a deleted <see cref="UserGroup"/>.
+		/// </summary>
+		/// <param name="userGroupId"></param>
+		/// <returns></returns>
+		public Task<RespUserGroupDelete> RestoreUserGroup(
+			ulong userGroupId
+		) => this.Command<RespUserGroupDelete>(new ReqUserGroupRestore() {
+			userGroup = new ParamId() {
+				id = userGroupId
+			},
+		});
+		#endregion Commands - UserGroups
 		#region Commands - Users
 		/// <summary>
 		/// Gets details of the specified <see cref="User"/>.

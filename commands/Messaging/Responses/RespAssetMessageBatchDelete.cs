@@ -8,6 +8,6 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// Details about deleting/restoring the requested <see cref="AssetMessage"/>.
 		/// </summary>
-		public RespDeleted[] assetMessages;
+		public RespIdDeleted[] assetMessages;
 	}
 }

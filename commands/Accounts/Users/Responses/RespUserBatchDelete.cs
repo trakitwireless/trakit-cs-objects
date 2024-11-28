@@ -8,6 +8,6 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// Details about deleting/restoring the requested <see cref="User"/>.
 		/// </summary>
-		public RespDeleted[] users;
+		public RespIdDeleted[] users;
 	}
 }

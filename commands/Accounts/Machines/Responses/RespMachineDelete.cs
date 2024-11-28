@@ -8,6 +8,6 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// Details about deleting/restoring the requested <see cref="Machine"/>.
 		/// </summary>
-		public RespDeleted machine;
+		public RespIdDeleted machine;
 	}
 }

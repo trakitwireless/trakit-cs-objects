@@ -8,6 +8,6 @@ namespace Trakit.Commands {
 		/// <summary>
 		/// Details about deleting/restoring the requested <see cref="DispatchJob"/>.
 		/// </summary>
-		public RespDeleted[] dispatchJobs;
+		public RespIdDeleted[] dispatchJobs;
 	}
 }

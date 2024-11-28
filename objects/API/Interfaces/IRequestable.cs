@@ -7,7 +7,7 @@
 		/// Returns a unique identifier as a string.
 		/// </summary>
 		/// <returns></returns>
-		/// <seealso cref="DashcamData.guid"/>
+		/// <seealso cref="Dashcam.guid"/>
 		/// <seealso cref="IIdUlong.id"/>
 		/// <seealso cref="Machine.key"/>
 		/// <seealso cref="Provider.id"/>
