@@ -17,6 +17,7 @@ namespace Trakit.Tools {
 				Formatting = Formatting.None,
 				DateParseHandling = DateParseHandling.None,
 				DateTimeZoneHandling = DateTimeZoneHandling.Utc,
+				NullValueHandling = NullValueHandling.Ignore,
 			};
 
 			// Converts a DateTime to and from the ISO 8601 date format (with seconds and milliseconds)
