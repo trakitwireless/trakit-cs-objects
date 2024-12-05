@@ -139,6 +139,11 @@ namespace Trakit.Commands {
 		/// </summary>
 		/// <seealso cref="CompanyPolicies"/>
 		companyPolicies,
+		///// <summary>
+		///// Company's list of <see cref="Contact"/>s broken down by role.
+		///// </summary>
+		///// <seealso cref="CompanyDirectory"/>
+		//companyDirectory,
 		/// <summary>
 		/// A <see cref="Company"/>'s white-labelling details.
 		/// </summary>
