@@ -9,8 +9,8 @@ namespace Trakit.Objects {
 		public static bool operator >=(Component a, Component b) => a?.v?.FirstOrDefault() >= b?.v?.FirstOrDefault();
 		public static bool operator <(Component a, Component b) => a?.v?.FirstOrDefault() < b?.v?.FirstOrDefault();
 		public static bool operator <=(Component a, Component b) => a?.v?.FirstOrDefault() <= b?.v?.FirstOrDefault();
-		public static bool operator ==(Component a, Component b) => a?.v?.FirstOrDefault() == b?.v?.FirstOrDefault();
-		public static bool operator !=(Component a, Component b) => a?.v?.FirstOrDefault() != b?.v?.FirstOrDefault();
+		//public static bool operator ==(Component a, Component b) => a?.v?.FirstOrDefault() == b?.v?.FirstOrDefault();
+		//public static bool operator !=(Component a, Component b) => a?.v?.FirstOrDefault() != b?.v?.FirstOrDefault();
 
 		/// <summary>
 		/// Object version keys used to validate synchronization for all object properties.
