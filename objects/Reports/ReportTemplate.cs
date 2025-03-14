@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace Trakit.Objects {
 	/// <summary>
@@ -37,19 +36,16 @@ namespace Trakit.Objects {
 		/// The fill/background colour of the icon.
 		/// </summary>
 		/// <override max-length="22" format="colour" />
-		[DataMember]
 		public string fill { get; set; }
 		/// <summary>
 		/// Outline and graphic colour.
 		/// </summary>
 		/// <override max-length="22" format="colour" />
-		[DataMember]
 		public string stroke { get; set; }
 		/// <summary>
 		/// The name of the symbol for this report.
 		/// </summary>
 		/// <override max-length="22" format="codified" />
-		[DataMember]
 		public string graphic { get; set; }
 
 		// IRequestable
