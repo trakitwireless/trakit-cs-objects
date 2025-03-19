@@ -1,9 +1,7 @@
 # Trak-iT API Object Model
 
 All of the Trak-iT APIs use the same object definitions.  Use this package in your .NET project for either standard, code, or framework.
-Other Trak-iT API libraries are available on GitHub and nuget.
- - https://github.com/trakitwireless
- - https://www.nuget.org/profiles/Trak-iT
+Other Trak-iT API libraries are available on [GitHub](https://github.com/trakitwireless) and [nuget](https://www.nuget.org/profiles/Trak-iT).
 
 ### Prerequisites
 

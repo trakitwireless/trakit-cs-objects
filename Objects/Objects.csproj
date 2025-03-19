@@ -6,17 +6,17 @@
 		<Title>Trak-iT API Object Model</Title>
 		<PackageProjectUrl>https://apis.trakit.ca/dotnet</PackageProjectUrl>
 		<AssemblyName>Trakit.$(MSBuildProjectName)</AssemblyName>
-		<AssemblyVersion>0.3.0.3</AssemblyVersion>
-		<FileVersion>0.3.0.3</FileVersion>
+		<AssemblyVersion>0.3.0.4</AssemblyVersion>
+		<FileVersion>0.3.0.4</FileVersion>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Version>0.3.0.3</Version>
+		<Version>0.3.0.4</Version>
 		<PackageIcon>trakit-objects.png</PackageIcon>
 		<Copyright>2024 Traki-iT Wireless Inc.</Copyright>
 		<Authors>Trak-it Wireless Inc.</Authors>
 	</PropertyGroup>
 	<ItemGroup>
-		<None Include="..\trakit-objects.png">
+		<None Update="trakit-objects.png">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
