@@ -8,7 +8,7 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// General details about this person.
 		/// </summary>
-		new public PersonGeneral general {
+		new public PersonGeneral General {
 			get => (PersonGeneral)base.General;
 			set => base.General = value;
 		}
@@ -18,8 +18,8 @@ namespace Trakit.Objects {
 		/// </summary>
 		/// <seealso cref="Contact.id" />
 		public ulong contact {
-			get => (this.general ?? throw new NullReferenceException("general")).contact;
-			set => (this.general ?? throw new NullReferenceException("general")).contact = value;
+			get => (this.General ?? throw new NullReferenceException("general")).contact;
+			set => (this.General ?? throw new NullReferenceException("general")).contact = value;
 		}
 	}
 }

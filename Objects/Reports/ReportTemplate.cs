@@ -21,7 +21,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Name of this report.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about this report.
@@ -35,17 +34,14 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The fill/background colour of the icon.
 		/// </summary>
-		/// <override max-length="22" format="colour" />
 		public string fill { get; set; }
 		/// <summary>
 		/// Outline and graphic colour.
 		/// </summary>
-		/// <override max-length="22" format="colour" />
 		public string stroke { get; set; }
 		/// <summary>
 		/// The name of the symbol for this report.
 		/// </summary>
-		/// <override max-length="22" format="codified" />
 		public string graphic { get; set; }
 
 		// IRequestable

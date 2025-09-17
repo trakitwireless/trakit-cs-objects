@@ -15,7 +15,6 @@
 		/// The user that read this message.  This field is blank/null when unread.
 		/// </summary>
 		/// <seealso cref="User.login" />
-		/// <override max-length="254" format="email" />
 		public string readBy;
 	}
 }

@@ -18,12 +18,10 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A noun to describe the type of thing represented.  Like Truck, Car, Trailer, Hot-Air Balloon, etc...
 		/// </summary>
-		/// <override max-length="100" />
 		public string category;
 		/// <summary>
 		/// A specific adjective to describe the thing.  Like Blue, Red, Empty, Full, etc...
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes.

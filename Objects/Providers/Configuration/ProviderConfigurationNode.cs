@@ -34,7 +34,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Unit hint used to help the script processor format the value.
 		/// </summary>
-		/// <override type="Vorgon.Units" />
 		public string unit;
 		/// <summary>
 		/// Description of what this configuration does when mapped to a device.

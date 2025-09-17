@@ -52,11 +52,6 @@
 		/// Codified names of <see cref="LabelStyle"/>s.
 		/// If list is empty, this permission applies for all labels.
 		/// </summary>
-		/// <override>
-		/// <values format="codified">
-		/// <seealso cref="LabelStyle.code" />
-		/// </values>
-		/// </override>
 		public string[] labels;
 	}
 }

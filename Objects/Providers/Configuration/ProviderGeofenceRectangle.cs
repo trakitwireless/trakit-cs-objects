@@ -9,12 +9,10 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The smallest possible diameter for this geofence.
 		/// </summary>
-		/// <override type="System.UInt32" />
 		public int maxLength;
 		/// <summary>
 		/// The smallest possible diameter for this geofence.
 		/// </summary>
-		/// <override type="System.UInt32" />
 		public int maxWidth;
 	}
 }

@@ -45,7 +45,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// This thing's name.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name {
 			get => (this.General ?? throw new NullReferenceException("general")).name;
 			set => (this.General ?? throw new NullReferenceException("general")).name = value;
@@ -77,7 +76,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The password programmed on the device used to ensure the system is the only client authorized to make changes.
 		/// </summary>
-		/// <override max-length="50" />
 		public string password {
 			get => (this.General ?? throw new NullReferenceException("general")).password;
 			set => (this.General ?? throw new NullReferenceException("general")).password = value;
@@ -85,7 +83,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The firmware/application version number.
 		/// </summary>
-		/// <override max-length="100" />
 		public string firmware {
 			get => (this.General ?? throw new NullReferenceException("general")).firmware;
 			set => (this.General ?? throw new NullReferenceException("general")).firmware = value;
@@ -93,7 +90,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The phone number of this device.
 		/// </summary>
-		/// <override format="phone" />
 		public ulong? phoneNumber {
 			get => (this.General ?? throw new NullReferenceException("general")).phoneNumber;
 			set => (this.General ?? throw new NullReferenceException("general")).phoneNumber = value;
@@ -101,11 +97,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A list of read-only values about the device like IMEI, ESN, firmware version, hardware revision, etc...
 		/// </summary>
-		/// <override>
-		/// <keys>
-		/// <seealso cref="DataName" />
-		/// </keys>
-		/// </override>
 		public Dictionary<string, string> information {
 			get => (this.General ?? throw new NullReferenceException("general")).information;
 			set => (this.General ?? throw new NullReferenceException("general")).information = value;
@@ -125,7 +116,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The last IP address of the device.
 		/// </summary>
-		/// <override type="System.String" format="ipv4" />
 		public IPEndPoint lastIP {
 			get => (this.Advanced ?? throw new NullReferenceException("advanced")).lastIP;
 			set => (this.Advanced ?? throw new NullReferenceException("advanced")).lastIP = value;

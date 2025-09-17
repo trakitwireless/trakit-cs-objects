@@ -15,12 +15,10 @@
 		/// </summary>
 		/// <example>{{([a-z]+)}}</example>
 		/// <example>&lt;(var[a-z]+)&gt;</example>
-		/// <override max-length="20" />
 		public string replace;
 		/// <summary>
 		/// When defined, this condition matches a <see cref="ProviderScriptParameter"/> defined in the <see cref="ProviderConfig"/> to include or exclude this chunk from the script.
 		/// </summary>
-		/// <override max-length="50" />
 		public string condition;
 		/// <summary>
 		/// Used in conjunction with condition, this value must match the given ProviderScriptParameter value to have the chunk included.

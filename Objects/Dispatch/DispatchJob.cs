@@ -24,15 +24,10 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A name for the work needed to be performed.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name;
 		/// <summary>
 		/// Name/value collections of custom fields used to refer to external systems.
 		/// </summary>
-		/// <override max-count="10">
-		/// <keys max-length="20" />
-		/// <values max-length="100" />
-		/// </override>
 		public Dictionary<string, string> references;
 		/// <summary>
 		/// Instructions (filled out by dispatcher) for the field-employee to help them complete the job.
@@ -41,20 +36,10 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A list of hosted <see cref="Document"/> identifiers attached to this job.
 		/// </summary>
-		/// <override max-count="10">
-		/// <values>
-		/// <seealso cref="Document.id" />
-		/// </values>
-		/// </override>
 		public ulong[] attachments;
 		/// <summary>
 		/// A list of hosted <see cref="FormResult"/> identifiers attached to this job.
 		/// </summary>
-		/// <override max-count="10">
-		/// <values>
-		/// <seealso cref="FormResult.id" />
-		/// </values>
-		/// </override>
 		public ulong[] forms;
 		/// <summary>
 		/// The importance of this job when scheduling for an asset.
@@ -63,20 +48,10 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Codified label names used to relate (unassigned) jobs to <see cref="Asset"/>s.
 		/// </summary>
-		/// <override>
-		/// <values format="codified">
-		/// <seealso cref="LabelStyle.code" />
-		/// </values>
-		/// </override>
 		public string[] labels { get; set; }
 		/// <summary>
 		/// The codified status tag names reflecting the conditions of this job.
 		/// </summary>
-		/// <override>
-		/// <values format="codified">
-		/// <seealso cref="LabelStyle.code" />
-		/// </values>
-		/// </override>
 		public string[] tags { get; set; }
 		/// <summary>
 		/// A list of coordinates to visit in order to carry out the work for this job.

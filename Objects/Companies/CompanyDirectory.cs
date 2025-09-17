@@ -4,7 +4,6 @@ namespace Trakit.Objects {
 	/// <summary>
 	/// The list of Contacts from this and other companies broken down by contact role.
 	/// </summary>
-	/// <override skip="true" />
 	public class CompanyDirectory : Component, IIdUlong, IAmCompany {
 		/// <summary>
 		/// Unique identifier of the Company.
@@ -19,13 +18,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The list of Contacts from this and other companies broken down by contact role.
 		/// </summary>
-		/// <override>
-		/// <values>
-		/// <values>
-		/// <seealso cref="Contact.id" />
-		/// </values>
-		/// </values>
-		/// </override>
 		public Dictionary<string, ulong[]> directory;
 
 		// IRequestable

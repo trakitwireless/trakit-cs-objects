@@ -47,7 +47,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// This thing's name.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name {
 			get => (this.General ?? throw new NullReferenceException("general")).name;
 			set => (this.General ?? throw new NullReferenceException("general")).name = value;
@@ -70,11 +69,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Codified label names.
 		/// </summary>
-		/// <override>
-		/// <values format="codified">
-		/// <seealso cref="LabelStyle.code" />
-		/// </values>
-		/// </override>
 		public string[] labels {
 			get => (this.General ?? throw new NullReferenceException("general")).labels;
 			set => (this.General ?? throw new NullReferenceException("general")).labels = value;
@@ -82,11 +76,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A list of photos of this thing.
 		/// </summary>
-		/// <override>
-		/// <values>
-		/// <seealso cref="Picture.id" />
-		/// </values>
-		/// </override>
 		public ulong[] pictures {
 			get => (this.General ?? throw new NullReferenceException("general")).pictures;
 			set => (this.General ?? throw new NullReferenceException("general")).pictures = value;
@@ -94,7 +83,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The fall-back address which is used to send Messages if the asset is a Person and has no Contact phone or email.
 		/// </summary>
-		/// <override max-length="254" />
 		public string messagingAddress {
 			get => (this.General ?? throw new NullReferenceException("general")).messagingAddress;
 			set => (this.General ?? throw new NullReferenceException("general")).messagingAddress = value;
@@ -102,10 +90,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Name/value collections of custom fields used to refer to external systems.
 		/// </summary>
-		/// <override max-count="10">
-		/// <keys max-length="20" />
-		/// <values max-length="100" />
-		/// </override>
 		public Dictionary<string, string> references {
 			get => (this.General ?? throw new NullReferenceException("general")).references;
 			set => (this.General ?? throw new NullReferenceException("general")).references = value;
@@ -133,11 +117,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The codified status tag names.
 		/// </summary>
-		/// <override>
-		/// <values format="codified">
-		/// <seealso cref="LabelStyle.code" />
-		/// </values>
-		/// </override>
 		public string[] tags {
 			get => (this.Advanced ?? throw new NullReferenceException("advanced")).tags;
 			set => (this.Advanced ?? throw new NullReferenceException("advanced")).tags = value;
@@ -145,11 +124,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A list of attributes given to this asset by the connection device such as wiring state, VBus, etc.
 		/// </summary>
-		/// <override>
-		/// <keys format="codified">
-		/// <seealso cref="AssetAttribute.name" />
-		/// </keys>
-		/// </override>
 		public Dictionary<string, AssetAttribute> attributes {
 			get => (this.Advanced ?? throw new NullReferenceException("advanced")).attributes;
 			set => (this.Advanced ?? throw new NullReferenceException("advanced")).attributes = value;
@@ -157,11 +131,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The list of devices providing events for this asset.
 		/// </summary>
-		/// <override readonly="true">
-		/// <values>
-		/// <seealso cref="Provider.id" />
-		/// </values>
-		/// </override>
 		public string[] providers {
 			get => (this.Advanced ?? throw new NullReferenceException("advanced")).providers;
 			set => (this.Advanced ?? throw new NullReferenceException("advanced")).providers = value;
@@ -169,11 +138,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A list of assets related to this one; like a Person for a Vehicle (driver).
 		/// </summary>
-		/// <override>
-		/// <values>
-		/// <seealso cref="Asset.id" />
-		/// </values>
-		/// </override>
 		public ulong[] relationships {
 			get => (this.Advanced ?? throw new NullReferenceException("advanced")).relationships;
 			set => (this.Advanced ?? throw new NullReferenceException("advanced")).relationships = value;
@@ -181,11 +145,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The current state of this asset's interaction with known Places.
 		/// </summary>
-		/// <override>
-		/// <keys>
-		/// <seealso cref="Place.id" />
-		/// </keys>
-		/// </override>
 		public Dictionary<ulong, AssetPlaceStatus> places {
 			get => (this.Advanced ?? throw new NullReferenceException("advanced")).places;
 			set => (this.Advanced ?? throw new NullReferenceException("advanced")).places = value;

@@ -18,7 +18,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The nickname given to this script.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Usage notes and instructions for users on how best to setup this script.
@@ -31,12 +30,10 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The source code.
 		/// </summary>
-		/// <override max-length="8060" />
 		public string source;
 		/// <summary>
 		/// A list of targeting expressions.  These expressions are defaults for derived Behaviours.
 		/// </summary>
-		/// <override type="System.String" format="expression" />
 		public string filters;
 		/// <summary>
 		/// Listed parameters for the Behaviour function.
@@ -49,17 +46,14 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The background colour given to this script for easy visual identification.
 		/// </summary>
-		/// <override max-length="22" format="colour" />
 		public string fill { get; set; }
 		/// <summary>
 		/// The text/graphic colour given to this script for easy visual identification.
 		/// </summary>
-		/// <override max-length="22" format="colour" />
 		public string stroke { get; set; }
 		/// <summary>
 		/// The codified graphic name given to this script for easy visual identification.
 		/// </summary>
-		/// <override max-length="22" format="codified" />
 		public string graphic { get; set; }
 
 		// IRequestable

@@ -19,7 +19,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The nickname given to this configuration
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Simple details about how the providers are expected to behave.
@@ -29,17 +28,14 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The fill/background colour of the icon.
 		/// </summary>
-		/// <override max-length="22" format="colour" />
 		public string fill { get; set; }
 		/// <summary>
 		/// Outline and graphic colour.
 		/// </summary>
-		/// <override max-length="22" format="colour" />
 		public string stroke { get; set; }
 		/// <summary>
 		/// The name of the symbol for this script.
 		/// </summary>
-		/// <override max-length="22" format="codified" />
 		public string graphic { get; set; }
 
 		/// <summary>

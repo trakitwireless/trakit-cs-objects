@@ -50,7 +50,6 @@
 		/// <summary>
 		/// An optional field which can be set as the "sent from" and/or "reply-to" address.
 		/// </summary>
-		/// <override format="email" />
 		public string outgoingReplyTo;
 	}
 }

@@ -22,7 +22,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The name of this billing rule.
 		/// </summary>
-		/// <override max-length="254" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about billing this rule.
@@ -31,12 +30,10 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A custom field used to refer to an external system.  Examples are a cost codes, SOCs, discount plans...
 		/// </summary>
-		/// <override max-length="100" />
 		public string reference;
 		/// <summary>
 		/// SKU or SOC code
 		/// </summary>
-		/// <override max-length="20" />
 		public string sku;
 		/// <summary>
 		/// Date this billing rule takes effect.

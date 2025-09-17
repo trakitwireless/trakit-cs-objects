@@ -16,7 +16,6 @@
 		/// <summary>
 		/// Target's name.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about the target.

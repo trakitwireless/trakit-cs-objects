@@ -8,7 +8,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Display name of the attribute.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name;
 		/// <summary>
 		/// Computed/contextual value from the behaviour.  Like "3.76 volts" or "on".

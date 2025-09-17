@@ -15,7 +15,6 @@ namespace Trakit.Objects {
 		/// <summary sort="Company">
 		/// Updating the company's <see cref="CompanyDirectory">directory</see> of <see cref="Contact"/>s.  Not the same as <see cref="PermissionType.contact"/>.
 		/// </summary>
-		/// <override skip="true" />
 		/// <seealso cref="CompanyDirectory"/>
 		companyDirectory,
 		/// <summary sort="Company">
@@ -66,7 +65,6 @@ namespace Trakit.Objects {
 		/// <summary sort="Dispatch">
 		/// <see cref="Asset"/>'s <see cref="DispatchTask"/> order, turn by turn directions, and required route.
 		/// </summary>
-		/// <override skip="true" />
 		/// <seealso cref="AssetDispatch"/>
 		assetDispatch,
 
@@ -103,7 +101,6 @@ namespace Trakit.Objects {
 		/// <summary sort="Providers and Configurations">
 		/// Legacy <see cref="Provider"/> configuration types.
 		/// </summary>
-		/// <override skip="true" />
 		/// <seealso cref="ProviderConfigurationType"/>
 		[Obsolete("Use .providerConfiguration instead")]
 		providerConfigType,
@@ -115,7 +112,6 @@ namespace Trakit.Objects {
 		/// <summary sort="Providers and Configurations">
 		/// Sending and reading <see cref="Provider"/> commands.
 		/// </summary>
-		/// <override skip="true" />
 		/// <seealso cref="ProviderCommand"/>
 		[Obsolete("Use .providerControl instead")]
 		providerCommand,
@@ -200,19 +196,16 @@ namespace Trakit.Objects {
 		/// Hours of Service <see cref="HosCarrier">Carrier</see>s.
 		/// </summary>
 		/// <seealso cref="HosCarrier"/>
-		/// <override obsolete="true" deprecated="Feature retired" />
 		hosCarrier,
 		/// <summary sort="Hours of Service">
 		/// Driver's <see cref="HosEvent">E-log event</see> records.
 		/// </summary>
 		/// <seealso cref="HosEvent"/>
-		/// <override obsolete="true" deprecated="Feature retired" />
 		hosEvent,
 		/// <summary sort="Hours of Service">
 		/// Driver <see cref="HosInspection">vehicle inspection</see> reports.
 		/// </summary>
 		/// <seealso cref="HosInspection"/>
-		/// <override obsolete="true" deprecated="Feature retired" />
 		hosInspection,
 
 		/// <summary sort="Maintenance">
@@ -229,14 +222,12 @@ namespace Trakit.Objects {
 		/// <summary sort="Real-time Analytics">
 		/// Rules definiting real-time analytic calculations.
 		/// </summary>
-		/// <override skip="true" />
 		/// <seealso cref="AnalyticRule"/>
 		[Obsolete("Feature retired")]
 		analyticRule,
 		/// <summary sort="Real-time Analytics">
 		/// Updates to the calculations of real-time analytics.
 		/// </summary>
-		/// <override skip="true" />
 		/// <seealso cref="AnalyticSummary"/>
 		[Obsolete("Feature retired")]
 		analyticSummary,
@@ -271,7 +262,6 @@ namespace Trakit.Objects {
 		/// Discount rule for <see cref="Asset"/>s.
 		/// </summary>
 		/// <seealso cref="BillableHostingDiscount"/>
-		/// <override skip="true" />
 		[Obsolete("Feature retired")]
 		billingDiscount,
 		/// <summary sort="Billing">

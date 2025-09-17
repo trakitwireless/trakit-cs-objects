@@ -18,7 +18,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The file name of this file.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about this file.
@@ -27,7 +26,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The URL/path to find this file.
 		/// </summary>
-		/// <override max-length="200" />
 		public string src { get; set; }
 		/// <summary>
 		/// The file-size on the disk.
@@ -36,7 +34,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The MIME type of the file.
 		/// </summary>
-		/// <override max-length="50" />
 		public string mime { get; set; }
 		/// <summary>
 		/// The date and time this fill will be automatically purged from our system.
@@ -45,10 +42,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Name/value collections of custom fields used to refer to external systems.
 		/// </summary>
-		/// <override max-count="10">
-		/// <keys max-length="20" />
-		/// <values max-length="100" />
-		/// </override>
 		public Dictionary<string, string> references;
 
 		// IRequestable

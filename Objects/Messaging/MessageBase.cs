@@ -25,12 +25,10 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Recipient address
 		/// </summary>
-		/// <override min-length="6" max-length="254" />
 		public string to;
 		/// <summary>
 		/// Sender address
 		/// </summary>
-		/// <override min-length="6" max-length="254" />
 		public string from;
 		/// <summary>
 		/// The main contents of the memo.
@@ -48,7 +46,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The subject of this message.
 		/// </summary>
-		/// <override max-length="100" />
 		public string subject;
 		/// <summary>
 		/// The asset to which this message relates.
@@ -59,7 +56,6 @@ namespace Trakit.Objects {
 		/// The user who sent/received this message.
 		/// </summary>
 		/// <seealso cref="User.login" />
-		/// <override max-length="254" format="email" />
 		public string user { get; set; }
 
 		// IRequestable

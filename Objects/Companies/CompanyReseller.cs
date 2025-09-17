@@ -20,68 +20,43 @@ namespace Trakit.Objects {
 		/// A list of Contacts for company specific things like Technical Support, Billing, etc...
 		/// </summary>
 		/// <seealso cref="Contact.id" />
-		/// <override>
-		/// <keys max-count="100" />
-		/// <values>
-		/// <seealso cref="Contact.id" />
-		/// </values>
-		/// </override>
 		public Dictionary<string, ulong> contactInfo;
 		/// <summary>
 		/// The name of the branded service being provided to the seller's customers.
 		/// </summary>
-		/// <override max-length="150" />
 		public string serviceName;
 		/// <summary>
 		/// The name of the image uploaded as the logo (used for regular view).
 		/// </summary>
-		/// <override max-length="200" />
 		public string logo;
 		/// <summary>
 		/// The name of the image uploaded as the logo (used for collapsed/mobile view).
 		/// </summary>
-		/// <override max-length="200" />
 		public string icon;
 		/// <summary>
 		/// The name of the icon file used for browser bookmarks.
 		/// </summary>
-		/// <override max-length="200" />
 		public string favourite;
 		/// <summary>
 		/// The URN and path to the instance of v4.
 		/// It does not contain the protocol because all instances are required to be HTTPS.
 		/// </summary>
-		/// <override max-length="100" />
 		public string domain;
 		/// <summary>
 		/// Themed colours used in the web-based UI.
 		/// </summary>
-		/// <override>
-		/// <keys max-length="25" />
-		/// <values max-length="22" format="colour" />
-		/// </override>
 		public Dictionary<string, string> website;
 		/// <summary>
 		/// A list of symbol names and their corresponding FontAwesome icon names.
 		/// </summary>
-		/// <override>
-		/// <keys max-length="25" />
-		/// <values max-length="30" format="codified" />
-		/// </override>
 		public Dictionary<string, string> graphics;
 		/// <summary>
 		/// A list of supported languages for your customers.
 		/// </summary>
-		/// <override>
-		/// <values max-length="5" format="codified" />
-		/// </override>
 		public string[] languages;
 		/// <summary>
 		/// Colours used as templates for status tags, labels, and places.
 		/// </summary>
-		/// <override>
-		/// <keys max-length="25" />
-		/// </override>
 		public Dictionary<string, ColourStyle> gamut;
 		/// <summary>
 		/// The server used for notification and conversational email messages sent and received by the system.

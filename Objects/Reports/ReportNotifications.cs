@@ -7,11 +7,6 @@
 		/// List of users to send emailed report.
 		/// Each email will only contain the results for the assets each user is allowed to view.
 		/// </summary>
-		/// <override>
-		/// <values max-length="50" format="email">
-		/// <seealso cref="UserGeneral.login" />
-		/// </values>
-		/// </override>
 		public string[] users;
 		/// <summary>
 		/// A targeting expression to identify which assets receive the report results.

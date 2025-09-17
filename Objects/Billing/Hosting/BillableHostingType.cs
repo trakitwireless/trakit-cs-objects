@@ -26,22 +26,18 @@
 		/// <summary>
 		/// Inventory management
 		/// </summary>
-		/// <override skip="true" />
 		inventory,
 		/// <summary>
 		/// Cargo and delivery audit
 		/// </summary>
-		/// <override skip="true" />
 		cargo,
 		/// <summary>
 		/// Mobile forms
 		/// </summary>
-		/// <override skip="true" />
 		forms,
 		/// <summary>
 		/// Dashcam and live images hosting
 		/// </summary>
-		/// <override skip="true" />
 		streetview,
 	}
 }

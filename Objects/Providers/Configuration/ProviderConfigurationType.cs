@@ -15,7 +15,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Name of the configuration type.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes regarding the use of this configuration.
@@ -28,12 +27,10 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The maximum number of geofences that can be programmed onto a device. This number changes based on device make and model, and can also change based on the supported geofence types.
 		/// </summary>
-		/// <override type="System.UInt32" />
 		public int maxGeofenceCount;
 		/// <summary>
 		/// The minimum number of geofences that need to be programmed onto the device. This value is almost always zero.
 		/// </summary>
-		/// <override type="System.UInt32" />
 		public int minGeofenceCount;
 		/// <summary>
 		/// A tree-structure of configurations required (or optionally available) for programming a device.

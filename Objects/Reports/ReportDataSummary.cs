@@ -13,7 +13,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Code given to this summary instance for an asset.
 		/// </summary>
-		/// <override max-length="100" />
 		public string stateDetail;
 		/// <summary>
 		/// Identifier of the summary instance in the report.

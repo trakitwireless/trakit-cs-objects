@@ -4,7 +4,6 @@ namespace Trakit.Objects {
 	/// <summary>
 	/// A POI (point-of-interest) saved to the system to help determine an asset's real-world position.
 	/// </summary>
-	/// <override complex="true">
 	/// <property name="anchor" type="Vorgon.LatLng">
 	/// <summary>
 	/// A central point of the shape.
@@ -17,7 +16,6 @@ namespace Trakit.Objects {
 	/// This member is only present for <see cref="PlaceType.radial"/> shapes, and is the radius in meters from the centre anchor.
 	/// </summary>
 	/// </property>
-	/// </override>
 	public class Place : Component, IIdUlong, INamed, IIconic, IBelongCompany, ILabelled, IPictured, IDeletable {
 		/// <summary>
 		/// Unique identifier of this POI.
@@ -35,12 +33,10 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// POI's common name instead of street address.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Full street address including province/state, country, and postal/zip code.
 		/// </summary>
-		/// <override max-length="200" />
 		public string address;
 		/// <summary>
 		/// The icon used to display this POI in lists and on the map.
@@ -54,30 +50,18 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The codified names of labels
 		/// </summary>
-		/// <override>
-		/// <values format="codified">
-		/// <seealso cref="LabelStyle.code" />
-		/// </values>
-		/// </override>
 		public string[] labels { get; set; }
 		/// <summary>
 		/// The fill colour given to this place for easy visual identification on the map (given in 24bit hex; #RRGGBB)
 		/// </summary>
-		/// <override max-length="22" format="colour" />
 		public string colour;
 		/// <summary>
 		/// Images of this POI.
 		/// </summary>
-		/// <override>
-		/// <values>
-		/// <seealso cref="Picture.id" />
-		/// </values>
-		/// </override>
 		public ulong[] pictures { get; set; }
 		/// <summary>
 		/// A custom field used to refer to an external system.
 		/// </summary>
-		/// <override max-length="100" />
 		public string reference;
 
 		/// <summary>

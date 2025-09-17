@@ -18,7 +18,6 @@ namespace Trakit.Objects {
 		/// The unique public email address used to access the system.
 		/// </summary>
 		/// <seealso cref="User.login" />
-		/// <override min-length="6" max-length="254" format="email" />
 		public string login => this.General?.login
 						?? this.Advanced?.login
 						?? throw new NullReferenceException("general");
@@ -51,7 +50,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Human friendly name for these credentials
 		/// </summary>
-		/// <override max-length="100" />
 		public string nickname {
 			get => (this.General ?? throw new NullReferenceException("general")).nickname;
 			set => (this.General ?? throw new NullReferenceException("general")).nickname = value;
@@ -76,7 +74,6 @@ namespace Trakit.Objects {
 		/// Preferred region/language for the UI and notifications.
 		/// Valid formats use &lt;ISO 639-1&gt;&lt;dash&gt;&lt;ISO 3166-2&gt; such as "fr-CA" or "en-US".
 		/// </summary>
-		/// <override min-length="2" max-length="5" format="codified" />
 		public string language {
 			get => (this.General ?? throw new NullReferenceException("general")).language;
 			set => (this.General ?? throw new NullReferenceException("general")).language = value;
@@ -84,10 +81,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The format strings defining the preferred way to display ambiguous values.
 		/// </summary>
-		/// <override>
-		/// <keys format="codified" />
-		/// <values max-length="20" format="datetimetemplate" />
-		/// </override>
 		public Dictionary<string, string> formats {
 			get => (this.General ?? throw new NullReferenceException("general")).formats;
 			set => (this.General ?? throw new NullReferenceException("general")).formats = value;
@@ -95,9 +88,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Preferred way of displaying ambiguous numbers in the context of measurements.
 		/// </summary>
-		/// <override>
-		/// <keys format="codified" />
-		/// </override>
 		public Dictionary<string, SystemsOfUnits> measurements {
 			get => (this.General ?? throw new NullReferenceException("general")).measurements;
 			set => (this.General ?? throw new NullReferenceException("general")).measurements = value;
@@ -105,10 +95,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Additional options which do not fit in with the formats or measurements preferences.
 		/// </summary>
-		/// <override>
-		/// <keys format="codified" />
-		/// <values max-length="20" />
-		/// </override>
 		public Dictionary<string, string> options {
 			get => (this.General ?? throw new NullReferenceException("general")).options;
 			set => (this.General ?? throw new NullReferenceException("general")).options = value;
@@ -116,7 +102,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Definition of how and when to send alerts to the user.
 		/// </summary>
-		/// <override max-count="7" />
 		public UserNotifications[] notify {
 			get => (this.General ?? throw new NullReferenceException("general")).notify;
 			set => (this.General ?? throw new NullReferenceException("general")).notify = value;

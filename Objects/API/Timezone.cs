@@ -10,17 +10,14 @@
 		/// <summary>
 		/// Common timezone name
 		/// </summary>
-		/// <override readonly="true" />
 		public string name;
 		/// <summary>
 		/// Minutes offset from GMT
 		/// </summary>
-		/// <override readonly="true" />
 		public short offset;
 		/// <summary>
 		/// Indicates whether this timezone abides by daylight savings
 		/// </summary>
-		/// <override readonly="true" />
 		public bool dst;
 
 		/// <summary>

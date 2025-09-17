@@ -17,7 +17,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Provider name.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about the provider.
@@ -38,7 +37,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The firmware/application version number.
 		/// </summary>
-		/// <override max-length="100" />
 		public string firmware;
 		/// <summary>
 		/// Number of days this Provider is being billed for.

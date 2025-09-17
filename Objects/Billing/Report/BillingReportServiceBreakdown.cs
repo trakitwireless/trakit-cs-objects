@@ -17,7 +17,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Asset's name.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about the asset.
@@ -47,11 +46,6 @@ namespace Trakit.Objects {
 		/// Codified label names.
 		/// </summary>
 		/// <seealso cref="LabelStyle.code" />
-		/// <override>
-		/// <values format="codified">
-		/// <seealso cref="LabelStyle.code" />
-		/// </values>
-		/// </override>
 		public string[] labels { get; set; }
 		/// <summary>
 		/// The list of devices providing events for this asset.
@@ -61,9 +55,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The list of phone numbers for this asset.
 		/// </summary>
-		/// <override>
-		/// <values format="phone" />
-		/// </override>
 		public ulong[] phoneNumbers;
 		/// <summary>
 		/// Indicates when this Asset was last updated.

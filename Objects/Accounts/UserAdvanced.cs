@@ -7,7 +7,6 @@
 		/// The unique public email address used to access the system.
 		/// </summary>
 		/// <seealso cref="User.login" />
-		/// <override min-length="6" max-length="254" format="email" />
 		public string login { get; set; }
 		/// <summary>
 		/// The company to which this user belongs.

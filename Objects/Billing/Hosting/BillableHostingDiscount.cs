@@ -4,7 +4,6 @@ namespace Trakit.Objects {
 	/// <summary>
 	/// A discount rule for assets
 	/// </summary>
-	/// <override skip="true" />
 	[Obsolete("Never implemented.")]
 	public class BillableHostingDiscount : BillableHostingBase {
 		/// <summary>

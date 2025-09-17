@@ -23,7 +23,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// This thing's name.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// The icon that represents this asset on the map and in lists.
@@ -37,33 +36,18 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Codified label names.
 		/// </summary>
-		/// <override>
-		/// <values format="codified">
-		/// <seealso cref="LabelStyle.code" />
-		/// </values>
-		/// </override>
 		public string[] labels { get; set; }
 		/// <summary>
 		/// A list of photos of this thing.
 		/// </summary>
-		/// <override>
-		/// <values>
-		/// <seealso cref="Picture.id" />
-		/// </values>
-		/// </override>
 		public ulong[] pictures { get; set; }
 		/// <summary>
 		/// The fall-back address which is used to send Messages if the asset is a Person and has no Contact phone or email.
 		/// </summary>
-		/// <override max-length="254" />
 		public string messagingAddress;
 		/// <summary>
 		/// Name/value collections of custom fields used to refer to external systems.
 		/// </summary>
-		/// <override max-count="10">
-		/// <keys max-length="20" />
-		/// <values max-length="100" />
-		/// </override>
 		public Dictionary<string, string> references;
 
 		// IRequestable

@@ -10,9 +10,6 @@
 		/// <summary>
 		/// Restrict session creation to only the provided IPv4 ranges (using CIDR slash-notation).  Leave blank for Internet access.
 		/// </summary>
-		/// <override>
-		/// <values max-length="19" format="ipv4" />
-		/// </override>
 		public string[] ipv4Ranges;
 		/// <summary>
 		/// Defines the behaviour of the system when a user creates multiple sessions.

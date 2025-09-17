@@ -27,7 +27,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Name of this report.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about this report.
@@ -57,7 +56,6 @@ namespace Trakit.Objects {
 		/// A field which contains report error details if the <see cref="status"/> is <see cref="BillingReportStatus.failed"/>.
 		/// </summary>
 		/// <seealso cref="BillingReportStatus" />
-		/// <override max-length="250" />
 		public string error;
 		/// <summary>
 		/// Summary contains totals per target for this billee

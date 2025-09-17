@@ -16,7 +16,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The relevant unit for the data provided like Km/h, degrees, volts, RPM, etc...
 		/// </summary>
-		/// <override type="Vorgon.Units" />
 		public string unit;
 	}
 }

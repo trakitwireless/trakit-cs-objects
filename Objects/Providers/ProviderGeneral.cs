@@ -10,7 +10,6 @@ namespace Trakit.Objects {
 		/// Unique identifier of this device.
 		/// </summary>
 		/// <seealso cref="Provider.id" />
-		/// <override min-length="10" max-length="50" />
 		public string id { get; set; }
 		/// <summary>
 		/// The company to which this device belongs.
@@ -20,7 +19,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A nickname given to the device/hardware.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes!
@@ -45,17 +43,14 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The password programmed on the device used to ensure the system is the only client authorized to make changes.
 		/// </summary>
-		/// <override max-length="50" />
 		public string password;
 		/// <summary>
 		/// The firmware/application version number.
 		/// </summary>
-		/// <override max-length="100" />
 		public string firmware;
 		/// <summary>
 		/// The phone number of this device.
 		/// </summary>
-		/// <override format="phone" />
 		public ulong? phoneNumber;
 		/// <summary>
 		/// A list of read-only values about the device like IMEI, ESN, firmware version, hardware revision, etc...

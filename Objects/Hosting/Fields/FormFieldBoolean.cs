@@ -23,7 +23,6 @@
 		/// These three values are the values of the choices presented.
 		/// The first value is the "checked" value, second is the "unchecked" value, and third is "indeterminate" value.
 		/// </summary>
-		/// <override length="3" />
 		public string[] choices;
 	}
 }

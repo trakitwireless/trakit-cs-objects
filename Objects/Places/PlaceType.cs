@@ -2,7 +2,6 @@
 	/// <summary>
 	/// The types of geography the system supports
 	/// </summary>
-	/// <override name="PlaceType"/>
 	public enum PlaceType : byte {
 		/// <summary>
 		/// A lat/long coordinate pair.

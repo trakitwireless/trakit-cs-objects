@@ -8,7 +8,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A unique six digit code.
 		/// </summary>
-		/// <override length="6" />
 		public string code;
 		/// <summary>
 		/// The company to which the device will belong.
@@ -18,7 +17,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A nickname given to the device once it has been provisioned.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes!
@@ -27,13 +25,11 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The password programmed on the device used to ensure the system is the only client authorized to make changes.
 		/// </summary>
-		/// <override max-length="50" />
 		public string password;
 		/// <summary>
 		/// The unique identifier the user who generated this registration.
 		/// </summary>
 		/// <seealso cref="User.login" />
-		/// <override max-length="254" format="email" />
 		public string user;
 		/// <summary>
 		/// The predefined configuration this device will use.
@@ -61,7 +57,6 @@ namespace Trakit.Objects {
 		/// The unique identifier of the device that completed this registration.
 		/// </summary>
 		/// <seealso cref="Provider.id" />
-		/// <override max-length="50" />
 		public string identifier;
 		/// <summary>
 		/// The Asset for which this device will provide data.
@@ -72,7 +67,6 @@ namespace Trakit.Objects {
 		/// The phone number of the device being provisioned.
 		/// This is set by the user for long-term registrations, or by the client during serial port setup.
 		/// </summary>
-		/// <override format="phone" />
 		public ulong? phoneNumber;
 
 		// IRequestable

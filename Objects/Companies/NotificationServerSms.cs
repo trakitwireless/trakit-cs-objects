@@ -12,12 +12,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// All phone numbers listed by the country (using two-digit ISO 3166-1 alpha-2 country codes) they each serve.
 		/// </summary>
-		/// <override>
-		/// <keys length="2" />
-		/// <values>
-		/// <values format="phone" />
-		/// </values>
-		/// </override>
 		public Dictionary<string, ulong[]> phoneNumbers;
 	}
 }

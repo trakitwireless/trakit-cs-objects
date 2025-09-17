@@ -4,7 +4,6 @@ namespace Trakit.Objects {
 	/// <summary>
 	/// The detail for calculating Maintenance Schedule recurrence.
 	/// </summary>
-	/// <override name="MaintenanceInterval" />
 	public class MaintenanceRecurrence : IBelongAsset {
 		/// <summary>
 		/// The Vehicle or Trailer to which this recurrence detail belongs.

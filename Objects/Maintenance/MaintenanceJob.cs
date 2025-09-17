@@ -32,7 +32,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The work being done. Like "oil change".
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about the job.  Like "changed the oil and filter".
@@ -63,12 +62,10 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The name of the garage or service facility where the work is done.
 		/// </summary>
-		/// <override max-length="100" />
 		public string garage;
 		/// <summary>
 		/// Time it took to complete the job.
 		/// </summary>
-		/// <override format="timespan" />
 		public TimeSpan duration;
 		/// <summary>
 		/// How much the job cost in dollars.
@@ -77,22 +74,15 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A reference code used to track this job
 		/// </summary>
-		/// <override max-length="100" />
 		public string reference;
 		/// <summary>
 		/// The mechanic who performed the work.
 		/// </summary>
-		/// <override max-length="100" />
 		public string technician;
 		/// <summary>
 		/// Images taken while performing the work for reference.
 		/// </summary>
 		/// <seealso cref="Picture.id" />
-		/// <override>
-		/// <values>
-		/// <seealso cref="Picture.id" />
-		/// </values>
-		/// </override>
 		public ulong[] pictures { get; set; }
 
 		// IRequestable

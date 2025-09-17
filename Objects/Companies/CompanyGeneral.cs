@@ -19,7 +19,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The organizational name.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes.
@@ -28,10 +27,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Name/value collections of custom fields used to refer to external systems.
 		/// </summary>
-		/// <override max-count="10">
-		/// <keys max-length="20" />
-		/// <values max-length="100" />
-		/// </override>
 		public Dictionary<string, string> references;
 
 		// IRequestable

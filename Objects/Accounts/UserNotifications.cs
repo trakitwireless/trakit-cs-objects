@@ -8,7 +8,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A common name like "Weekdays" or "Off Hours".
 		/// </summary>
-		/// <override max-length="100" />
 		public string name;
 		/// <summary>
 		/// A flag for whether or not this schedule is in use.
@@ -19,7 +18,6 @@ namespace Trakit.Objects {
 		/// The days of the week are defined in local time, not UTC.
 		/// </summary>
 		/// <seealso cref="UserGeneral.timezone" />
-		/// <override count="7" />
 		public bool[] weekdays;
 		/// <summary>
 		/// Start time portion of the schedule that defines a period of the day when the user wants to receive alerts.
@@ -38,7 +36,6 @@ namespace Trakit.Objects {
 		/// If not specified, the email address from the User's <see cref="Contact"/> is taken.
 		/// If the contact has no email address, the alert is sent to the user's login.
 		/// </summary>
-		/// <override min-length="6" max-length="254" format="email" />
 		public string email;
 		/// <summary>
 		/// SMS address where the alert is sent.

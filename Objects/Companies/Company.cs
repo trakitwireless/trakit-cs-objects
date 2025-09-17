@@ -55,7 +55,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The organizational name.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name {
 			get => (this.General ?? throw new NullReferenceException("general")).name;
 			set => (this.General ?? throw new NullReferenceException("general")).name = value;
@@ -70,10 +69,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Name/value collections of custom fields used to refer to external systems.
 		/// </summary>
-		/// <override max-count="10">
-		/// <keys max-length="20" />
-		/// <values max-length="100" />
-		/// </override>
 		public Dictionary<string, string> references {
 			get => (this.General ?? throw new NullReferenceException("general")).references;
 			set => (this.General ?? throw new NullReferenceException("general")).references = value;

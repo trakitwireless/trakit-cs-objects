@@ -24,15 +24,10 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The name of this task or the work needed to be performed.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name;
 		/// <summary>
 		/// Name/value collections of custom fields used to refer to external systems.
 		/// </summary>
-		/// <override max-count="10">
-		/// <keys max-length="20" />
-		/// <values max-length="100" />
-		/// </override>
 		public Dictionary<string, string> references;
 		/// <summary>
 		/// An optional place which can be used as a template instead of providing lat/long coordinates and a street address.
@@ -42,7 +37,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The street address of where the task must be completed.
 		/// </summary>
-		/// <override max-length="500" />
 		public string address;
 		/// <summary>
 		/// The lat/long coordinates of where the task must be completed.
@@ -83,7 +77,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The name of the person who signed the task's completion.
 		/// </summary>
-		/// <override max-length="100" />
 		public string signatory;
 		/// <summary>
 		/// Notes about the status of the work filled in by field-employee.
@@ -92,11 +85,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A list of hosted <see cref="Document"/> identifiers attached to this task.
 		/// </summary>
-		/// <override max-count="10">
-		/// <values>
-		/// <seealso cref="Document.id" />
-		/// </values>
-		/// </override>
 		public ulong[] attachments;
 		/// <summary>
 		/// Either the user's login, or provider's identifier that changed this task

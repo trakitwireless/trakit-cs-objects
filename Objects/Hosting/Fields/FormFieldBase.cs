@@ -2,7 +2,6 @@
 	/// <summary>
 	/// A base class for the common form field UI members.
 	/// </summary>
-	/// <override skip="false" />
 	public abstract class FormFieldBase : IIdUlong, INamed {
 		/// <summary>
 		/// A list of supported <see cref="FormFieldType"/>s that this class supports.

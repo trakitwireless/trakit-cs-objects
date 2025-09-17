@@ -6,11 +6,6 @@
 		/// <summary>
 		/// A list of codified status tag names.  Any of the tags must be applied to the asset for the image to appear.
 		/// </summary>
-		/// <override>
-		/// <values format="codified">
-		/// <seealso cref="LabelStyle.code" />
-		/// </values>
-		/// </override>
 		public string[] tags;
 		/// <summary>
 		/// Path to the image.

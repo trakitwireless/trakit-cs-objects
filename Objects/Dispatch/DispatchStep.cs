@@ -15,7 +15,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A name for the work needed to be performed.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// The most recently updated state for this step.
@@ -41,7 +40,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The street address of where the step must be completed.
 		/// </summary>
-		/// <override max-length="500" />
 		public string address;
 		/// <summary>
 		/// The lat/long coordinates of where the step must be <see cref="DispatchStepStatus.completed"/>.
@@ -58,7 +56,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The name of the person who signed the step's completion.
 		/// </summary>
-		/// <override max-length="100" />
 		public string signatory;
 	}
 }

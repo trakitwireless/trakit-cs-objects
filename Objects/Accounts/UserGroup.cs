@@ -18,7 +18,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A name given to this group.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about this group, and to whom this group should be applied.

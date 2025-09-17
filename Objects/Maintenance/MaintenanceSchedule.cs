@@ -18,7 +18,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The name of the work to be done.  Like "oil change".
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about the work to be done.  Like "change the oil and oil filter".
@@ -31,33 +30,24 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// List of Users to send notifications.
 		/// </summary>
-		/// <override>
-		/// <values format="email">
-		/// <seealso cref="User.login" />
-		/// </values>
-		/// </override>
 		public string[] notify;
 
 		/// <summary>
 		/// The fill/background colour of the icon.
 		/// </summary>
-		/// <override max-length="22" format="colour" />
 		public string fill { get; set; }
 		/// <summary>
 		/// Outline and graphic colour.
 		/// </summary>
-		/// <override max-length="22" format="colour" />
 		public string stroke { get; set; }
 		/// <summary>
 		/// The name of the symbol for this schedule.
 		/// </summary>
-		/// <override max-length="22" format="codified" />
 		public string graphic { get; set; }
 
 		/// <summary>
 		/// The number of days in advance to predict a job will become pending.
 		/// </summary>
-		/// <override min-value="5" max-value="180" />
 		public uint predictionDays;
 		/// <summary>
 		/// The number of days between service visits.
@@ -74,18 +64,12 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The per-asset details calculated by the system to help predict the creation of Maintenance Jobs.
 		/// </summary>
-		/// <override>
-		/// <keys>
-		/// <seealso cref="Asset.id" />
-		/// </keys>
-		/// </override>
 		public Dictionary<ulong, MaintenanceRecurrence> intervals;
 
 		// ------------ repair details ------------
 		/// <summary>
 		/// The name of the garage or service facility where the work is done.
 		/// </summary>
-		/// <override max-length="100" />
 		public string garage;
 		/// <summary>
 		/// The estimated time for the job.
@@ -98,7 +82,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A reference code used to track this job
 		/// </summary>
-		/// <override max-length="100" />
 		public string reference;
 
 		// IRequestable

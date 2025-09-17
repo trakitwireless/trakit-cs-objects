@@ -10,7 +10,6 @@ namespace Trakit.Objects {
 		/// Unique identifier of this device.
 		/// </summary>
 		/// <seealso cref="Provider.id" />
-		/// <override min-length="10" max-length="50" />
 		public string id { get; set; }
 		/// <summary>
 		/// The company to which this device belongs.
@@ -20,7 +19,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The last IP address of the device.
 		/// </summary>
-		/// <override type="System.String" format="ipv4" />
 		public IPEndPoint lastIP;
 		/// <summary>
 		/// Often changing values like latitude, longitude, speed, wiring state, VBus information, etc...

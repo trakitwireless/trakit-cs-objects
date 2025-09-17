@@ -28,12 +28,10 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The name for this profile
 		/// </summary>
-		/// <override max-length="254" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about the billing profile for the billee or target.
 		/// </summary>
-		/// <override max-length="1000" />
 		public string notes { get; set; }
 		/// <summary>
 		/// SMS messaging tiers

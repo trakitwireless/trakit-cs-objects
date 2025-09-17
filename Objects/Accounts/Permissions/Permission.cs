@@ -17,7 +17,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The kind of permission.
 		/// </summary>
-		/// <override type="Vorgon.UserPermissionType"/>
 		[Obsolete("Use .kind instead")]
 		public string type {
 			get => this.kind.ToString();
@@ -34,11 +33,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Codified names of <see cref="LabelStyle"/>s.  If list is empty, this permission applies for all labels.
 		/// </summary>
-		/// <override>
-		/// <values format="codified">
-		/// <seealso cref="LabelStyle.code" />
-		/// </values>
-		/// </override>
 		public string[] labels;
 	}
 }

@@ -18,7 +18,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The person's name
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about this person.
@@ -29,27 +28,18 @@ namespace Trakit.Objects {
 		/// Use the object key like a name identifier.
 		/// Example keys: Initials, Nickname, Maiden Name, etc.
 		/// </summary>
-		/// <override>
-		/// <values max-length="254" />
-		/// </override>
 		public Dictionary<string, string> otherNames;
 		/// <summary>
 		/// Email addresses.
 		/// Use the object key like a name of the address.
 		/// Example keys: Home, Work, Support, Old, etc.
 		/// </summary>
-		/// <override>
-		/// <values max-length="254" format="email" />
-		/// </override>
 		public Dictionary<string, string> emails;
 		/// <summary>
 		/// Phone numbers.
 		/// Use the object key like a name of the phone number.
 		/// Example keys: Mobile, Fax, Home, Office, etc.
 		/// </summary>
-		/// <override>
-		/// <values format="phone" />
-		/// </override>
 		public Dictionary<string, ulong> phones;
 		/// <summary>
 		/// Mailing addresses.
@@ -62,9 +52,6 @@ namespace Trakit.Objects {
 		/// Use the object key like a name of the address.
 		/// Example keys: Downloads, Support, FTP, etc.
 		/// </summary>
-		/// <override>
-		/// <values type="System.String" max-length="254" format="url" />
-		/// </override>
 		public Dictionary<string, Uri> urls;
 		/// <summary>
 		/// Date information.
@@ -80,16 +67,10 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A list of roles they play in the Company.
 		/// </summary>
-		/// <override format="codified" />
 		public string[] roles;
 		/// <summary>
 		/// Pictures of this Contact.
 		/// </summary>
-		/// <override>
-		/// <values>
-		/// <seealso cref="Picture.id" />
-		/// </values>
-		/// </override>
 		public ulong[] pictures { get; set; }
 
 		// IRequestable

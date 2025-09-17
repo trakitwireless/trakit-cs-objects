@@ -21,7 +21,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Name of this report.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about this report.
@@ -55,7 +54,6 @@ namespace Trakit.Objects {
 		/// The login of the user that ran this report.
 		/// </summary>
 		/// <seealso cref="User.login" />
-		/// <override max-length="254" format="email" />
 		public string runBy;
 		/// <summary>
 		/// The date/time this result was requested.
@@ -97,7 +95,6 @@ namespace Trakit.Objects {
 		/// A field which contains report error details if the <see cref="status"/> is <see cref="ReportStatus.failed"/>.
 		/// </summary>
 		/// <seealso cref="ReportStatus" />
-		/// <override max-length="250" />
 		public string error;
 
 		// IRequestable

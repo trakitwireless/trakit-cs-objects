@@ -17,7 +17,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The file name of this image.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about this image.
@@ -26,7 +25,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The URL/path to find this image.
 		/// </summary>
-		/// <override max-length="200" />
 		public string src { get; set; }
 		/// <summary>
 		/// Resolution defined in pixels.

@@ -23,7 +23,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The nickname given to this configuration
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Simple details about how the providers are expected to behave.
@@ -39,7 +38,6 @@ namespace Trakit.Objects {
 		/// Use "*" to match all the Places the Provider's Asset can match.
 		/// Or use "#123456" or "label:term" like other Place search patterns.
 		/// </summary>
-		/// <override type="System.String" format="expression" />
 		public string geofences;
 
 		// IRequestable

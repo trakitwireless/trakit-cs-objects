@@ -27,7 +27,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Name of this form.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about this form.
@@ -36,11 +35,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Codified label names used to relate forms to <see cref="Asset"/>s.
 		/// </summary>
-		/// <override>
-		/// <values format="codified">
-		/// <seealso cref="LabelStyle.code" />
-		/// </values>
-		/// </override>
 		public string[] labels { get; set; }
 		/// <summary>
 		/// All the values for fillable fields by index.

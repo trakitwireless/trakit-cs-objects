@@ -25,13 +25,11 @@ namespace Trakit.Objects {
 		/// Province or state code.
 		/// Codes should be a value from ISO 3166-2.
 		/// </summary>
-		/// <override length="2" />
 		public string province;
 		/// <summary>
 		/// Country code.
 		/// Codes should be a value from ISO 3166-1 alpha-2.
 		/// </summary>
-		/// <override length="2" />
 		public string country;
 		/// <summary>
 		/// Postal or zip code.

@@ -23,12 +23,10 @@ namespace Trakit.Objects {
 		/// Login of the user who has ownership of this report schedule.
 		/// </summary>
 		/// <seealso cref="User.login" />
-		/// <override max-length="254" format="email" />
 		public string owner;
 		/// <summary>
 		/// Name of this report.
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Notes about this report.

@@ -19,7 +19,6 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// The nickname given to this configuration
 		/// </summary>
-		/// <override max-length="100" />
 		public string name { get; set; }
 		/// <summary>
 		/// Simple details about how the providers are expected to behave.

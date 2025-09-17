@@ -9,7 +9,6 @@ namespace Trakit.Objects {
 		/// Unique identifier of this device.
 		/// </summary>
 		/// <seealso cref="Provider.id" />
-		/// <override min-length="10" max-length="50" />
 		public string id { get; set; }
 		/// <summary>
 		/// The company to which this device belongs.
