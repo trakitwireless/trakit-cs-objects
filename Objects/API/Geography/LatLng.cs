@@ -13,15 +13,15 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// Latitude
 		/// </summary>
-		public double lat;
+		public readonly double lat;
 		/// <summary>
 		/// Longitude
 		/// </summary>
-		public double lng;
+		public readonly double lng;
 
 		public LatLng(double lat, double lng) {
-			this.lat = lat;
-			this.lng = lng;
+			this.lat = Geography.NormalizeLatitude(lat);
+			this.lng = Geography.NormalizeLongitude(lng);
 		}
 		//public override bool Equals(object obj) => obj is LatLng other && this.Equals(other);
 
@@ -30,7 +30,7 @@ namespace Trakit.Objects {
 		/// </summary>
 		/// <param name="other"></param>
 		/// <returns></returns>
-		public bool Equals(LatLng other) => other?.isValid() == this.isValid()
+		public bool Equals(LatLng other) => other?.IsValid() == this.IsValid()
 									&& other?.lat == this.lat
 									&& other?.lng == this.lng;
 
@@ -38,7 +38,7 @@ namespace Trakit.Objects {
 		/// True when a <see cref="PlaceType.radial"/> radius is within the allowed size range.
 		/// </summary>
 		/// <returns></returns>
-		public bool isValid() => !double.IsNaN(this.lat) && !double.IsInfinity(this.lat)
-						&& !double.IsNaN(this.lng) && !double.IsInfinity(this.lng);
+		public bool IsValid() => Geography.NotNaN(this.lat) != 0
+							&& Geography.NotNaN(this.lng) != 0;
 	}
 }
