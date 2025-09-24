@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Trakit.Objects {
 	/// <summary>
@@ -23,6 +24,7 @@ namespace Trakit.Objects {
 		/// The <see cref="Asset"/> to which this form belongs.
 		/// </summary>
 		/// <seealso cref="Asset.id" />
+		[JsonProperty(NullValueHandling = NullValueHandling.Include)]
 		public ulong? asset;
 		/// <summary>
 		/// Name of this form.
@@ -43,6 +45,7 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// A timestamp from when this form was completed by a <see cref="User"/> or <see cref="Asset"/>.
 		/// </summary>
+		[JsonProperty(NullValueHandling = NullValueHandling.Include)]
 		public DateTime? completed;
 		/// <summary>
 		/// The coordinates of the <see cref="User"/> or <see cref="Asset"/> from when the form was completed.

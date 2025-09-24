@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Trakit.Objects {
 	/// <summary>
@@ -20,6 +21,7 @@ namespace Trakit.Objects {
 		/// This value is null when unassigned.
 		/// </summary>
 		/// <seealso cref="Asset.id" />
+		[JsonProperty(NullValueHandling = NullValueHandling.Include)]
 		public ulong? asset;
 		/// <summary>
 		/// A name for the work needed to be performed.

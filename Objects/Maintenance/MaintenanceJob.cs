@@ -28,7 +28,7 @@ namespace Trakit.Objects {
 		/// The Maintenance Schedule from which this job was created
 		/// </summary>
 		/// <seealso cref="MaintenanceSchedule.id" />
-		public ulong? schedule { get; set; }
+		public ulong? schedule;
 		/// <summary>
 		/// The work being done. Like "oil change".
 		/// </summary>

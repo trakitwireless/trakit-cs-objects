@@ -1,4 +1,6 @@
-﻿namespace Trakit.Objects {
+﻿using Newtonsoft.Json;
+
+namespace Trakit.Objects {
 	/// <summary>
 	/// A base class for Dashcam meta-data.
 	/// </summary>
@@ -25,6 +27,7 @@
 		/// Unique identifier of the asset tied to the provider at the time.
 		/// </summary>
 		/// <seealso cref="Asset.id" />
+		[JsonProperty(NullValueHandling = NullValueHandling.Include)]
 		public ulong? asset;
 		/// <summary>
 		/// Number assigned to the camera that took the image/video.

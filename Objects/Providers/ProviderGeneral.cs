@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Trakit.Objects {
 	/// <summary>
@@ -32,6 +33,7 @@ namespace Trakit.Objects {
 		/// The asset for which this device provides field data.
 		/// </summary>
 		/// <seealso cref="Asset.id" />
+		[JsonProperty(NullValueHandling = NullValueHandling.Include)]
 		public ulong? asset;
 		/// <summary>
 		/// The provider's current (or pending) configuration profile.

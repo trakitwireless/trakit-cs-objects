@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace Trakit.Objects {
 	/// <summary>
@@ -57,11 +58,13 @@ namespace Trakit.Objects {
 		/// The unique identifier of the device that completed this registration.
 		/// </summary>
 		/// <seealso cref="Provider.id" />
+		[JsonProperty(NullValueHandling = NullValueHandling.Include)]
 		public string identifier;
 		/// <summary>
 		/// The Asset for which this device will provide data.
 		/// </summary>
 		/// <seealso cref="Asset.id" />
+		[JsonProperty(NullValueHandling = NullValueHandling.Include)]
 		public ulong? asset;
 		/// <summary>
 		/// The phone number of the device being provisioned.
