@@ -2,7 +2,7 @@
 	/// <summary>
 	/// The password and session lifetime policies for this Company.
 	/// </summary>
-	public class CompanyPolicies : Component, IIdUlong, IAmCompany {
+	public class CompanyPolicy : Component, IIdUlong, IAmCompany {
 		/// <summary>
 		/// Unique identifier of the Company.
 		/// </summary>
