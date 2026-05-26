@@ -17,10 +17,6 @@ namespace Trakit.Objects {
 		/// <seealso cref="Company.id" />
 		public ulong company { get; set; }
 		/// <summary>
-		/// Indicated whether the credentials have expired according to the company's policy.
-		/// </summary>
-		public bool passwordExpired;
-		/// <summary>
 		/// Indicates whether system access is disabled.
 		/// </summary>
 		public bool enabled { get; set; }
@@ -51,10 +47,6 @@ namespace Trakit.Objects {
 		/// Preferred way of displaying ambiguous numbers in the context of measurements.
 		/// </summary>
 		public Dictionary<string, SystemsOfUnits> measurements { get; set; }
-		/// <summary>
-		/// Additional options which do not fit in with the formats or measurements preferences.
-		/// </summary>
-		public Dictionary<string, string> options { get; set; }
 		/// <summary>
 		/// Definition of how and when to send alerts to the user.
 		/// </summary>

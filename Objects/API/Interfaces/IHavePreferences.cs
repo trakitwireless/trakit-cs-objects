@@ -23,9 +23,5 @@ namespace Trakit.Objects {
 		/// Preferred way of displaying ambiguous numbers in the context of measurements.
 		/// </summary>
 		Dictionary<string, SystemsOfUnits> measurements { get; }
-		/// <summary>
-		/// Additional options which do not fit in with the formats or measurements preferences.
-		/// </summary>
-		Dictionary<string, string> options { get; }
 	}
 }

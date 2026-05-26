@@ -57,10 +57,6 @@ namespace Trakit.Objects {
 		/// Preferred way of displaying ambiguous numbers in the context of measurements.
 		/// </summary>
 		public Dictionary<string, SystemsOfUnits> measurements { get; set; }
-		/// <summary>
-		/// Additional options which do not fit in with the formats or measurements preferences.
-		/// </summary>
-		public Dictionary<string, string> options { get; set; }
 
 		/// <summary>
 		/// A list of groups to which this machine account belongs.
