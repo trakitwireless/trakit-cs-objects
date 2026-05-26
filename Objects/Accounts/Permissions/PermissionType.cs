@@ -18,9 +18,9 @@ namespace Trakit.Objects {
 		/// <seealso cref="CompanyDirectory"/>
 		companyDirectory,
 		/// <summary sort="Company">
-		/// Company's <see cref="CompanyStyles">label and tag styles</see>.
+		/// Company's <see cref="CompanyStyle">label and tag styles</see>.
 		/// </summary>
-		/// <seealso cref="CompanyStyles"/>
+		/// <seealso cref="CompanyStyle"/>
 		companyLabels,
 		/// <summary sort="Company">
 		/// Company's <see cref="SessionPolicy"/> and <see cref="PasswordPolicy"/>.

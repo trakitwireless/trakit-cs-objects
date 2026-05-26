@@ -13,8 +13,8 @@ namespace Trakit.Objects {
 			this.General,
 			default,	// reserved for future use
 			this.Directory,
-			this.Styles,
-			this.Policies,
+			this.Style,
+			this.Policy,
 			this.Reseller,
 		};
 
@@ -24,8 +24,8 @@ namespace Trakit.Objects {
 		/// <seealso cref="Asset.id" />
 		public ulong id => this.General?.id
 						?? this.Directory?.id
-						?? this.Policies?.id
-						?? this.Styles?.id
+						?? this.Policy?.id
+						?? this.Style?.id
 						?? this.Reseller?.id
 						?? throw new NullReferenceException("general");
 		/// <summary>
@@ -35,15 +35,15 @@ namespace Trakit.Objects {
 		public ulong parent {
 			get => this.General?.parent
 				?? this.Directory?.parent
-				?? this.Policies?.parent
-				?? this.Styles?.parent
+				?? this.Policy?.parent
+				?? this.Style?.parent
 				?? this.Reseller?.parent
 				?? throw new NullReferenceException("general");
 			set {
 				if (this.General != default) this.General.parent = value;
 				if (this.Directory != default) this.Directory.parent = value;
-				if (this.Policies != default) this.Policies.parent = value;
-				if (this.Styles != default) this.Styles.parent = value;
+				if (this.Policy != default) this.Policy.parent = value;
+				if (this.Style != default) this.Style.parent = value;
 				if (this.Reseller != default) this.Reseller.parent = value;
 			}
 		}
@@ -89,39 +89,39 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// 
 		/// </summary>
-		public CompanyPolicies Policies { get; set; }
+		public CompanyPolicy Policy { get; set; }
 		/// <summary>
 		/// The session lifetime policy.
 		/// </summary>
 		public SessionPolicy sessionPolicy {
-			get => (this.Policies ?? throw new NullReferenceException("policies")).sessionPolicy;
-			set => (this.Policies ?? throw new NullReferenceException("policies")).sessionPolicy = value;
+			get => (this.Policy ?? throw new NullReferenceException("policies")).sessionPolicy;
+			set => (this.Policy ?? throw new NullReferenceException("policies")).sessionPolicy = value;
 		}
 		/// <summary>
 		/// The password complexity and expiry policy.
 		/// </summary>
 		public PasswordPolicy passwordPolicy {
-			get => (this.Policies ?? throw new NullReferenceException("policies")).passwordPolicy;
-			set => (this.Policies ?? throw new NullReferenceException("policies")).passwordPolicy = value;
+			get => (this.Policy ?? throw new NullReferenceException("policies")).passwordPolicy;
+			set => (this.Policy ?? throw new NullReferenceException("policies")).passwordPolicy = value;
 		}
 
 		/// <summary>
 		/// 
 		/// </summary>
-		public CompanyStyles Styles { get; set; }
+		public CompanyStyle Style { get; set; }
 		/// <summary>
 		/// The styles for labels added to Assets, Places, and other things.
 		/// </summary>
 		public Dictionary<string, LabelStyle> labels {
-			get => (this.Styles ?? throw new NullReferenceException("styles")).labels;
-			set => (this.Styles ?? throw new NullReferenceException("styles")).labels = value;
+			get => (this.Style ?? throw new NullReferenceException("styles")).labels;
+			set => (this.Style ?? throw new NullReferenceException("styles")).labels = value;
 		}
 		/// <summary>
 		/// The styles for status tags added to Assets.
 		/// </summary>
 		public Dictionary<string, LabelStyle> tags {
-			get => (this.Styles ?? throw new NullReferenceException("styles")).tags;
-			set => (this.Styles ?? throw new NullReferenceException("styles")).tags = value;
+			get => (this.Style ?? throw new NullReferenceException("styles")).tags;
+			set => (this.Style ?? throw new NullReferenceException("styles")).tags = value;
 		}
 
 		/// <summary>
