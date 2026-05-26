@@ -12,6 +12,8 @@ namespace Trakit.Objects {
 		protected override Component[] Pieces => new Component[] {
 			this.General,
 			this.Advanced,
+			this.Authentication,
+			this.State,
 		};
 
 		/// <summary>
@@ -33,13 +35,6 @@ namespace Trakit.Objects {
 		/// 
 		/// </summary>
 		public UserGeneral General { get; set; }
-		/// <summary>
-		/// Indicated whether the credentials have expired according to the company's policy.
-		/// </summary>
-		public bool passwordExpired {
-			get => (this.General ?? throw new NullReferenceException("general")).passwordExpired;
-			set => (this.General ?? throw new NullReferenceException("general")).passwordExpired = value;
-		}
 		/// <summary>
 		/// Indicates whether system access is disabled.
 		/// </summary>
@@ -93,13 +88,6 @@ namespace Trakit.Objects {
 			set => (this.General ?? throw new NullReferenceException("general")).measurements = value;
 		}
 		/// <summary>
-		/// Additional options which do not fit in with the formats or measurements preferences.
-		/// </summary>
-		public Dictionary<string, string> options {
-			get => (this.General ?? throw new NullReferenceException("general")).options;
-			set => (this.General ?? throw new NullReferenceException("general")).options = value;
-		}
-		/// <summary>
 		/// Definition of how and when to send alerts to the user.
 		/// </summary>
 		public UserNotifications[] notify {
@@ -125,6 +113,44 @@ namespace Trakit.Objects {
 		public Permission[] permissions {
 			get => (this.Advanced ?? throw new NullReferenceException("advanced")).permissions;
 			set => (this.Advanced ?? throw new NullReferenceException("advanced")).permissions = value;
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public UserAuthentication Authentication { get; set; }
+		/// <summary>
+		/// Indicated whether the credentials have expired according to the company's policy.
+		/// </summary>
+		public bool passwordExpired {
+			get => (this.Authentication ?? throw new NullReferenceException("authentication")).passwordExpired;
+			set => (this.Authentication ?? throw new NullReferenceException("authentication")).passwordExpired = value;
+		}
+		/// <summary>
+		/// Indicated whether the credentials have expired according to the company's policy.
+		/// </summary>
+		public List<UserMFA> mfa {
+			get => (this.Authentication ?? throw new NullReferenceException("authentication")).mfa;
+			set => (this.Authentication ?? throw new NullReferenceException("authentication")).mfa = value;
+		}
+		/// <summary>
+		/// Indicated whether the credentials have expired according to the company's policy.
+		/// </summary>
+		public UserSSO sso {
+			get => (this.Authentication ?? throw new NullReferenceException("authentication")).sso;
+			set => (this.Authentication ?? throw new NullReferenceException("authentication")).sso = value;
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public UserState State { get; set; }
+		/// <summary>
+		/// Additional options which do not fit in with the formats or measurements preferences.
+		/// </summary>
+		public Dictionary<string, string> options {
+			get => (this.State ?? throw new NullReferenceException("state")).options;
+			set => (this.State ?? throw new NullReferenceException("state")).options = value;
 		}
 
 		// IRequestable
