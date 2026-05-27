@@ -14,7 +14,7 @@ namespace Trakit.Objects {
 		protected override Component[] Pieces => new Component[] {
 			this.General,
 			this.Advanced,
-			this.Dispatch,
+			this.dispatch,
 		};
 
 		/// <summary>
@@ -23,7 +23,7 @@ namespace Trakit.Objects {
 		/// <seealso cref="Asset.id" />
 		public ulong id => this.General?.id
 						?? this.Advanced?.id
-						?? this.Dispatch?.id
+						?? this.dispatch?.id
 						?? throw new NullReferenceException("general");
 		/// <summary>
 		/// The company to which this asset belongs.
@@ -31,7 +31,7 @@ namespace Trakit.Objects {
 		/// <seealso cref="Company.id" />
 		public ulong company => this.General?.company
 							?? this.Advanced?.company
-							?? this.Dispatch?.company
+							?? this.dispatch?.company
 							?? throw new NullReferenceException("general");
 		/// <summary>
 		/// Type of asset.
@@ -95,6 +95,79 @@ namespace Trakit.Objects {
 			set => (this.General ?? throw new NullReferenceException("general")).references = value;
 		}
 
+		#region Person
+		/// <summary>
+		/// A reference to their Company's Contact information.
+		/// </summary>
+		/// <seealso cref="Contact.id" />
+		public ulong? contact {
+			get => (this.General ?? throw new NullReferenceException("general")).contact;
+			set => (this.General ?? throw new NullReferenceException("general")).contact = value;
+		}
+		#endregion Person
+		#region Vehicle
+		/// <summary>
+		/// Manufacturer's unique identification number (Vehicle Identification Number).
+		/// </summary>
+		public string vin {
+			get => (this.General ?? throw new NullReferenceException("general")).vin;
+			set => (this.General ?? throw new NullReferenceException("general")).vin = value;
+		}
+		/// <summary>
+		/// The cumulative duration that the vehicle's engine has been running (in decimal hours).
+		/// </summary>
+		public double? engineHours {
+			get => (this.Advanced ?? throw new NullReferenceException("advanced")).engineHours;
+			set => (this.Advanced ?? throw new NullReferenceException("advanced")).engineHours = value;
+		}
+		#endregion Vehicle
+		#region Trailer
+		/// <summary>
+		/// Manufacturer's unique identification number for this trailer.
+		/// </summary>
+		public string serial {
+			get => (this.General ?? throw new NullReferenceException("general")).serial;
+			set => (this.General ?? throw new NullReferenceException("general")).serial = value;
+		}
+		#endregion Vehicle
+		#region Vehicle and Trailer
+		/// <summary>
+		/// The license plate.
+		/// </summary>
+		public string plate {
+			get => (this.General ?? throw new NullReferenceException("general")).plate;
+			set => (this.General ?? throw new NullReferenceException("general")).plate = value;
+		}
+		/// <summary>
+		/// Manufacturer's name.
+		/// </summary>
+		public string make {
+			get => (this.General ?? throw new NullReferenceException("general")).make;
+			set => (this.General ?? throw new NullReferenceException("general")).make = value;
+		}
+		/// <summary>
+		/// Manufacturer's model name/number.
+		/// </summary>
+		public string model {
+			get => (this.General ?? throw new NullReferenceException("general")).model;
+			set => (this.General ?? throw new NullReferenceException("general")).model = value;
+		}
+		/// <summary>
+		/// Year of manufacturing.
+		/// </summary>
+		public ushort? year {
+			get => (this.General ?? throw new NullReferenceException("general")).year;
+			set => (this.General ?? throw new NullReferenceException("general")).year = value;
+		}
+		/// <summary>
+		/// Primary colour of the vehicle (given in 24bit hex; #RRGGBB)
+		/// </summary>
+		public string colour {
+			get => (this.General ?? throw new NullReferenceException("general")).colour;
+			set => (this.General ?? throw new NullReferenceException("general")).colour = value;
+		}
+		#endregion Vehicle and Trailer
+
 		/// <summary>
 		/// 
 		/// </summary>
@@ -153,7 +226,7 @@ namespace Trakit.Objects {
 		/// <summary>
 		/// 
 		/// </summary>
-		public AssetDispatch Dispatch { get; set; }
+		public AssetDispatch dispatch { get; set; }
 
 		// IRequestable
 		/// <summary>

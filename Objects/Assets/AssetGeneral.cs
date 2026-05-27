@@ -50,6 +50,48 @@ namespace Trakit.Objects {
 		/// </summary>
 		public Dictionary<string, string> references;
 
+		#region Person
+		/// <summary>
+		/// A reference to their Company's Contact information.
+		/// </summary>
+		/// <seealso cref="Contact.id" />
+		public ulong? contact;
+		#endregion Person
+		#region Vehicle
+		/// <summary>
+		/// Manufacturer's unique identification number (Vehicle Identification Number).
+		/// </summary>
+		public string vin;
+		#endregion Vehicle
+		#region Trailer
+		/// <summary>
+		/// Manufacturer's unique identification number for this trailer.
+		/// </summary>
+		public string serial;
+		#endregion Trailer
+		#region Vehicle and Trailer
+		/// <summary>
+		/// The license plate.
+		/// </summary>
+		public string plate;
+		/// <summary>
+		/// Manufacturer's name.
+		/// </summary>
+		public string make;
+		/// <summary>
+		/// Manufacturer's model name/number.
+		/// </summary>
+		public string model;
+		/// <summary>
+		/// Year of manufacturing.
+		/// </summary>
+		public ushort? year;
+		/// <summary>
+		/// Primary colour of the vehicle (given in 24bit hex; #RRGGBB)
+		/// </summary>
+		public string colour;
+		#endregion Vehicle and Trailer
+
 		// IRequestable
 		/// <summary>
 		/// The <see cref="id"/> is the key.

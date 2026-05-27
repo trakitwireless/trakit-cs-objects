@@ -44,6 +44,13 @@ namespace Trakit.Objects {
 		/// </summary>
 		public Dictionary<ulong, AssetPlaceStatus> places;
 
+		#region Vehicle
+		/// <summary>
+		/// The cumulative duration that the vehicle's engine has been running (in decimal hours).
+		/// </summary>
+		public double? engineHours;
+		#endregion Vehicle
+
 		// IRequestable
 		/// <summary>
 		/// The <see cref="id"/> is the key.
