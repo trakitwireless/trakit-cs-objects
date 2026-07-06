@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace Trakit.Objects {
 	/// <summary>
-	/// Permissions and group membership defined for a user.
+	/// State flags for this user.
 	/// </summary>
 	public class UserState : Component, IBelongCompany {
 		/// <summary>
