@@ -132,27 +132,32 @@ namespace Trakit.Objects {
 		/// <seealso cref="ReportSchedule"/>
 		reportSchedule,
 
-		/// <summary sort="Users and Groups">
+		/// <summary sort="Accounts">
 		/// General <see cref="UserGeneral">user information</see> such as name, contact information, and preferences.
 		/// </summary>
 		/// <seealso cref="UserGeneral"/>
 		userGeneral,
-		/// <summary sort="Users and Groups">
+		/// <summary sort="Accounts">
 		/// <see cref="UserAdvanced">User information</see> such as permissions and group membership.
 		/// </summary>
 		/// <seealso cref="UserAdvanced"/>
 		userAdvanced,
-		/// <summary sort="Users and Groups">
+		/// <summary sort="Accounts">
+		/// Authentication details for <see cref="User"/>.
+		/// </summary>
+		/// <seealso cref="UserAuthentication"/>
+		userAuthentication,
+		/// <summary sort="Accounts">
 		/// <see cref="UserGroup"/> information for easy access control.
 		/// </summary>
 		/// <seealso cref="UserGroup"/>
 		userGroup,
-		/// <summary sort="Users and Groups">
+		/// <summary sort="Accounts">
 		/// <see cref="Machine"/> information and permissions.
 		/// </summary>
 		/// <seealso cref="Machine"/>
 		machine,
-		/// <summary sort="Users and Groups">
+		/// <summary sort="Accounts">
 		/// Access to retrieve a list of active sessions and kill sessions.
 		/// </summary>
 		/// <seealso cref="Tentacles.RespSession"/>
