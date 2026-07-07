@@ -106,5 +106,9 @@ namespace Trakit.Objects {
 		/// Teltonika device protocols
 		/// </summary>
 		teltonika,
+		/// <summary>
+		/// Queclink device protocols
+		/// </summary>
+		queclink,
 	}
 }
